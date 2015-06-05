@@ -1,2 +1,2 @@
-# Coursmatch
-Repository for SEBA  project
+# CourseMatch
+Repository for SEBA project
