@@ -1,4 +1,21 @@
 
+# Students
+
+students:
+
+    - !!models.Student
+        email:      guillaume@sample.com
+        name:       Guillaume Bort
+        password:   secret
+    
+    - !!models.Student
+        email:      max@mustermann.com
+        name:       Max Mustermann
+        password:   password
+    
+    
+
+
 # Users
 
 users:
