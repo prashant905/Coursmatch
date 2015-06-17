@@ -1,0 +1,65 @@
+@(student: Student , courses: List[Course],jobs:List[Job])(body: Html)
+
+<html>
+
+<style>
+
+#menu_container{
+	position: relative;
+	margin-top:4%;
+	width:50%;
+}
+
+.nav > li {
+   width: 220px !important;
+  text-align: center !important;
+}
+
+.text-title{
+	font-style:italic;
+	text-decoration: underline;
+}
+
+
+</style>
+    <head>
+        <title>TUM</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.7.1.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-play-1.7.1.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+        
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="" id="logo">TUM</a>
+            <dl id="user">
+                <dt>@student.name <span>(@student.email)</span></dt>
+                <dd>
+                    <a href="@routes.Application.logout()">Logout</a>
+                </dd>
+            </dl>
+        </header>
+		            <nav>
+            <h4 class="dashboard"><a href="#/">Courses</a></h4>
+            
+        </nav>
+        
+		
+		<div>
+        
+        <section>
+            @body
+        </section>
+		
+		
+		</div>
+    </body>
+</html>
+

@@ -1,0 +1,23 @@
+[0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\arrow-left.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\arrow-left.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\breadcrumb-1.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\breadcrumb-1.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\breadcrumb-2.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\breadcrumb-2.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\breadcrumb.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\breadcrumb.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\loading.gif,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\loading.gif)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\pattern.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\pattern.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\addRemove.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\addRemove.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\clock.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\clock.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\delete.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\delete.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\drawer.folder.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\drawer.folder.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\folder.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\folder.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\home.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\home.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\options.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\options.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\user.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\user.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\images\icons\user2.png,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\images\icons\user2.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\javascripts\tablefilter.js,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\javascripts\tablefilter.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\stylesheets\bootstrap.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\bootstrap.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\public\stylesheets\bootstrap.min.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\bootstrap.min.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\login.min.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\login.min.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\login.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\login.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\main.min.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\main.min.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\main.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\main.css)[0m

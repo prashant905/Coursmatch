@@ -1,0 +1,125 @@
+@(student: Student , course :Course)
+
+<html>
+
+<style>
+
+#menu_container{
+	position: relative;
+	margin-top:4%;
+	width:50%;
+}
+
+.nav > li {
+   width: 220px !important;
+  text-align: center !important;
+}
+
+.text-title{
+	font-style:italic;
+	text-decoration: underline;
+}
+    	.row{
+		    margin-top:40px;
+		    padding: 0 10px;
+		}
+		.clickable{
+		    cursor: pointer;   
+		}
+
+		.panel-heading div {
+			margin-top: -18px;
+			font-size: 15px;
+		}
+		.panel-heading div span{
+			margin-left:5px;
+		}
+		.panel-body{
+			display: none;
+		}
+
+</style>
+    <head>
+        <title>TUM</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.7.1.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-play-1.7.1.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/tablefilter.js")"></script>
+        
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="" id="logo">TUM</a>
+            <dl id="user">
+                <dt>@student.name <span>(@student.email)</span></dt>
+                <dd>
+                    <a href="@routes.Application.logout()">Logout</a>
+                </dd>
+            </dl>
+        </header>
+		            <nav>
+            <h4 class="dashboard"><a href="#/">Courses</a></h4>
+            
+        </nav>
+        
+   		<div style="position: relative;
+			top: 100px;
+			width: 63%;
+			left: 20%;" class="well well-lg">
+			<div style="text-align:center;"class="container">
+			<p class="text-title">Title<p>
+			<p>@course.name</p>
+			<p class="text-title">Professor<p>
+			<p>@course.professor_name</p>
+			<p style="float:right;top:-130px;position:relative" class ="text-title">Overall Rate:</p>
+			<p style="float:right;top:-100px;left:35px;position:relative">@course.rate</p>
+			</div>
+			<button style="float:right;position:relative;top:-15px" type="button" class="btn-link">Rate Me</button>
+		
+		</div>
+		
+		 <div style="position: relative;
+			top: 145px;
+			width: 63%;
+			left: 20%;" class="well well-lg">
+		
+		<div class="container" style="height:180px">
+			<p class="text-title">Description<p>
+			<p>@course.description</p>
+		</div>
+		
+		<div class="container" style="height:180px">
+			<p class="text-title">Uploads<p>
+			<a href="#">file1.pdf</a>
+			<a href="#">file2.pdf</a>
+			<a href="#">file3.pdf</a>
+			<button type="button" class="btn btn-sm btn-primary">upload</button>
+		</div>
+		
+		<div "class="container" style="width:44%">
+       <div class="panel panel-default">
+		   <div class="panel-heading"><p class="text-title">Comments<p></div>
+		      <div class="panel-body">
+		   </div>
+		   <ul class="list-group">
+		      <li class="list-group-item"> comment1</li>
+		      <li class="list-group-item"> comment2</li> 
+		   	  <li class="list-group-item"> comment3</li>
+		   </ul>   
+		   	   <input type="text" class="form-control" id="comment"></input>
+		   	   	<button type="button" class="btn btn- btn-primary" style="float:right">Comment</button>
+		      </div>
+		</div>
+		
+		</div>
+		
+		</body>
+		</html>
+        

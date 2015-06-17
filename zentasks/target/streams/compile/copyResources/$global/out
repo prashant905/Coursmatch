@@ -1,0 +1,11 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\login.min.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\login.min.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\login.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\login.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\main.min.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\main.min.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\resource_managed\main\public\stylesheets\main.css,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\public\stylesheets\main.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\conf\application.conf,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\conf\evolutions,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\conf\initial-data.yml,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\initial-data.yml)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\conf\routes,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\conf\evolutions\default,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\PRASHANT\workspace\zentasks\conf\evolutions\default\1.sql,C:\Users\PRASHANT\workspace\zentasks\target\scala-2.10\classes\evolutions\default\1.sql)[0m

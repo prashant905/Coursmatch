@@ -1,0 +1,65 @@
+
+# Student
+
+students:
+
+    - !!models.Student
+        email:      mohamed.ragab@tum.de
+        name:       mohamed ragab
+        password:   1234
+    
+
+
+courses:
+
+
+    - !!models.Course
+        id:                 1
+        name:               Introduction to software Eng.   
+        professor_name:     Prof.1
+        description:        fun course for fresh students at the university recommended to begginers
+        chair:              software engineering
+        rate:               5
+         
+    - !!models.Course
+        id:                 2
+        name:               Patterns 
+        professor_name:     Prof.2
+        description:        software patterns at its best . From MVC to fascade 
+        chair:              software engineering 
+        rate:               10
+        
+    - !!models.Course
+        id:                 3
+        name:               Web Services   
+        professor_name:     Prof.3
+        description:        fun A challenging course for those though are interested in web programming
+        chair:              informatics
+        rate:                2
+        
+        
+jobs:
+
+    - !!models.Job
+        id:                 1
+        title:               front end developer   
+        company_name:        company 1
+        description:         front end developer , javascript and jquery favorable
+        salary:              25 euros / hour
+        begin_time:          1st of august 2015
+  
+    - !!models.Job
+        id:                 2
+        title:               backend developer   
+        company_name:        company 2
+        description:         hibernate, msql and algorithm programmer needed
+        salary:              50 euros / hour
+        begin_time:          1st of august 2015
+  
+    - !!models.Job
+        id:                 3
+        title:               software arch.
+        company_name:        company 3
+        description:         software arch. in need with good patterns and managing skills.
+        salary:              25 euros / hour
+        begin_time:          25th december 2015
