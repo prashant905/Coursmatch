@@ -97,7 +97,7 @@ hr {
   visibility: hidden;
 }
 body {
-  background: #c7d1d8;
+  background: #666666;
   color: #2a3a48;
   font: 13px "Lucida Grande", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialised;
@@ -110,16 +110,61 @@ a {
 a:hover {
   color: #2a5e88;
 }
+.navlist {
+  margin-top: 15px;
+}
+.navlist li {
+  margin: 0 8px;
+}
+.navlist li a {
+  display: inline-block;
+  margin: 0 4px;
+  text-align: none;
+}
+.logout {
+  background: #0E5180;
+  /*#445868;*/
+  /*155984 0%, #003b84 */
+  /*  #445868, #2a3a48) */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#155984), to(#003b84));
+  background-image: -moz-linear-gradient(top, #155984, #003b84);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.8);
+}
+.coursetitle {
+  font-size: 24px;
+}
+.coursesubtitle {
+  font-size: 20px;
+}
+.uploaditem {
+  float: left;
+  padding-right: 30px;
+}
+.uploaditem div {
+  height: 140px;
+  width: 100px;
+}
+.uploaditem div div {
+  height: 100px;
+}
+.uploaditembox {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #AAA;
+  border-radius: 6px;
+  background: #FFF;
+}
 body > header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 50px;
 }
 body > nav {
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 0;
   width: 220px;
   bottom: 0;
@@ -127,7 +172,7 @@ body > nav {
 }
 body > section {
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 220px;
   right: 0;
   bottom: 0;
@@ -233,14 +278,17 @@ body > section {
   background-color: #2a3a48;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-  color: #c7d1d8;
+  color: #FAFAFA;
   cursor: pointer;
 }
 .new:hover {
+  background-color: #2a3a48;
   background: rgba(187, 255, 255, 0.30000000000000004);
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.30000000000000004)), to(rgba(187, 255, 255, 0)));
   background-image: -moz-linear-gradient(top, rgba(187, 255, 255, 0.30000000000000004), rgba(187, 255, 255, 0));
-  background-color: #2a3a48;
+  background-color: #003b84;
+  /*#2a3a48;*/
+
   color: #ffffff;
 }
 .new:before {
@@ -412,15 +460,18 @@ body h4 {
   background-color: #2a3a48;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-  color: #c7d1d8;
+  color: #FAFAFA;
   cursor: pointer;
   margin: 15px 25px;
 }
 #newGroup:hover {
+  background-color: #2a3a48;
   background: rgba(187, 255, 255, 0.30000000000000004);
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.30000000000000004)), to(rgba(187, 255, 255, 0)));
   background-image: -moz-linear-gradient(top, rgba(187, 255, 255, 0.30000000000000004), rgba(187, 255, 255, 0));
-  background-color: #2a3a48;
+  background-color: #003b84;
+  /*#2a3a48;*/
+
   color: #ffffff;
 }
 #newGroup:before {
@@ -439,6 +490,15 @@ body > header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#445868), to(#2a3a48));
   background-image: -moz-linear-gradient(top, #445868, #2a3a48);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.8);
+  height: 50px;
+  background: #0E5180;
+  /*#445868;*/
+  /*155984 0%, #003b84 */
+  /*  #445868, #2a3a48) */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#155984), to(#003b84));
+  background-image: -moz-linear-gradient(top, #155984, #003b84);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.8);
 }
 #logo {
   color: #fff;
@@ -477,19 +537,31 @@ body > header {
   background-color: #2a3a48;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-  color: #c7d1d8;
+  color: #FAFAFA;
   cursor: pointer;
+  background: #0E5180;
+  /*#445868;*/
+  /*155984 0%, #003b84 */
+  /*  #445868, #2a3a48) */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#155984), to(#003b84));
+  background-image: -moz-linear-gradient(top, #155984, #003b84);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.8);
+  text-decoration: none;
 }
 #user dd a:hover,
 #user dd button:hover {
+  background-color: #2a3a48;
   background: rgba(187, 255, 255, 0.30000000000000004);
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.30000000000000004)), to(rgba(187, 255, 255, 0)));
   background-image: -moz-linear-gradient(top, rgba(187, 255, 255, 0.30000000000000004), rgba(187, 255, 255, 0));
-  background-color: #2a3a48;
+  background-color: #003b84;
+  /*#2a3a48;*/
+
   color: #ffffff;
 }
 #main > header {
-  height: 39px;
+  height: 50px;
   background: url(/assets/images/breadcrumb.png);
   border-bottom: 1px solid #606d78;
 }
@@ -603,7 +675,7 @@ body > header {
   background-color: #2a3a48;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-  color: #c7d1d8;
+  color: #FAFAFA;
   cursor: pointer;
 }
 #main > header .users > dt:before {
@@ -612,10 +684,13 @@ body > header {
   vertical-align: middle;
 }
 #main > header .users > dt:hover {
+  background-color: #2a3a48;
   background: rgba(187, 255, 255, 0.30000000000000004);
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.30000000000000004)), to(rgba(187, 255, 255, 0)));
   background-image: -moz-linear-gradient(top, rgba(187, 255, 255, 0.30000000000000004), rgba(187, 255, 255, 0));
-  background-color: #2a3a48;
+  background-color: #003b84;
+  /*#2a3a48;*/
+
   color: #ffffff;
 }
 #main > header .users > dd {
@@ -837,4 +912,58 @@ body > header {
   position: absolute;
   top: 5px;
   right: 6px;
+}
+/*
+ * Selectable CSS3 Rating Stars by Martin Ivanov (@wemakesitesnet)
+ * @version 1.0
+ * @author Martin Ivanov
+ * @url portfolio http://wemakesites.net/
+ * @url twitter https://twitter.com/wemakesitesnet
+ * @url blog http://acidmartin.wordpress.com/
+ **/
+/*
+ * Do you like this solution? Please, donate:
+ * https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QFUHPWJB2JDBS
+ * 
+ * If you are looking for a feature-complete rating system http://acidjs.wemakesites.net/rating.html 
+ *
+ **/
+.acidjs-rating-stars,
+.acidjs-rating-stars label::before {
+  display: inline-block;
+}
+.acidjs-rating-stars label:hover,
+.acidjs-rating-stars label:hover ~ label {
+  color: #2e6da4;
+}
+.acidjs-rating-stars * {
+  margin: 0;
+  padding: 0;
+}
+.acidjs-rating-stars input {
+  display: none;
+}
+.acidjs-rating-stars {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.acidjs-rating-stars label {
+  color: #ccc;
+}
+.acidjs-rating-stars label::before {
+  content: "\2605";
+  width: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.acidjs-rating-stars input:checked ~ label {
+  color: #f5b301;
+}
+.acidjs-rating-disabled {
+  opacity: .50;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  pointer-events: none;
 }

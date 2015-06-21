@@ -36,28 +36,35 @@ Seq[Any](format.raw/*1.33*/("""
     </head>
     <body>
         
-        <header>
-            <a href="" id="logo">Course Match</a>
+        <header style="padding-top: 10px">
+            <a href="" id="logo"> 
+             <img src=""""),_display_(Seq[Any](/*13.25*/routes/*13.31*/.Assets.at("images/logo-white.png"))),format.raw/*13.66*/("""" height="30px">
+            </a>           
         </header>
         
-        """),_display_(Seq[Any](/*15.10*/helper/*15.16*/.form(routes.Application.authenticate)/*15.54*/ {_display_(Seq[Any](format.raw/*15.56*/("""
+        """),_display_(Seq[Any](/*17.10*/helper/*17.16*/.form(routes.Application.authenticate)/*17.54*/ {_display_(Seq[Any](format.raw/*17.56*/("""
             
-            <h1>Sign in</h1>
+            <h1 style="height:50px">
+               <img src=""""),_display_(Seq[Any](/*20.27*/routes/*20.33*/.Assets.at("images/logo.png"))),format.raw/*20.62*/("""" height="30px">
+            </h1>
             
-            """),_display_(Seq[Any](/*19.14*/if(form.hasGlobalErrors)/*19.38*/ {_display_(Seq[Any](format.raw/*19.40*/(""" 
-                <p class="error">
-                    """),_display_(Seq[Any](/*21.22*/form/*21.26*/.globalError.message)),format.raw/*21.46*/("""
+            
+            """),_display_(Seq[Any](/*24.14*/if(form.hasGlobalErrors)/*24.38*/ {_display_(Seq[Any](format.raw/*24.40*/(""" 
+                <p class="error" style="border: 1px solid #F00">
+                    """),_display_(Seq[Any](/*26.22*/form/*26.26*/.globalError.message)),format.raw/*26.46*/("""
                 </p>
-            """)))})),format.raw/*23.14*/("""
+            """)))})),format.raw/*28.14*/("""
             
-            """),_display_(Seq[Any](/*25.14*/if(flash.contains("success"))/*25.43*/ {_display_(Seq[Any](format.raw/*25.45*/("""
-                <p class="success">
-                    """),_display_(Seq[Any](/*27.22*/flash/*27.27*/.get("success"))),format.raw/*27.42*/("""
+            """),_display_(Seq[Any](/*30.14*/if(flash.contains("success"))/*30.43*/ {_display_(Seq[Any](format.raw/*30.45*/("""
+                <p class="success" style="border: 1px solid #0F0">
+                    """),_display_(Seq[Any](/*32.22*/flash/*32.27*/.get("success"))),format.raw/*32.42*/("""
                 </p>
-            """)))})),format.raw/*29.14*/("""
+            """)))})),format.raw/*34.14*/("""
             
+           
+           
             <p>
-                <input type="email" name="email" placeholder="Email" value=""""),_display_(Seq[Any](/*32.78*/form("email")/*32.91*/.value)),format.raw/*32.97*/("""">
+                <input type="email" name="email" placeholder="Email" value=""""),_display_(Seq[Any](/*39.78*/form("email")/*39.91*/.value)),format.raw/*39.97*/("""">
             </p>
             <p>
                 <input type="password" name="password" placeholder="Password">
@@ -66,7 +73,12 @@ Seq[Any](format.raw/*1.33*/("""
                 <button type="submit">Login</button>
             </p>
             
-        """)))})),format.raw/*41.10*/("""
+    
+            
+            
+            
+            
+        """)))})),format.raw/*53.10*/("""
         
  
             
@@ -87,11 +99,11 @@ Seq[Any](format.raw/*1.33*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 17 23:07:14 CEST 2015
-                    SOURCE: C:/Users/PRASHANT/workspace/zentasks/app/views/login.scala.html
-                    HASH: f964f3ae250d584100a5a1a3ce2f004204e93dda
-                    MATRIX: 791->1|916->32|1071->152|1085->158|1138->190|1245->262|1259->268|1316->303|1490->441|1505->447|1552->485|1592->487|1697->556|1730->580|1770->582|1863->639|1876->643|1918->663|1985->698|2048->725|2086->754|2126->756|2220->814|2234->819|2271->834|2338->869|2481->976|2503->989|2531->995|2803->1235
-                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|43->15|43->15|43->15|43->15|47->19|47->19|47->19|49->21|49->21|49->21|51->23|53->25|53->25|53->25|55->27|55->27|55->27|57->29|60->32|60->32|60->32|69->41
+                    DATE: Sat Jun 20 17:50:31 CEST 2015
+                    SOURCE: D:/Code/Eclipse-SEBA/Coursmatch/zentasks/app/views/login.scala.html
+                    HASH: d3b5813d9e14b8aec42b806d428578e23f422f2d
+                    MATRIX: 791->1|916->32|1076->157|1090->163|1143->195|1251->268|1265->274|1322->309|1501->452|1516->458|1573->493|1694->578|1709->584|1756->622|1796->624|1912->704|1927->710|1978->739|2092->817|2125->841|2165->843|2291->933|2304->937|2346->957|2415->994|2480->1023|2518->1052|2558->1054|2685->1145|2699->1150|2736->1165|2805->1202|2977->1338|2999->1351|3027->1357|3370->1668
+                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|41->13|41->13|41->13|45->17|45->17|45->17|45->17|48->20|48->20|48->20|52->24|52->24|52->24|54->26|54->26|54->26|56->28|58->30|58->30|58->30|60->32|60->32|60->32|62->34|67->39|67->39|67->39|81->53
                     -- GENERATED --
                 */
             

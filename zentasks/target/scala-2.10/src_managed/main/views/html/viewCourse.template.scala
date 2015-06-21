@@ -68,7 +68,7 @@ Seq[Any](format.raw/*1.37*/("""
 
 </style>
     <head>
-        <title>TUM</title>
+        <title>CourseMatch</title>
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*44.59*/routes/*44.65*/.Assets.at("images/favicon.png"))),format.raw/*44.97*/("""">
         <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*45.70*/routes/*45.76*/.Assets.at("stylesheets/main.css"))),format.raw/*45.110*/("""">
         <script type="text/javascript" src=""""),_display_(Seq[Any](/*46.46*/routes/*46.52*/.Assets.at("javascripts/jquery-1.7.1.js"))),format.raw/*46.93*/(""""></script>
@@ -83,70 +83,356 @@ Seq[Any](format.raw/*1.37*/("""
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <header>
-            <a href="" id="logo">TUM</a>
-            <dl id="user">
-                <dt>"""),_display_(Seq[Any](/*61.22*/student/*61.29*/.name)),format.raw/*61.34*/(""" <span>("""),_display_(Seq[Any](/*61.43*/student/*61.50*/.email)),format.raw/*61.56*/(""")</span></dt>
+        
+        <header style="padding-top: 12px">
+            
+            <a href="/dashboard" id="logo"> 
+             <img src=""""),_display_(Seq[Any](/*62.25*/routes/*62.31*/.Assets.at("images/logo-white.png"))),format.raw/*62.66*/("""" height="26px">
+            </a>
+            
+            <dl id="user" >
+                <dt style="padding-top: 10px">
+                 """),_display_(Seq[Any](/*67.19*/student/*67.26*/.name)),format.raw/*67.31*/(""" <span>("""),_display_(Seq[Any](/*67.40*/student/*67.47*/.email)),format.raw/*67.53*/(""")</span></dt>
                 <dd>
-                    <a href=""""),_display_(Seq[Any](/*63.31*/routes/*63.37*/.Application.logout())),format.raw/*63.58*/("""">Logout</a>
+                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*69.68*/routes/*69.74*/.Application.logout())),format.raw/*69.95*/("""" style="padding: 8px 5px;"> 
+                   <b style="font-family:arial; font-size: 14px"> Logout </b>
+                  </a>    
                 </dd>
             </dl>
         </header>
-		            <nav>
-            <h4 class="dashboard"><a href="#/">Courses</a></h4>
+       
+        
+	  	<nav>
+		    <div style="padding: 10px 0 0 15px">
+		     <img src=""""),_display_(Seq[Any](/*79.19*/routes/*79.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*79.70*/("""" height="60px">
+		    </div>
+		
+		    <div style="padding: 10px 0 0 0px">
+             <h4 class="dashboard">
+                Courses
+             </h4>
+             <ul class="navlist">
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+             </ul> 
+            </div>
             
+            <div style="padding: 10px 0 0 0px">
+             <h4 class="dashboard">
+                Favorites
+             </h4>
+             <ul class="navlist">
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+             </ul> 
+            </div>
+  
         </nav>
         
-   		<div style="position: relative;
-			top: 100px;
-			width: 63%;
-			left: 20%;" class="well well-lg">
-			<div style="text-align:center;"class="container">
-			<p class="text-title">Title<p>
-			<p>"""),_display_(Seq[Any](/*78.8*/course/*78.14*/.name)),format.raw/*78.19*/("""</p>
-			<p class="text-title">Professor<p>
-			<p>"""),_display_(Seq[Any](/*80.8*/course/*80.14*/.professor_name)),format.raw/*80.29*/("""</p>
-			<p style="float:right;top:-130px;position:relative" class ="text-title">Overall Rate:</p>
-			<p style="float:right;top:-100px;left:35px;position:relative">"""),_display_(Seq[Any](/*82.67*/course/*82.73*/.rate)),format.raw/*82.78*/("""</p>
+        
+        
+        
+        
+       
+   		<div class="well well-lg" style="position: relative; top: 100px; width: 66%; left: 260;
+   		 background-color: #FFFFFF; border: 0px; box-shadow: 0 0 0 rgba(0, 0, 0, 0)">
+   		
+		  <div style="line-height: 30px">
+			<p class="coursetitle">"""),_display_(Seq[Any](/*118.28*/course/*118.34*/.name)),format.raw/*118.39*/("""<p>			
+		  </div>
+		
+		  <div>
+		   <p class="">(Professor: """),_display_(Seq[Any](/*122.31*/course/*122.37*/.professor_name)),format.raw/*122.52*/(""")<p>
+		  </div>	
+		
+		  <div id="description" style="padding: 30px 0 0 0">  
+		   <p class="coursesubtitle">Description<p>
+		   <p>"""),_display_(Seq[Any](/*127.10*/course/*127.16*/.description)),format.raw/*127.28*/("""</p>
+		  </div>	
+			 
+		  <div id="uploads" style="padding: 30px 0 0 0">  
+			<p class="coursesubtitle">Uploads<p>
+			
+			<div style="width:100%; min-height: 250px">
+			
+    		 <a href="google.de" style="float:left; padding-right:30px">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*138.21*/routes/*138.27*/.Assets.at("images/tum.png"))),format.raw/*138.55*/("""">
+			   </div>
+			   <div> TU München </div>
+			  </div>
+			 </a>
+
+             <a href="google.de" class="uploaditem">
+		 	  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*147.21*/routes/*147.27*/.Assets.at("images/unistuff.png"))),format.raw/*147.60*/("""">
+			   </div>
+			   <div> Unistuff </div>
+			  </div>
+			 </a>
+			
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*156.21*/routes/*156.27*/.Assets.at("images/dropbox.png"))),format.raw/*156.59*/("""">
+			   </div>
+			   <div> Dropbox </div>
+			  </div>
+			 </a>			
+
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*165.21*/routes/*165.27*/.Assets.at("images/pdf.png"))),format.raw/*165.55*/("""">
+			   </div>
+			   <div> Student-Summary.pdf </div>
+			  </div>
+			 </a>			
+
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*174.21*/routes/*174.27*/.Assets.at("images/moodle.png"))),format.raw/*174.58*/("""">
+			   </div>
+			   <div> Moodle </div>
+			  </div>
+			 </a>			
+
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*183.21*/routes/*183.27*/.Assets.at("images/facebook.png"))),format.raw/*183.60*/("""">
+			   </div>
+			   <div> Facebook Group </div>
+			  </div>
+			 </a>			
+
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*192.21*/routes/*192.27*/.Assets.at("images/pdf.png"))),format.raw/*192.55*/("""">
+			   </div>
+			   <div> Student-Summary2.pdf </div>
+			  </div>
+			 </a>			
+
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*201.21*/routes/*201.27*/.Assets.at("images/link.png"))),format.raw/*201.56*/("""">
+			   </div>
+			   <div> Link </div>
+			  </div>
+			 </a>	
+			
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*210.21*/routes/*210.27*/.Assets.at("images/piazza.png"))),format.raw/*210.58*/("""">
+			   </div>
+			   <div> Piazza </div>
+			  </div>
+			 </a>			
+
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src=""""),_display_(Seq[Any](/*219.21*/routes/*219.27*/.Assets.at("images/tumonline.png"))),format.raw/*219.61*/("""">
+			   </div>
+			   <div> TumOnline </div>
+			  </div>
+			 </a>	
+
 			</div>
-			<button style="float:right;position:relative;top:-15px" type="button" class="btn-link">Rate Me</button>
+						
+			<div style="width:100; min-height: 20px;">			
+			 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal"
+			 style="height: 30px; width: 200px"> Upload more... </button>
+			</div>
 		
 		</div>
 		
-		 <div style="position: relative;
-			top: 145px;
-			width: 63%;
-			left: 20%;" class="well well-lg">
 		
-		<div class="container" style="height:180px">
-			<p class="text-title">Description<p>
-			<p>"""),_display_(Seq[Any](/*95.8*/course/*95.14*/.description)),format.raw/*95.26*/("""</p>
-		</div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Upload new teaching material</h4>
+              </div>
+              <div class="modal-body">
+                
+                <div class="input-group">
+                  <span class="input-group-addon fileinput-button" id="basic-addon1"> Document </span>
+                  <input type="file" name="files[]" multiple="" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                
+                <span class="btn fileinput-button">
+                  <i class="glyphicon glyphicon-plus"></i>
+                  <span>Add file</span>
+                  <input type="file" multiple="" name="files[]">
+                </span>
+                
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">TumOnline</a></li>
+                          <li><a href="#">Unistuff</a></li>
+                          <li><a href="#">Dropbox</a></li>
+                          <li><a href="#">Link</a></li>
+                          <li><a href="#">Sonstiges</a></li>
+                        </ul>
+                      </div><!-- /btn-group -->
+                      <input type="text" class="form-control" aria-label="...">
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                </div>
+                
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary"> Upload </button>
+              </div>
+            </div>
+          </div>
+        </div>		
 		
-		<div class="container" style="height:180px">
-			<p class="text-title">Uploads<p>
-			<a href="#">file1.pdf</a>
-			<a href="#">file2.pdf</a>
-			<a href="#">file3.pdf</a>
-			<button type="button" class="btn btn-sm btn-primary">upload</button>
-		</div>
 		
-		<div "class="container" style="width:44%">
-       <div class="panel panel-default">
-		   <div class="panel-heading"><p class="text-title">Comments<p></div>
-		      <div class="panel-body">
-		   </div>
-		   <ul class="list-group">
-		      <li class="list-group-item"> comment1</li>
-		      <li class="list-group-item"> comment2</li> 
-		   	  <li class="list-group-item"> comment3</li>
-		   </ul>   
-		   	   <input type="text" class="form-control" id="comment"></input>
-		   	   	<button type="button" class="btn btn- btn-primary" style="float:right">Comment</button>
+		
+	
+		
+		
+		
+		
+         <div id="rating" style="padding: 50px 0 0 0">  
+		   <p class="coursesubtitle">Rating<p>
+		 
+			
+			<div style="width:100%; height:30px">
+			<div style="float:left; width:300px">Fairness und Unterstützung:</div>			
+			<div class="acidjs-rating-stars" style="float:left">
+              <form>
+                <input type="radio" name="group-1" id="group-1-0" value="5" /><label for="group-1-0"></label>
+                <input type="radio" name="group-1" id="group-1-1" value="4" /><label for="group-1-1"></label>
+                <input type="radio" name="group-1" id="group-1-2" value="3" /><label for="group-1-2"></label>
+                <input type="radio" name="group-1" id="group-1-3" value="2" /><label for="group-1-3"></label>
+                <input type="radio" name="group-1" id="group-1-4" value="1" /><label for="group-1-4"></label>
+              </form>
+            </div>
+            </div>
+            
+            <div style="width:100%; height:30px">
+            <div style="float:left; width:300px">Material und Verständlichkeit:</div>            
+            <div class="acidjs-rating-stars" style="float:left">
+              <form>
+                <input type="radio" name="group-2" id="group-2-0" value="5" /><label for="group-2-0"></label>
+                <input type="radio" name="group-2" id="group-2-1" value="4" /><label for="group-2-1"></label>
+                <input type="radio" name="group-2" id="group-2-2" value="3" /><label for="group-2-2"></label>
+                <input type="radio" name="group-2" id="group-2-3" value="2" /><label for="group-2-3"></label>
+                <input type="radio" name="group-2" id="group-2-4" value="1" /><label for="group-2-4"></label>
+              </form>
+            </div>
+            </div>
+            
+            <div style="width:100%; height:30px">
+            <div style="float:left; width:300px">Spaß und Interesse:</div>
+            <div class="acidjs-rating-stars" style="float:left">
+              <form>
+                <input type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label>
+                <input type="radio" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label>
+                <input type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label>
+                <input type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label>
+                <input type="radio" name="group-3" id="group-3-4" value="1" /><label for="group-3-4"></label>
+              </form>
+            </div>
+            </div>
+            
+            <div style="width:100%; height:30px">
+            <div style="float:left; width:300px">Note/Aufwand:</div>
+            <div class="acidjs-rating-stars" style="float:left">
+              <form>
+                <input type="radio" name="group-4" id="group-4-0" value="5" /><label for="group-4-0"></label>
+                <input type="radio" name="group-4" id="group-4-1" value="4" /><label for="group-4-1"></label>
+                <input type="radio" name="group-4" id="group-4-2" value="3" /><label for="group-4-2"></label>
+                <input type="radio" name="group-4" id="group-4-3" value="2" /><label for="group-4-3"></label>
+                <input type="radio" name="group-4" id="group-4-4" value="1" /><label for="group-4-4"></label>
+              </form>
+            </div>
+            </div>
+
+            <div style="width:100%; height:30px">
+            <div style="float:left; width:300px">Empfehlung:</div>
+            <div class="acidjs-rating-stars" style="float:left">
+              <form>
+                <input type="radio" name="group-5" id="group-5-0" value="5" /><label for="group-5-0"></label>
+                <input type="radio" name="group-5" id="group-5-1" value="4" /><label for="group-5-1"></label>
+                <input type="radio" name="group-5" id="group-5-2" value="3" /><label for="group-5-2"></label>
+                <input type="radio" name="group-5" id="group-5-3" value="2" /><label for="group-5-3"></label>
+                <input type="radio" name="group-5" id="group-5-4" value="1" /><label for="group-5-4"></label>
+              </form>
+            </div>
+            </div>
+            
+			
+            
+	    	<div style="width:100%; height:30px">
+	    		<p class="text-title">Overall Rate: """),_display_(Seq[Any](/*362.45*/course/*362.51*/.rate)),format.raw/*362.56*/(""" </p>
+			</div>
+			
+			<div style="width:100; min-height: 20px;">			
+			 <button type="button" class="btn btn-sm btn-primary" style="height: 30px; width: 200px"> 
+			 Rate the course </button>
+			</div>
+			
+			
+			<!-- <button type="button" class="btn btn-sm btn-primary">Rate this course</button> -->
+	
+		 </div>
+		
+		
+		
+		
+		
+		
+          <div id="comments" style="padding: 50px 0 0 0">  
+		    <p class="coursesubtitle">Comments<p>
+		    <div class="panel panel-default">
+		      <ul class="list-group">
+		       <li class="list-group-item"> I took this course last year. It was great!! I learned a lot. :)</li>
+		       <li class="list-group-item"> You just need to learn the slides for the exam.</li> 
+		   	   <li class="list-group-item"> This professor is so awesome. Its easy to get a good grade.</li>
+		      </ul>   
+		   	   <textarea type="text" id="comment" class="form-control" style="height: 70px" 
+		   	    placeholder="Type in your comment here..." cols="40" rows="5"></textarea>		   	   	
 		      </div>
-		</div>
+		      
+		       <!--<button type="button" class="btn btn- btn-primary" style="float:right">Comment</button>-->
+		   	   	<div style="width:100; min-height: 20px; padding-top:0px">			
+			     <button type="button" class="btn btn-sm btn-primary" style="height: 30px; width: 200px"> 
+			     Comment this course </button>
+			   </div>
+		      
+		     </div>
+		    
+		  </div>	
+			 
+		  
+		    
 		
 		</div>
+		
+			
 		
 		</body>
 		</html>
@@ -162,11 +448,11 @@ Seq[Any](format.raw/*1.37*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 17 23:07:14 CEST 2015
-                    SOURCE: C:/Users/PRASHANT/workspace/zentasks/app/views/viewCourse.scala.html
-                    HASH: f4b78350ce2f0ab00f07b9f4352054f6601feddb
-                    MATRIX: 787->1|916->36|983->76|1011->77|1092->131|1120->132|1162->146|1191->147|1283->212|1311->213|1354->228|1383->229|1463->282|1491->283|1530->294|1559->295|1638->347|1666->348|1708->362|1737->363|1795->394|1823->395|1876->420|1905->421|1980->469|2008->470|2063->497|2092->498|2144->523|2172->524|2215->539|2244->540|2294->563|2322->564|2470->676|2485->682|2539->714|2648->787|2663->793|2720->827|2805->876|2820->882|2883->923|2977->981|2992->987|3060->1033|3154->1091|3169->1097|3234->1140|3328->1198|3343->1204|3406->1245|3500->1303|3515->1309|3570->1342|3664->1400|3679->1406|3741->1446|4236->1905|4252->1912|4279->1917|4324->1926|4340->1933|4368->1939|4471->2006|4486->2012|4529->2033|4969->2438|4984->2444|5011->2449|5098->2501|5113->2507|5150->2522|5352->2688|5367->2694|5394->2699|5778->3048|5793->3054|5827->3066
-                    LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|50->22|50->22|53->25|53->25|54->26|54->26|56->28|56->28|58->30|58->30|61->33|61->33|62->34|62->34|64->36|64->36|65->37|65->37|67->39|67->39|72->44|72->44|72->44|73->45|73->45|73->45|74->46|74->46|74->46|75->47|75->47|75->47|76->48|76->48|76->48|77->49|77->49|77->49|78->50|78->50|78->50|79->51|79->51|79->51|89->61|89->61|89->61|89->61|89->61|89->61|91->63|91->63|91->63|106->78|106->78|106->78|108->80|108->80|108->80|110->82|110->82|110->82|123->95|123->95|123->95
+                    DATE: Sun Jun 21 05:20:22 CEST 2015
+                    SOURCE: D:/Code/Eclipse-SEBA/Coursmatch/zentasks/app/views/viewCourse.scala.html
+                    HASH: 9bd173baeffc1a57b0d865333b98498b2d5f0dee
+                    MATRIX: 787->1|916->36|983->76|1011->77|1092->131|1120->132|1162->146|1191->147|1283->212|1311->213|1354->228|1383->229|1463->282|1491->283|1530->294|1559->295|1638->347|1666->348|1708->362|1737->363|1795->394|1823->395|1876->420|1905->421|1980->469|2008->470|2063->497|2092->498|2144->523|2172->524|2215->539|2244->540|2294->563|2322->564|2478->684|2493->690|2547->722|2656->795|2671->801|2728->835|2813->884|2828->890|2891->931|2985->989|3000->995|3068->1041|3162->1099|3177->1105|3242->1148|3336->1206|3351->1212|3414->1253|3508->1311|3523->1317|3578->1350|3672->1408|3687->1414|3749->1454|4273->1942|4288->1948|4345->1983|4526->2128|4542->2135|4569->2140|4614->2149|4630->2156|4658->2162|4798->2266|4813->2272|4856->2293|5183->2584|5198->2590|5265->2635|6810->4143|6826->4149|6854->4154|6956->4219|6972->4225|7010->4240|7184->4377|7200->4383|7235->4395|7587->4710|7603->4716|7654->4744|7889->4942|7905->4948|7961->4981|8190->5173|8206->5179|8261->5211|8489->5402|8505->5408|8556->5436|8796->5639|8812->5645|8866->5676|9093->5866|9109->5872|9165->5905|9400->6103|9416->6109|9467->6137|9708->6341|9724->6347|9776->6376|10002->6565|10018->6571|10072->6602|10299->6792|10315->6798|10372->6832|17735->14158|17751->14164|17779->14169
+                    LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|50->22|50->22|53->25|53->25|54->26|54->26|56->28|56->28|58->30|58->30|61->33|61->33|62->34|62->34|64->36|64->36|65->37|65->37|67->39|67->39|72->44|72->44|72->44|73->45|73->45|73->45|74->46|74->46|74->46|75->47|75->47|75->47|76->48|76->48|76->48|77->49|77->49|77->49|78->50|78->50|78->50|79->51|79->51|79->51|90->62|90->62|90->62|95->67|95->67|95->67|95->67|95->67|95->67|97->69|97->69|97->69|107->79|107->79|107->79|146->118|146->118|146->118|150->122|150->122|150->122|155->127|155->127|155->127|166->138|166->138|166->138|175->147|175->147|175->147|184->156|184->156|184->156|193->165|193->165|193->165|202->174|202->174|202->174|211->183|211->183|211->183|220->192|220->192|220->192|229->201|229->201|229->201|238->210|238->210|238->210|247->219|247->219|247->219|390->362|390->362|390->362
                     -- GENERATED --
                 */
             

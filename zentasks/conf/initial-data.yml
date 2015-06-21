@@ -4,18 +4,36 @@
 students:
 
     - !!models.Student
-        email:      mohamed.ragab@tum.de
-        name:       mohamed ragab
+        email:      max.mustermann@tum.de
+        name:       Max Mustermann
         password:   1234
     
+    - !!models.Student
+        email:      mohamed.ragab@tum.de
+        name:       Mohamed Ragab
+        password:   1234
+    
+    - !!models.Student
+        email:      thomas.sennebogen@tum.de
+        name:       Thomas Sennebogen
+        password:   asdf
+
+    - !!models.Student
+        email:      caroline.rederer@tum.de
+        name:       Caroline Rederer
+        password:   1234
+
+    - !!models.Student
+        email:      prashant.singh@tum.de
+        name:       Prashant Singh
+        password:   1234
 
 
 courses:
 
-
     - !!models.Course
         id:                 1
-        name:               Introduction to software Eng.   
+        name:               Introduction to Software Engineering   
         professor_name:     Prof.1
         description:        fun course for fresh students at the university recommended to begginers
         chair:              software engineering
