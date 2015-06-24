@@ -55,7 +55,71 @@ courses:
         chair:              informatics
         rate:                2
         
+    - !!models.Course
+        id:                 4
+        name:               Introduction to Software application   
+        professor_name:     Prof.1
+        description:        fun course for fresh students at the university recommended to advanced people
+        chair:              software engineering
+        rate:               3
+         
+    - !!models.Course
+        id:                 5
+        name:               Patterns studies 
+        professor_name:     Prof.12
+        description:        patterns studies for all chairs
+        chair:              formal methods
+        rate:               1
         
+    - !!models.Course
+        id:                 6
+        name:               Web Services techniques 
+        professor_name:     Prof.3
+        description:        fun A challenging course for those though are interested in theoretical web programming
+        chair:              informatics
+        rate:                6
+        
+    - !!models.Course
+        id:                 7
+        name:               Databases 
+        professor_name:     Prof.1
+        description:        theory of queries
+        chair:              Database
+        rate:               3
+         
+    - !!models.Course
+        id:                 8
+        name:               Project Management 
+        professor_name:     Prof.5
+        description:        how to manage a project
+        chair:              software engineering
+        rate:               10
+        
+    - !!models.Course
+        id:                 9
+        name:               Distributed Systems 
+        professor_name:     Prof.3
+        description:        fun A challenging course for those though are interested in Distributed systems
+        chair:              Distributed Systems
+        rate:                6        
+        
+    - !!models.Course
+        id:                 10
+        name:               Algorithms 
+        professor_name:     Prof.8
+        description:        Theory of algorithms
+        chair:              Algorithms
+        rate:               1
+        
+    - !!models.Course
+        id:                 11
+        name:               modeling 
+        professor_name:     Prof.3
+        description:        no description
+        chair:              formal methods
+        rate:                6
+       
+                
 jobs:
 
     - !!models.Job

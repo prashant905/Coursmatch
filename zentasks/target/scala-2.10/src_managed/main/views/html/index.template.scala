@@ -38,8 +38,8 @@ Seq[Any](format.raw/*1.1*/("""hellow"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 20 01:09:18 CEST 2015
-                    SOURCE: D:/Code/Eclipse-SEBA/Coursmatch/zentasks/app/views/index.scala.html
+                    DATE: Tue Jun 23 23:53:33 CEST 2015
+                    SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/index.scala.html
                     HASH: 28526b3046c27b3a9211e24be00801fe6a85eaa1
                     MATRIX: 855->0
                     LINES: 29->1

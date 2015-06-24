@@ -1,7 +1,6 @@
 package controllers;
 
 
-import play.*;
 import play.mvc.*;
 import play.data.*;
 import static play.data.Form.*;
@@ -11,9 +10,6 @@ import views.html.*;
 @Security.Authenticated(Secured.class)
 public class Application extends Controller {
   
-	private static String loginStudent = "";
-    // -- Authentication
-	
 
 	public static Result viewAllCourses(){
 		 return ok(
@@ -63,7 +59,6 @@ public class Application extends Controller {
         } else {
             session("email", loginForm.get().email);
             
-            loginStudent = loginForm.get().email;
             return redirect(
                 routes.Application.dashboard()
             );
