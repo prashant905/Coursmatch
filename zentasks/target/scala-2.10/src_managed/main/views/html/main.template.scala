@@ -34,8 +34,8 @@ Seq[Any](format.raw/*1.71*/("""
 
 #menu_container"""),format.raw/*7.16*/("""{"""),format.raw/*7.17*/("""
 	position: relative;
-	margin-top: 80px;
-	margin-left:600px;
+	margin-top:4%;
+	width:50%;
 """),format.raw/*11.1*/("""}"""),format.raw/*11.2*/("""
 
 .nav > li """),format.raw/*13.11*/("""{"""),format.raw/*13.12*/("""
@@ -58,30 +58,29 @@ Seq[Any](format.raw/*1.71*/("""
         <title>CourseMatch</title>
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*31.59*/routes/*31.65*/.Assets.at("images/favicon.png"))),format.raw/*31.97*/("""">
         <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*32.70*/routes/*32.76*/.Assets.at("stylesheets/main.css"))),format.raw/*32.110*/("""">
-        
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*33.46*/routes/*33.52*/.Assets.at("javascripts/jquery-1.7.1.js"))),format.raw/*33.93*/(""""></script>
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*34.46*/routes/*34.52*/.Assets.at("javascripts/jquery-play-1.7.1.js"))),format.raw/*34.98*/(""""></script>
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*35.46*/routes/*35.52*/.Assets.at("javascripts/underscore-min.js"))),format.raw/*35.95*/(""""></script>
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*36.46*/routes/*36.52*/.Assets.at("javascripts/backbone-min.js"))),format.raw/*36.93*/(""""></script>
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*37.46*/routes/*37.52*/.Assets.at("javascripts/main.js"))),format.raw/*37.85*/(""""></script>
         
           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  		<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-  		<script src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/js/bootstrap-select.js"></script>
     </head>
     <body>
        
         <header style="padding-top: 12px">
             
             <a href="" id="logo"> 
-             <img src=""""),_display_(Seq[Any](/*49.25*/routes/*49.31*/.Assets.at("images/logo-white.png"))),format.raw/*49.66*/("""" height="26px">
+             <img src=""""),_display_(Seq[Any](/*48.25*/routes/*48.31*/.Assets.at("images/logo-white.png"))),format.raw/*48.66*/("""" height="26px">
             </a>
             
             <dl id="user" >
                 <dt style="padding-top: 10px">
-                 """),_display_(Seq[Any](/*54.19*/student/*54.26*/.name)),format.raw/*54.31*/(""" <span>("""),_display_(Seq[Any](/*54.40*/student/*54.47*/.email)),format.raw/*54.53*/(""")</span></dt>
+                 """),_display_(Seq[Any](/*53.19*/student/*53.26*/.name)),format.raw/*53.31*/(""" <span>("""),_display_(Seq[Any](/*53.40*/student/*53.47*/.email)),format.raw/*53.53*/(""")</span></dt>
                 <dd>
-                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*56.68*/routes/*56.74*/.Application.logout())),format.raw/*56.95*/("""" style="padding: 8px 5px;"> 
+                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*55.68*/routes/*55.74*/.Application.logout())),format.raw/*55.95*/("""" style="padding: 8px 5px;"> 
                    <b style="font-family:arial; font-size: 14px"> Logout </b>
                   </a>    
                 </dd>
@@ -91,7 +90,7 @@ Seq[Any](format.raw/*1.71*/("""
         
 		<nav>
 		    <div style="padding: 10px 0 0 15px">
-		     <img src=""""),_display_(Seq[Any](/*66.19*/routes/*66.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*66.70*/("""" height="60px">
+		     <img src=""""),_display_(Seq[Any](/*65.19*/routes/*65.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*65.70*/("""" height="60px">
 		    </div>
 		
 		    <div style="padding: 10px 0 0 0px">
@@ -125,7 +124,7 @@ Seq[Any](format.raw/*1.71*/("""
 		<div>
         
         <section>
-            """),_display_(Seq[Any](/*100.14*/body)),format.raw/*100.18*/("""
+            """),_display_(Seq[Any](/*99.14*/body)),format.raw/*99.18*/("""
         </section>
 		
 		
@@ -145,11 +144,11 @@ Seq[Any](format.raw/*1.71*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 24 01:31:41 CEST 2015
-                    SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/main.scala.html
-                    HASH: d58166d039b0eb039d47066074822e1e3530eff9
-                    MATRIX: 802->1|965->70|1032->110|1060->111|1152->176|1180->177|1222->191|1251->192|1343->257|1371->258|1414->273|1443->274|1523->327|1551->328|1717->458|1732->464|1786->496|1895->569|1910->575|1967->609|3066->1672|3081->1678|3138->1713|3319->1858|3335->1865|3362->1870|3407->1879|3423->1886|3451->1892|3591->1996|3606->2002|3649->2023|3975->2313|3990->2319|4057->2364|5332->3602|5359->3606
-                    LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|59->31|59->31|59->31|60->32|60->32|60->32|77->49|77->49|77->49|82->54|82->54|82->54|82->54|82->54|82->54|84->56|84->56|84->56|94->66|94->66|94->66|128->100|128->100
+                    DATE: Sat Jun 20 19:59:29 CEST 2015
+                    SOURCE: D:/Code/Eclipse-SEBA/Coursmatch/zentasks/app/views/main.scala.html
+                    HASH: ddf4e35fb5933625813edd63ed380641b7d7d751
+                    MATRIX: 802->1|965->70|1032->110|1060->111|1141->165|1169->166|1211->180|1240->181|1332->246|1360->247|1403->262|1432->263|1512->316|1540->317|1706->447|1721->453|1775->485|1884->558|1899->564|1956->598|2041->647|2056->653|2119->694|2213->752|2228->758|2296->804|2390->862|2405->868|2470->911|2564->969|2579->975|2642->1016|2736->1074|2751->1080|2806->1113|3319->1590|3334->1596|3391->1631|3572->1776|3588->1783|3615->1788|3660->1797|3676->1804|3704->1810|3844->1914|3859->1920|3902->1941|4228->2231|4243->2237|4310->2282|5584->3520|5610->3524
+                    LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|59->31|59->31|59->31|60->32|60->32|60->32|61->33|61->33|61->33|62->34|62->34|62->34|63->35|63->35|63->35|64->36|64->36|64->36|65->37|65->37|65->37|76->48|76->48|76->48|81->53|81->53|81->53|81->53|81->53|81->53|83->55|83->55|83->55|93->65|93->65|93->65|127->99|127->99
                     -- GENERATED --
                 */
             

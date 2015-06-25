@@ -407,15 +407,6 @@ body > header {
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
   color: #FAFAFA;
   cursor: pointer;
-  background: #0E5180;
-  /*#445868;*/
-  /*155984 0%, #003b84 */
-  /*  #445868, #2a3a48) */
-
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#155984), to(#003b84));
-  background-image: -moz-linear-gradient(top, #155984, #003b84);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.8);
-  text-decoration: none;
 }
 #user dd a:hover,
 #user dd button:hover {

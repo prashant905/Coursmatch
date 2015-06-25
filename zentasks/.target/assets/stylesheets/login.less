@@ -1,0 +1,124 @@
+// -----------------------------------
+// LOGIN
+// -----------------------------------
+// author: mda@zenexity.com - 2011
+// -----------------------------------
+
+@import 'libs/_reset.less';
+@import 'libs/_mate.less';
+@import 'libs/_theme.less';
+
+// ----------------------- MAIN STYLES
+body {
+    background: @mainBackground;
+    color: @mainColor;
+    font: @defaultFont;
+    -webkit-font-smoothing: antialised;
+    -webkit-user-select: none;
+}
+
+a {
+    color: @links;
+    text-decoration: none;
+    &:hover {
+        color: @linksHover;
+    }
+}
+
+p.note {
+    margin: 10px auto 0;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    color: #445868;
+    text-shadow: 1px 1px rgba(255,255,255,.6);
+    em {
+        font-weight: bold;
+    }
+}
+
+form {
+    margin: 120px auto 0;
+    width: 360px;
+    padding: 36px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,.5);
+    text-align: center;
+    border: 1px solid #0e5180;
+       
+    h1 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    p {
+        width: inherit;
+        margin: 5px 0;
+        color: #999;
+    }
+    p.error {
+        color: #c00;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px rgba(0,0,0,.1);
+    }
+    p.success {
+        color: #83BD41; 
+        margin-bottom: 10px;
+        text-shadow: 1px 1px rgba(0,0,0,.1);
+    }
+    input {
+        display: block;
+        width: inherit;
+        padding: 2px 2px 2px 6px;
+        background: rgba(0,0,0,.05);
+        border: 1px solid rgba(0,0,0,.15);
+        box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+        border-radius: 3px;
+        font-size: 15px;
+        height: 36px;
+        &:invalid:not(:focus) {
+            border-color: red;
+        }
+    }
+    button {
+        .button();
+        display: block;
+        width: inherit;
+        font-size: 14px;
+        height: 36px;
+        
+        padding: 2px 5px;
+        border-radius: 3px;
+        border: 1px solid #192937;
+        background: rgba(187, 255, 255, 0.19999999999999996);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.19999999999999996)), to(rgba(187, 255, 255, 0)));
+        background-image: -moz-linear-gradient(top, rgba(187, 255, 255, 0.19999999999999996), rgba(187, 255, 255, 0));
+  
+        //rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #155984 0%, #003b84 100%) repeat scroll 0 0
+        //                                                    21 89   132          0 59   132  													   
+        background-color: #0A4982; /*#2a3a48;*/
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+        color: #c7d1d8;
+        cursor: pointer;
+        display: block;
+        width: inherit;
+        font-size: 14px;
+        height: 36px;
+        
+    }
+}
+
+nav {
+    margin-top: 15px;
+    a {
+        display: inline-block;
+        margin: 0 4px;
+    }
+} 
+
+// --------------------------- IMPORTS
+@import 'main/_widgets.less';        // Some shared elements
+@import 'main/_header.less';         // Top header + User bar
+

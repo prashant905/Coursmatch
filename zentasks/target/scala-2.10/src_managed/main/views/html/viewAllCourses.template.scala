@@ -38,8 +38,8 @@ Seq[Any]()}
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 23 23:53:33 CEST 2015
-                    SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/viewAllCourses.scala.html
+                    DATE: Sat Jun 20 01:09:19 CEST 2015
+                    SOURCE: D:/Code/Eclipse-SEBA/Coursmatch/zentasks/app/views/viewAllCourses.scala.html
                     HASH: c7efc0f75c87094f54f4173904bb22e85df9d1e0
                     MATRIX: 
                     LINES: 

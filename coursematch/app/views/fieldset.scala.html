@@ -1,0 +1,54 @@
+@(studentForm: Form[views.formdata.StudentFormData],
+  
+  levels:      List[String],
+  gpa:         Map[String,Boolean],
+  majors:      Map[String,Boolean])
+
+@import views.html.bootstrap3._
+
+<fieldset>
+  <!-- Header -->
+  <div id="legend">
+    <legend>Student Signup</legend>
+  </div>
+
+   <!-- Name -->
+  @text(studentForm("name"),
+        label = "Name",
+        placeholder = "My Name",
+        help = "Please enter your first and last name. (required)")
+
+  <!-- Password -->
+  @password(studentForm("password"),
+            label = "Password",
+            placeholder = "",
+            help = "Password must be five or more characters. (required)")
+
+  
+  <!-- Grade Level -->
+  @radiobuttons(studentForm("level"),
+                label = "Level",
+                buttonNameList = levels,
+                help = "Select your grade level. (required)")
+
+  <!-- GPA -->
+  @select(studentForm("gpa"),
+          label = "GPA",
+          optionMap = gpa,
+          isMultiple = false,
+          help = "Select your GPA. (required)")
+
+  <!-- Majors -->
+  @select(studentForm("majors"),
+          label = "Majors",
+          optionMap = majors,
+          isMultiple = true,
+          help = "Select zero or more majors. (optional)")
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+      <button id="cancel" class="btn cancel">Cancel</button>
+    </div>
+  </div>
+</fieldset>
