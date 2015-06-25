@@ -1,7 +1,6 @@
 package controllers;
 
 
-import play.*;
 import play.mvc.*;
 import play.data.*;
 import static play.data.Form.*;
@@ -11,9 +10,10 @@ import views.html.*;
 @Security.Authenticated(Secured.class)
 public class Application extends Controller {
   
-	private static String loginStudent = "";
-    // -- Authentication
-	
+	public static void saveComment(){
+		Comment comment = new Comment("mohamed.ragab@tum.de", "hello");
+		comment.save();
+	}
 
 	public static Result viewAllCourses(){
 		 return ok(
@@ -48,7 +48,9 @@ public class Application extends Controller {
      * Login page.
      */
     public static Result login() {
-        return ok(
+    	saveComment();
+    	return ok(
+        		
             login.render(form(Login.class))
         );
     }
@@ -63,7 +65,6 @@ public class Application extends Controller {
         } else {
             session("email", loginForm.get().email);
             
-            loginStudent = loginForm.get().email;
             return redirect(
                 routes.Application.dashboard()
             );

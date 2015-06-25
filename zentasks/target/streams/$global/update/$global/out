@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/D:/Code/Eclipse-SEBA/Coursmatch/zentasks/}zentasks...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/}zentasks...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: zentask#zentask_2.10;1.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for zentask#zentask_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4c774d2c[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@fee06b[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -743,6 +743,16 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-jdbc_2.10;2.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving mysql#mysql-connector-java;5.1.27 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: mysql#mysql-connector-java;5.1.27 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: mysql#mysql-connector-java;5.1.27[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: mysql#mysql-connector-java;5.1.27[0m
+[0m[[0mdebug[0m] [0m	found mysql#mysql-connector-java;5.1.27 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
@@ -1165,6 +1175,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-jdbc_2.10;2.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
@@ -1588,6 +1603,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-jdbc_2.10;2.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-test_2.10;2.2.6 [test->default(compile)][0m
@@ -2950,6 +2970,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-jdbc_2.10;2.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for zentask#zentask_2.10;1.0 [optional][0m
@@ -3375,6 +3400,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-jdbc_2.10;2.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for zentask#zentask_2.10;1.0 [optional][0m
@@ -3800,6 +3830,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.6->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-jdbc_2.10;2.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->mysql#mysql-connector-java;5.1.27 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->com.typesafe.play#play-test_2.10;2.2.6 [test->default(compile)][0m
@@ -4996,14 +5031,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\zentask\zentask_2.10\1.0\resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\zentask\zentask_2.10\1.0\resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.6!play-java-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ebean_2.10;2.2.6!play-java-ebean_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.6!play-jdbc_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] mysql#mysql-connector-java;5.1.27!mysql-connector-java.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.6!play_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.6!play-java_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.6!play-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.jolbox#bonecp;0.8.0.RELEASE!bonecp.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.guava#guava;14.0.1!guava.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.h2database#h2;1.3.172!h2.jar[0m
@@ -5121,19 +5157,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3932ms :: artifacts dl 223ms[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 compile produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 runtime produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 test produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 provided produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 optional produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 compile-internal produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 runtime-internal produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 test-internal produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 plugin produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 sources produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 docs produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 pom produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 scala-tool produced in D:\Code\Eclipse-SEBA\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (3932ms resolve - 223ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2324ms :: artifacts dl 93ms[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 compile produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 runtime produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 test produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 provided produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 optional produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 compile-internal produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 runtime-internal produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 test-internal produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 plugin produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 sources produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 docs produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 pom produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 scala-tool produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (2324ms resolve - 93ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

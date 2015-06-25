@@ -19,8 +19,22 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h3>Courses</h3>
-		  <table class="table">
+      
+   <div  class="container">
+  <ul class="nav nav-tabs" style="width: 1250px;
+  								  position: relative;
+  								  margin-left: -130px;
+  								  margin-top: 30px">
+     <li class="active"><a data-toggle="pill" href="#view_all_courses">View All Courses</a></li>
+    <li><a data-toggle="pill" href="#compare_courses">Compare Courses</a></li>
+  </ul>
+      
+      <div class="tab-content">
+   		 <div id="view_all_courses" class="tab-pane fade in active" style="  position: relative;
+  			left: -134px;">
+      <h3>Search Courses</h3>
+
+		  <table id = "courses" class="table table-striped"  cellspacing="0" style="width:1250px">
 		    <thead>
 		      <tr>
 		        <th>Name</th>
@@ -30,12 +44,12 @@
 		        <th>Overall Rate</th>
 		      </tr>
 		    </thead>
-		    <tbody>
+		    <tbody class="searchable">
 		      @for(course <- courses) {
 		      <tr>
 		      
 		        <td><a href="@routes.Application.viewCourse(course.id)">@course.name</td>
-		         <td>@course.professor_name <span>@student.email</span></td>
+		         <td>@course.professor_name</td>
 		          <td>@course.chair</td>
 		           <td>@course.description</td>
 		           <td>@course.rate</td>
@@ -43,6 +57,43 @@
 			}
 		    </tbody>
   </table>
+  </div>
+  
+   <div id="compare_courses" class="tab-pane fade" style="  position: relative;
+  			left: -134px;">
+  			<h3>Compare Courses</h3>
+  		 <div class="tab-content" style="width:1250px">
+  			<div class="panel panel-default">
+		      		<div class="panel-body">
+		      			<table  class="table" style="display:block; margin:auto;" >
+						<header>
+							<th>First Course</th>
+							<th>Second Course</th>
+						</header>
+						  <tr>
+							<td>
+							     <select id="course_1" class="selectpicker  form-control" data-live-search="true">
+							         @for(course <- courses) {
+							      <option >@course.name</option>
+							  }
+							  </select>
+						  </td>
+						  <td>
+						     <select id="course_2" class="selectpicker  form-control" data-live-search="true">
+						         @for(course <- courses) {
+						      <option>@course.name</option>
+						  }
+						  	</select>
+						   </td>
+						  </tr>
+						</table>	
+						  					  
+		      			</div>
+  		 		</div>
+  		 	</div>
+  		</div>
+  </div>
+  </div>
   </div>  
     <div id="menu3" class="tab-pane fade">
       <h3>Jobs</h3>
@@ -77,6 +128,40 @@
     </div>
   </div>
 </div>
+
+<script>
+
+$(document).ready(function() {
+    $('#courses').dataTable();
+} );
+
+ 
+</script>
+<style>
+
+div.dropdown-menu > ul.dropdown-menu {
+	max-height:135px !important;
+}
+
+#courses_wrapper > div.row {
+	width : 1250px;
+}
+
+#courses_filter > label {
+	float: right;
+}
+
+#courses_filter > label > input[type="search"]{
+	width : 400px !important;
+}
+
+.pagination {
+	top: -25px ;
+  position: relative;
+}
+
+</style>
+
     }
 
     
