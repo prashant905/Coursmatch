@@ -35,7 +35,7 @@ Seq[Any](format.raw/*1.71*/("""
 #menu_container"""),format.raw/*7.16*/("""{"""),format.raw/*7.17*/("""
 	position: relative;
 	margin-top: 80px;
-	margin-left:450px;
+	margin-left: 360px;   //not 450px please
 """),format.raw/*11.1*/("""}"""),format.raw/*11.2*/("""
 
 .nav > li """),format.raw/*13.11*/("""{"""),format.raw/*13.12*/("""
@@ -59,11 +59,11 @@ Seq[Any](format.raw/*1.71*/("""
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*31.59*/routes/*31.65*/.Assets.at("images/favicon.png"))),format.raw/*31.97*/("""">
         <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*32.70*/routes/*32.76*/.Assets.at("stylesheets/main.css"))),format.raw/*32.110*/("""">
         
-        
-          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
+  		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   		<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
   		<script src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
@@ -145,10 +145,10 @@ Seq[Any](format.raw/*1.71*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 26 14:13:06 CEST 2015
+                    DATE: Fri Jun 26 22:58:03 CEST 2015
                     SOURCE: D:/Code/Eclipse-SEBA/Coursmatch/zentasks/app/views/main.scala.html
-                    HASH: f5542480d1539d46a1e2ff65f9e0400602c49c46
-                    MATRIX: 802->1|965->70|1032->110|1060->111|1152->176|1180->177|1222->191|1251->192|1343->257|1371->258|1414->273|1443->274|1523->327|1551->328|1717->458|1732->464|1786->496|1895->569|1910->575|1967->609|3066->1672|3081->1678|3138->1713|3319->1858|3335->1865|3362->1870|3407->1879|3423->1886|3451->1892|3591->1996|3606->2002|3649->2023|3975->2313|3990->2319|4057->2364|5332->3602|5359->3606
+                    HASH: d3e5bb342e29d405dc92eca2d0f6f624a35fbebe
+                    MATRIX: 802->1|965->70|1032->110|1060->111|1174->198|1202->199|1244->213|1273->214|1365->279|1393->280|1436->295|1465->296|1545->349|1573->350|1739->480|1754->486|1808->518|1917->591|1932->597|1989->631|3082->1688|3097->1694|3154->1729|3335->1874|3351->1881|3378->1886|3423->1895|3439->1902|3467->1908|3607->2012|3622->2018|3665->2039|3991->2329|4006->2335|4073->2380|5348->3618|5375->3622
                     LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|59->31|59->31|59->31|60->32|60->32|60->32|77->49|77->49|77->49|82->54|82->54|82->54|82->54|82->54|82->54|84->56|84->56|84->56|94->66|94->66|94->66|128->100|128->100
                     -- GENERATED --
                 */

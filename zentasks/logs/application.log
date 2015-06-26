@@ -1,747 +1,880 @@
-2015-06-26 19:32:41,806 - [INFO] - from play in pool-4-thread-5 
+2015-06-26 19:47:33,379 - [INFO] - from play in pool-4-thread-7 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-06-26 19:33:20,676 - [ERROR] - from com.jolbox.bonecp.hooks.AbstractConnectionHook in play-internal-execution-context-1 
-Failed to obtain initial connection Sleeping for 0ms and trying again. Attempts left: 0. Exception: java.net.ConnectException: Connection refused: connect.Message:Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-
-2015-06-26 19:33:20,822 - [ERROR] - from application in New I/O worker #1 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/assets/images/favicon.png] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:33:21,129 - [ERROR] - from application in New I/O worker #2 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/login] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:33:22,515 - [ERROR] - from application in New I/O worker #1 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/assets/images/favicon.png] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:35:15,318 - [ERROR] - from application in New I/O worker #2 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:35:27,082 - [ERROR] - from application in New I/O worker #2 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:35:30,379 - [ERROR] - from application in New I/O worker #2 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:36:23,665 - [ERROR] - from application in New I/O worker #2 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:36:31,229 - [ERROR] - from application in New I/O worker #2 
-
-
-! @6mi9mi4ie - Internal server error, for (GET) [/] ->
-
-play.api.Configuration$$anon$1: Configuration error[Cannot connect to database [default]]
-	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:92) ~[play_2.10.jar:2.2.6]
-	at play.api.Configuration.reportError(Configuration.scala:570) ~[play_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:252) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244) ~[scala-library.jar:na]
-	at scala.collection.AbstractTraversable.map(Traversable.scala:105) ~[scala-library.jar:na]
-	at play.api.db.BoneCPPlugin.onStart(DB.scala:243) ~[play-jdbc_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.6]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.6]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1121) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:358) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2489) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2526) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2311) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.27.jar:na]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:347) ~[mysql-connector-java-5.1.27.jar:na]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_45]
-	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:416) ~[bonecp.jar:na]
-	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120) ~[bonecp.jar:na]
-	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245) ~[play-jdbc_2.10.jar:2.2.6]
-	... 30 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_45]
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at java.net.Socket.<init>(Unknown Source) ~[na:1.8.0_45]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259) ~[mysql-connector-java-5.1.27.jar:na]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:308) ~[mysql-connector-java-5.1.27.jar:na]
-	... 48 common frames omitted
-
-2015-06-26 19:37:23,061 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-26 19:48:12,573 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-06-26 19:37:24,250 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-26 19:48:13,305 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-06-26 19:37:37,045 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: java.lang.NullPointerException: The id is null
-
-2015-06-26 19:37:37,082 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6mi9n6jop - Internal server error, for (GET) [/dashboard] ->
-
-play.api.Application$$anon$1: Execution exception[[NullPointerException: The id is null]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.6]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.6]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
-	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10.jar:2.2.6]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.6]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: java.lang.NullPointerException: The id is null
-	at com.avaje.ebeaninternal.server.core.DefaultServer.find(DefaultServer.java:1042) ~[avaje-ebeanorm.jar:na]
-	at com.avaje.ebeaninternal.server.core.DefaultServer.find(DefaultServer.java:1033) ~[avaje-ebeanorm.jar:na]
-	at play.db.ebean.Model$Finder.byId(Model.java:261) ~[play-java-ebean_2.10.jar:2.2.6]
-	at controllers.Application.dashboard(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$5$$anonfun$apply$5.apply(routes_routing.scala:105) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$5$$anonfun$apply$5.apply(routes_routing.scala:105) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.6]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.6]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.6]
-	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.6]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.6]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.6]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.6]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.6]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
-
-2015-06-26 19:37:56,295 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-26 19:55:59,545 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-06-26 19:37:56,398 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-26 19:55:59,640 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 19:56:33,190 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 19:56:33,297 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 19:57:47,823 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 19:57:47,922 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:15:18,920 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:15:18,998 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:18:29,999 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:18:30,098 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:21:27,924 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:21:27,992 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:23:37,856 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:23:37,933 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:25:08,921 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:25:08,987 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:29:31,917 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:29:32,014 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:30:17,892 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:30:17,957 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:33:02,689 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:33:02,757 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:36:44,519 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6mia50fc7 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:38:30,502 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6mia56g9c - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:38:36,036 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6mia56ofa - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:43:56,974 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6mia5p581 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:44:01,748 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6mia5pcai - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:44:08,845 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6mia5pmma - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:44:27,499 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:44:27,566 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:54:37,944 - [ERROR] - from application in New I/O worker #10 
+
+
+! @6mia79haf - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[`)' expected but end of source found]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_45]
+
+2015-06-26 20:55:12,961 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:55:13,041 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:55:32,450 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:55:32,513 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 20:56:09,003 - [ERROR] - from application in New I/O worker #10 
+
+
+! @6mia7em6l - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 20:57:07,729 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 20:57:07,794 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:04:42,597 - [ERROR] - from application in New I/O worker #14 
+
+
+! @6mia8i20b - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value jsFileWithExtension]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:06:33,065 - [ERROR] - from application in New I/O worker #14 
+
+
+! @6mia8o9b5 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value jsFileWithExtension]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:06:46,828 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:06:46,889 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:07:21,384 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:07:21,446 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:08:48,710 - [ERROR] - from application in New I/O worker #14 
+
+
+! @6mia96229 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:09:23,086 - [ERROR] - from application in New I/O worker #14 
+
+
+! @6mia980od - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:13:29,694 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6mia9m1ja - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:13:36,091 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6mia9mb57 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:13:39,992 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6mia9mgpd - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:13:50,436 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6mia9n6b4 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value jsFileWithExtension]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:14:25,593 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:14:25,684 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:17:14,155 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6miaa8lkd - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '}' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:17:49,465 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6miaaam0f - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[expected start of definition]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:18:40,816 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6miaadjph - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[')' expected but '@' found.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:20:30,610 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:20:30,683 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:21:07,357 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6miaam2jl - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:22:23,889 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6miab0bp9 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[unclosed character literal]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:23:07,296 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6miab2o4n - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not enough arguments for method at: (file: String)play.api.mvc.Call.
+Unspecified value parameter file.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 21:23:37,041 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:23:37,105 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:25:35,118 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:25:35,191 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:26:15,486 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:26:15,551 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 21:33:23,957 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 21:33:24,018 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-06-26 22:45:35,463 - [INFO] - from play in play-internal-execution-context-8 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 22:45:35,623 - [INFO] - from play in play-internal-execution-context-8 
+Application started (Dev)
+
+2015-06-26 22:46:57,962 - [INFO] - from play in play-internal-execution-context-15 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 22:46:58,122 - [INFO] - from play in play-internal-execution-context-15 
+Application started (Dev)
+
+2015-06-26 22:47:23,279 - [INFO] - from play in play-internal-execution-context-16 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 22:47:23,350 - [INFO] - from play in play-internal-execution-context-16 
+Application started (Dev)
+
+2015-06-26 22:55:31,262 - [INFO] - from play in play-internal-execution-context-19 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 22:55:31,330 - [INFO] - from play in play-internal-execution-context-19 
+Application started (Dev)
+
+2015-06-26 22:58:07,190 - [INFO] - from play in play-internal-execution-context-19 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 22:58:07,271 - [INFO] - from play in play-internal-execution-context-19 
+Application started (Dev)
+
+2015-06-26 23:00:26,506 - [INFO] - from play in play-internal-execution-context-24 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:00:26,655 - [INFO] - from play in play-internal-execution-context-24 
+Application started (Dev)
+
+2015-06-26 23:03:36,785 - [INFO] - from play in play-internal-execution-context-25 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:03:36,853 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2015-06-26 23:03:53,962 - [INFO] - from play in play-internal-execution-context-26 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:03:54,068 - [INFO] - from play in play-internal-execution-context-26 
+Application started (Dev)
+
+2015-06-26 23:25:35,515 - [ERROR] - from application in New I/O worker #8 
+
+
+! @6mib15082 - Internal server error, for (GET) [/dashboard] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value coursematch]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2015-06-26 23:26:02,964 - [INFO] - from play in play-internal-execution-context-25 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:26:03,034 - [INFO] - from play in play-internal-execution-context-25 
+Application started (Dev)
+
+2015-06-26 23:26:36,514 - [INFO] - from play in play-internal-execution-context-27 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:26:36,583 - [INFO] - from play in play-internal-execution-context-27 
+Application started (Dev)
+
+2015-06-26 23:28:10,966 - [INFO] - from play in play-internal-execution-context-28 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:28:11,016 - [INFO] - from play in play-internal-execution-context-28 
+Application started (Dev)
+
+2015-06-26 23:56:19,625 - [INFO] - from play in play-internal-execution-context-28 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:56:19,694 - [INFO] - from play in play-internal-execution-context-28 
+Application started (Dev)
+
+2015-06-26 23:57:11,535 - [INFO] - from play in play-internal-execution-context-28 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:57:11,593 - [INFO] - from play in play-internal-execution-context-28 
+Application started (Dev)
+
+2015-06-26 23:57:57,305 - [INFO] - from play in play-internal-execution-context-28 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-26 23:57:57,380 - [INFO] - from play in play-internal-execution-context-28 
+Application started (Dev)
+
+2015-06-27 00:39:20,573 - [INFO] - from play in play-internal-execution-context-28 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-27 00:39:21,586 - [INFO] - from play in play-internal-execution-context-28 
+Application started (Dev)
+
+2015-06-27 00:44:29,953 - [INFO] - from play in play-internal-execution-context-39 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-27 00:44:30,154 - [INFO] - from play in play-internal-execution-context-39 
+Application started (Dev)
+
+2015-06-27 00:46:37,616 - [INFO] - from play in play-internal-execution-context-39 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-27 00:46:37,686 - [INFO] - from play in play-internal-execution-context-39 
+Application started (Dev)
+
+2015-06-27 00:57:01,150 - [INFO] - from play in play-internal-execution-context-39 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-27 00:57:01,253 - [INFO] - from play in play-internal-execution-context-39 
+Application started (Dev)
+
+2015-06-27 00:59:56,405 - [INFO] - from play in play-internal-execution-context-39 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-27 00:59:56,497 - [INFO] - from play in play-internal-execution-context-39 
+Application started (Dev)
+
+2015-06-27 01:00:48,398 - [INFO] - from play in play-internal-execution-context-48 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-27 01:00:48,495 - [INFO] - from play in play-internal-execution-context-48 
 Application started (Dev)
 

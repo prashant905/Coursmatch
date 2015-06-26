@@ -155,6 +155,12 @@ a:hover {
   border-radius: 6px;
   background: #FFF;
 }
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  background: #0e5180 -moz-linear-gradient(center top, #155984, #003b84) repeat scroll 0 0;
+  color: #fff;
+}
 body > header {
   position: absolute;
   top: 0;
