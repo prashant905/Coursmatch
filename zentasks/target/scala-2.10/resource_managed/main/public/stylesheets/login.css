@@ -98,6 +98,13 @@ hr {
 }
 body {
   background: #666666;
+  background: url("http://images7.alphacoders.com/418/418009.jpg") no-repeat center center fixed;
+  background: url("http://www.in.tum.de/typo3temp/pics/d0b40b3dab.jpg") no-repeat center center fixed;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/4/40/TUM.-.Parabelrutsche1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: #2a3a48;
   font: 13px "Lucida Grande", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialised;
@@ -202,6 +209,27 @@ nav {
 nav a {
   display: inline-block;
   margin: 0 4px;
+}
+#slideshow,
+img.bgM {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: 100%;
+  /*auto;*/
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-image-size: cover;
+  -moz-image-size: cover;
+  -o-image-size: cover;
+  image-size: cover;
 }
 .options {
   width: 20px;
