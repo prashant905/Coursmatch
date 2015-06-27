@@ -22,7 +22,7 @@ public class Application extends Controller {
 	}
 	
 	public static Result viewCourse(Long id ){
-		return ok(viewCourse.render(Student.find.byId(request().username()),Course.findById(id)));
+		return ok(viewCourse.render(Student.find.byId(request().username()),Course.findById(id),Ranking.findByCourseId(id)));
 	}
 	
     public static Result dashboard() {

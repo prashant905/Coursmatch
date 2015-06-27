@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/conf/routes
-// @HASH:4b7305bb0d8dbde548201caaebc026bae7070ab3
-// @DATE:Thu Jun 25 13:25:11 CEST 2015
+// @HASH:7772df18c24c05c0412fb5125b579bd9ef38a03c
+// @DATE:Sat Jun 27 21:23:52 CEST 2015
 
 
 import play.core._

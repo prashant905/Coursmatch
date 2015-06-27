@@ -18,5 +18,5 @@ GET    /course/:id                       controllers.Application.viewCourse(id:L
 # Javascript routing
 
 # Map static resources from the /public folder to the /public path
-GET     /assets/*file                       controllers.Assets.at(path="/public", file)
+GET  /assets/*file        controllers.Assets.at(path="/public", file)
 

@@ -1,4 +1,4 @@
-@(student: Student , course :Course)
+@(student: Student , course :Course ,ranking :Ranking)
 
 <html>
 
@@ -43,12 +43,11 @@
         <title>CourseMatch</title>
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.7.1.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-play-1.7.1.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/tablefilter.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.css")">
+                <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.min.css")">
+        <script src="@routes.Assets.at("javascripts/star-rating.js")"></script>
+        <script src="@routes.Assets.at("javascripts/star-rating.min.js")"></script>
         
           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -292,61 +291,49 @@
 		 
 			
 			<div style="width:100%; height:30px">
-			<div style="float:left; width:300px">Fairness and help:</div>			
-				<input id="input-1" class="rating" data-min="0" data-max="5" data-step="1">
+			<table>
+				<tr>
+					<td><div style="float:left; width:300px">Fairness and help:</div></td>		
+					<td><input id="input-1" value="@ranking.fair" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             </div>
             
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">Material und understanding:</div>            
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-2" id="group-2-0" value="5" /><label for="group-2-0"></label>
-                <input type="radio" name="group-2" id="group-2-1" value="4" /><label for="group-2-1"></label>
-                <input type="radio" name="group-2" id="group-2-2" value="3" /><label for="group-2-2"></label>
-                <input type="radio" name="group-2" id="group-2-3" value="2" /><label for="group-2-3"></label>
-                <input type="radio" name="group-2" id="group-2-4" value="1" /><label for="group-2-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>            
+            		<td><div style="float:left; width:300px">Material und understanding:</div></td>            
+          			 <td><input id="input-2" value="@ranking.material" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">fun and level of interest:</div>
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label>
-                <input type="radio" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label>
-                <input type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label>
-                <input type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label>
-                <input type="radio" name="group-3" id="group-3-4" value="1" /><label for="group-3-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>               
+            		<td><div style="float:left; width:300px">fun and level of interest:</div></td>
+            		<td><input id="input-2" value="@ranking.fun" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">grade and effort:</div>
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-4" id="group-4-0" value="5" /><label for="group-4-0"></label>
-                <input type="radio" name="group-4" id="group-4-1" value="4" /><label for="group-4-1"></label>
-                <input type="radio" name="group-4" id="group-4-2" value="3" /><label for="group-4-2"></label>
-                <input type="radio" name="group-4" id="group-4-3" value="2" /><label for="group-4-3"></label>
-                <input type="radio" name="group-4" id="group-4-4" value="1" /><label for="group-4-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>               
+          			  <td><div style="float:left; width:300px">grade and effort:</div></td>
+          			  <td><input id="input-2" value="@ranking.grade" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
 
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">recommendation:</div>
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-5" id="group-5-0" value="5" /><label for="group-5-0"></label>
-                <input type="radio" name="group-5" id="group-5-1" value="4" /><label for="group-5-1"></label>
-                <input type="radio" name="group-5" id="group-5-2" value="3" /><label for="group-5-2"></label>
-                <input type="radio" name="group-5" id="group-5-3" value="2" /><label for="group-5-3"></label>
-                <input type="radio" name="group-5" id="group-5-4" value="1" /><label for="group-5-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>                  
+		            <td><div style="float:left; width:300px">recommendation:</div></td>
+		   			<td><input id="input-2" value="@ranking.recommend" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             
 			

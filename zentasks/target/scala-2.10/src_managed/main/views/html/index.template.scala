@@ -38,7 +38,7 @@ Seq[Any](format.raw/*1.1*/("""hellow"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 25 13:25:11 CEST 2015
+                    DATE: Sat Jun 27 21:23:54 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/index.scala.html
                     HASH: 28526b3046c27b3a9211e24be00801fe6a85eaa1
                     MATRIX: 855->0

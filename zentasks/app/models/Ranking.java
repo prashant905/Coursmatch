@@ -15,16 +15,20 @@ public class Ranking extends Model {
 		@Id
 	    public Long id;
 	    
-	    public String text;
+		@ManyToOne
+		public Course course;
+		
+		public Long fair;
 	    
-	    public String autor;
+	    public Long material;
+	    
+	    public Long fun;
+	    
+	    public Long grade;
+	    
+	    public Long recommend;
 	    
 	    
-	    
-	    public Ranking(String text, String autor) {
-	        this.text = text;
-	        this.autor = autor;
-	    }
 	    
 	    // -- Queries
 	    
@@ -40,6 +44,12 @@ public class Ranking extends Model {
 	    public static Ranking findById(Long id) {
 	        return find.where().eq("id", id).findUnique();
 	    }
+	    
+	    public static Ranking findByCourseId(Long courseId){
+	    	return find.where().eq("course_id", courseId).findUnique();
+	    }
+	    
+	    
 	    
 	    /**
 	     * Retrieve project for user

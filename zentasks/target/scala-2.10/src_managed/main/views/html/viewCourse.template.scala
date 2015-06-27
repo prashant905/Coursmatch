@@ -20,13 +20,13 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object viewCourse extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[Student,Course,play.api.templates.HtmlFormat.Appendable] {
+object viewCourse extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template3[Student,Course,Ranking,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(student: Student , course :Course):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(student: Student , course :Course ,ranking :Ranking):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.37*/("""
+Seq[Any](format.raw/*1.55*/("""
 
 <html>
 
@@ -71,12 +71,11 @@ Seq[Any](format.raw/*1.37*/("""
         <title>CourseMatch</title>
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*44.59*/routes/*44.65*/.Assets.at("images/favicon.png"))),format.raw/*44.97*/("""">
         <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*45.70*/routes/*45.76*/.Assets.at("stylesheets/main.css"))),format.raw/*45.110*/("""">
-        <script type="text/javascript" src=""""),_display_(Seq[Any](/*46.46*/routes/*46.52*/.Assets.at("javascripts/jquery-1.7.1.js"))),format.raw/*46.93*/(""""></script>
-        <script type="text/javascript" src=""""),_display_(Seq[Any](/*47.46*/routes/*47.52*/.Assets.at("javascripts/jquery-play-1.7.1.js"))),format.raw/*47.98*/(""""></script>
-        <script type="text/javascript" src=""""),_display_(Seq[Any](/*48.46*/routes/*48.52*/.Assets.at("javascripts/underscore-min.js"))),format.raw/*48.95*/(""""></script>
-        <script type="text/javascript" src=""""),_display_(Seq[Any](/*49.46*/routes/*49.52*/.Assets.at("javascripts/backbone-min.js"))),format.raw/*49.93*/(""""></script>
-        <script type="text/javascript" src=""""),_display_(Seq[Any](/*50.46*/routes/*50.52*/.Assets.at("javascripts/main.js"))),format.raw/*50.85*/(""""></script>
-        <script type="text/javascript" src=""""),_display_(Seq[Any](/*51.46*/routes/*51.52*/.Assets.at("javascripts/tablefilter.js"))),format.raw/*51.92*/(""""></script>
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*46.46*/routes/*46.52*/.Assets.at("javascripts/jquery-2.1.4.min.js"))),format.raw/*46.97*/(""""></script>
+                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*47.78*/routes/*47.84*/.Assets.at("stylesheets/star-rating.css"))),format.raw/*47.125*/("""">
+                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*48.78*/routes/*48.84*/.Assets.at("stylesheets/star-rating.min.css"))),format.raw/*48.129*/("""">
+        <script src=""""),_display_(Seq[Any](/*49.23*/routes/*49.29*/.Assets.at("javascripts/star-rating.js"))),format.raw/*49.69*/(""""></script>
+        <script src=""""),_display_(Seq[Any](/*50.23*/routes/*50.29*/.Assets.at("javascripts/star-rating.min.js"))),format.raw/*50.73*/(""""></script>
         
           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -87,14 +86,14 @@ Seq[Any](format.raw/*1.37*/("""
         <header style="padding-top: 12px">
             
             <a href="/dashboard" id="logo"> 
-             <img src=""""),_display_(Seq[Any](/*62.25*/routes/*62.31*/.Assets.at("images/logo-white.png"))),format.raw/*62.66*/("""" height="26px">
+             <img src=""""),_display_(Seq[Any](/*61.25*/routes/*61.31*/.Assets.at("images/logo-white.png"))),format.raw/*61.66*/("""" height="26px">
             </a>
             
             <dl id="user" >
                 <dt style="padding-top: 10px">
-                 """),_display_(Seq[Any](/*67.19*/student/*67.26*/.name)),format.raw/*67.31*/(""" <span>("""),_display_(Seq[Any](/*67.40*/student/*67.47*/.email)),format.raw/*67.53*/(""")</span></dt>
+                 """),_display_(Seq[Any](/*66.19*/student/*66.26*/.name)),format.raw/*66.31*/(""" <span>("""),_display_(Seq[Any](/*66.40*/student/*66.47*/.email)),format.raw/*66.53*/(""")</span></dt>
                 <dd>
-                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*69.68*/routes/*69.74*/.Application.logout())),format.raw/*69.95*/("""" style="padding: 8px 5px;"> 
+                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*68.68*/routes/*68.74*/.Application.logout())),format.raw/*68.95*/("""" style="padding: 8px 5px;"> 
                    <b style="font-family:arial; font-size: 14px"> Logout </b>
                   </a>    
                 </dd>
@@ -104,7 +103,7 @@ Seq[Any](format.raw/*1.37*/("""
         
 	  	<nav>
 		    <div style="padding: 10px 0 0 15px">
-		     <img src=""""),_display_(Seq[Any](/*79.19*/routes/*79.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*79.70*/("""" height="60px">
+		     <img src=""""),_display_(Seq[Any](/*78.19*/routes/*78.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*78.70*/("""" height="60px">
 		    </div>
 		
 		    <div style="padding: 10px 0 0 0px">
@@ -143,16 +142,16 @@ Seq[Any](format.raw/*1.37*/("""
    		 background-color: #FFFFFF; border: 0px; box-shadow: 0 0 0 rgba(0, 0, 0, 0)">
    		
 		  <div style="line-height: 30px">
-			<p class="coursetitle">"""),_display_(Seq[Any](/*118.28*/course/*118.34*/.name)),format.raw/*118.39*/("""<p>			
+			<p class="coursetitle">"""),_display_(Seq[Any](/*117.28*/course/*117.34*/.name)),format.raw/*117.39*/("""<p>			
 		  </div>
 		
 		  <div>
-		   <p class="">(Professor: """),_display_(Seq[Any](/*122.31*/course/*122.37*/.professor_name)),format.raw/*122.52*/(""")<p>
+		   <p class="">(Professor: """),_display_(Seq[Any](/*121.31*/course/*121.37*/.professor_name)),format.raw/*121.52*/(""")<p>
 		  </div>	
 		
 		  <div id="description" style="padding: 30px 0 0 0">  
 		   <p class="coursesubtitle">Description<p>
-		   <p>"""),_display_(Seq[Any](/*127.10*/course/*127.16*/.description)),format.raw/*127.28*/("""</p>
+		   <p>"""),_display_(Seq[Any](/*126.10*/course/*126.16*/.description)),format.raw/*126.28*/("""</p>
 		  </div>	
 			 
 		  <div id="uploads" style="padding: 30px 0 0 0">  
@@ -163,7 +162,7 @@ Seq[Any](format.raw/*1.37*/("""
     		 <a href="google.de" style="float:left; padding-right:30px">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*138.21*/routes/*138.27*/.Assets.at("images/tum.png"))),format.raw/*138.55*/("""">
+			      <img src=""""),_display_(Seq[Any](/*137.21*/routes/*137.27*/.Assets.at("images/tum.png"))),format.raw/*137.55*/("""">
 			   </div>
 			   <div> TU München </div>
 			  </div>
@@ -172,7 +171,7 @@ Seq[Any](format.raw/*1.37*/("""
              <a href="google.de" class="uploaditem">
 		 	  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*147.21*/routes/*147.27*/.Assets.at("images/unistuff.png"))),format.raw/*147.60*/("""">
+			      <img src=""""),_display_(Seq[Any](/*146.21*/routes/*146.27*/.Assets.at("images/unistuff.png"))),format.raw/*146.60*/("""">
 			   </div>
 			   <div> Unistuff </div>
 			  </div>
@@ -181,7 +180,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*156.21*/routes/*156.27*/.Assets.at("images/dropbox.png"))),format.raw/*156.59*/("""">
+			      <img src=""""),_display_(Seq[Any](/*155.21*/routes/*155.27*/.Assets.at("images/dropbox.png"))),format.raw/*155.59*/("""">
 			   </div>
 			   <div> Dropbox </div>
 			  </div>
@@ -190,7 +189,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*165.21*/routes/*165.27*/.Assets.at("images/pdf.png"))),format.raw/*165.55*/("""">
+			      <img src=""""),_display_(Seq[Any](/*164.21*/routes/*164.27*/.Assets.at("images/pdf.png"))),format.raw/*164.55*/("""">
 			   </div>
 			   <div> Student-Summary.pdf </div>
 			  </div>
@@ -199,7 +198,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*174.21*/routes/*174.27*/.Assets.at("images/moodle.png"))),format.raw/*174.58*/("""">
+			      <img src=""""),_display_(Seq[Any](/*173.21*/routes/*173.27*/.Assets.at("images/moodle.png"))),format.raw/*173.58*/("""">
 			   </div>
 			   <div> Moodle </div>
 			  </div>
@@ -208,7 +207,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*183.21*/routes/*183.27*/.Assets.at("images/facebook.png"))),format.raw/*183.60*/("""">
+			      <img src=""""),_display_(Seq[Any](/*182.21*/routes/*182.27*/.Assets.at("images/facebook.png"))),format.raw/*182.60*/("""">
 			   </div>
 			   <div> Facebook Group </div>
 			  </div>
@@ -217,7 +216,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*192.21*/routes/*192.27*/.Assets.at("images/pdf.png"))),format.raw/*192.55*/("""">
+			      <img src=""""),_display_(Seq[Any](/*191.21*/routes/*191.27*/.Assets.at("images/pdf.png"))),format.raw/*191.55*/("""">
 			   </div>
 			   <div> Student-Summary2.pdf </div>
 			  </div>
@@ -226,7 +225,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*201.21*/routes/*201.27*/.Assets.at("images/link.png"))),format.raw/*201.56*/("""">
+			      <img src=""""),_display_(Seq[Any](/*200.21*/routes/*200.27*/.Assets.at("images/link.png"))),format.raw/*200.56*/("""">
 			   </div>
 			   <div> Link </div>
 			  </div>
@@ -235,7 +234,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*210.21*/routes/*210.27*/.Assets.at("images/piazza.png"))),format.raw/*210.58*/("""">
+			      <img src=""""),_display_(Seq[Any](/*209.21*/routes/*209.27*/.Assets.at("images/piazza.png"))),format.raw/*209.58*/("""">
 			   </div>
 			   <div> Piazza </div>
 			  </div>
@@ -244,7 +243,7 @@ Seq[Any](format.raw/*1.37*/("""
 		   	 <a href="google.de" class="uploaditem">
 			  <div> 
 			   <div class="uploaditembox"> 
-			      <img src=""""),_display_(Seq[Any](/*219.21*/routes/*219.27*/.Assets.at("images/tumonline.png"))),format.raw/*219.61*/("""">
+			      <img src=""""),_display_(Seq[Any](/*218.21*/routes/*218.27*/.Assets.at("images/tumonline.png"))),format.raw/*218.61*/("""">
 			   </div>
 			   <div> TumOnline </div>
 			  </div>
@@ -320,67 +319,55 @@ Seq[Any](format.raw/*1.37*/("""
 		 
 			
 			<div style="width:100%; height:30px">
-			<div style="float:left; width:300px">Fairness and help:</div>			
-				<input id="input-1" class="rating" data-min="0" data-max="5" data-step="1">
+			<table>
+				<tr>
+					<td><div style="float:left; width:300px">Fairness and help:</div></td>		
+					<td><input id="input-1" value=""""),_display_(Seq[Any](/*297.38*/ranking/*297.45*/.fair)),format.raw/*297.50*/("""" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             </div>
             
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">Material und understanding:</div>            
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-2" id="group-2-0" value="5" /><label for="group-2-0"></label>
-                <input type="radio" name="group-2" id="group-2-1" value="4" /><label for="group-2-1"></label>
-                <input type="radio" name="group-2" id="group-2-2" value="3" /><label for="group-2-2"></label>
-                <input type="radio" name="group-2" id="group-2-3" value="2" /><label for="group-2-3"></label>
-                <input type="radio" name="group-2" id="group-2-4" value="1" /><label for="group-2-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>            
+            		<td><div style="float:left; width:300px">Material und understanding:</div></td>            
+          			 <td><input id="input-2" value=""""),_display_(Seq[Any](/*307.47*/ranking/*307.54*/.material)),format.raw/*307.63*/("""" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">fun and level of interest:</div>
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label>
-                <input type="radio" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label>
-                <input type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label>
-                <input type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label>
-                <input type="radio" name="group-3" id="group-3-4" value="1" /><label for="group-3-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>               
+            		<td><div style="float:left; width:300px">fun and level of interest:</div></td>
+            		<td><input id="input-2" value=""""),_display_(Seq[Any](/*316.47*/ranking/*316.54*/.fun)),format.raw/*316.58*/("""" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">grade and effort:</div>
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-4" id="group-4-0" value="5" /><label for="group-4-0"></label>
-                <input type="radio" name="group-4" id="group-4-1" value="4" /><label for="group-4-1"></label>
-                <input type="radio" name="group-4" id="group-4-2" value="3" /><label for="group-4-2"></label>
-                <input type="radio" name="group-4" id="group-4-3" value="2" /><label for="group-4-3"></label>
-                <input type="radio" name="group-4" id="group-4-4" value="1" /><label for="group-4-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>               
+          			  <td><div style="float:left; width:300px">grade and effort:</div></td>
+          			  <td><input id="input-2" value=""""),_display_(Seq[Any](/*325.48*/ranking/*325.55*/.grade)),format.raw/*325.61*/("""" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
 
             <div style="width:100%; height:30px">
-            <div style="float:left; width:300px">recommendation:</div>
-            <div class="acidjs-rating-stars" style="float:left">
-              <form>
-                <input type="radio" name="group-5" id="group-5-0" value="5" /><label for="group-5-0"></label>
-                <input type="radio" name="group-5" id="group-5-1" value="4" /><label for="group-5-1"></label>
-                <input type="radio" name="group-5" id="group-5-2" value="3" /><label for="group-5-2"></label>
-                <input type="radio" name="group-5" id="group-5-3" value="2" /><label for="group-5-3"></label>
-                <input type="radio" name="group-5" id="group-5-4" value="1" /><label for="group-5-4"></label>
-              </form>
-            </div>
+			<table>
+				<tr>                  
+		            <td><div style="float:left; width:300px">recommendation:</div></td>
+		   			<td><input id="input-2" value=""""),_display_(Seq[Any](/*334.41*/ranking/*334.48*/.recommend)),format.raw/*334.58*/("""" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
             </div>
             
 			
             
 	    	<div style="width:100%; height:30px">
-	    		<p class="text-title">Overall Rate: """),_display_(Seq[Any](/*355.45*/course/*355.51*/.rate)),format.raw/*355.56*/(""" </p>
+	    		<p class="text-title">Overall Rate: """),_display_(Seq[Any](/*342.45*/course/*342.51*/.rate)),format.raw/*342.56*/(""" </p>
 			</div>
 			
 			<div style="width:100; min-height: 20px;">			
@@ -432,20 +419,20 @@ Seq[Any](format.raw/*1.37*/("""
         """))}
     }
     
-    def render(student:Student,course:Course): play.api.templates.HtmlFormat.Appendable = apply(student,course)
+    def render(student:Student,course:Course,ranking:Ranking): play.api.templates.HtmlFormat.Appendable = apply(student,course,ranking)
     
-    def f:((Student,Course) => play.api.templates.HtmlFormat.Appendable) = (student,course) => apply(student,course)
+    def f:((Student,Course,Ranking) => play.api.templates.HtmlFormat.Appendable) = (student,course,ranking) => apply(student,course,ranking)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 25 13:25:12 CEST 2015
+                    DATE: Sat Jun 27 21:23:55 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/viewCourse.scala.html
-                    HASH: 4b151deb1f989af9b8758fa8827d84fc17f5ac91
-                    MATRIX: 787->1|916->36|983->76|1011->77|1092->131|1120->132|1162->146|1191->147|1283->212|1311->213|1354->228|1383->229|1463->282|1491->283|1530->294|1559->295|1638->347|1666->348|1708->362|1737->363|1795->394|1823->395|1876->420|1905->421|1980->469|2008->470|2063->497|2092->498|2144->523|2172->524|2215->539|2244->540|2294->563|2322->564|2478->684|2493->690|2547->722|2656->795|2671->801|2728->835|2813->884|2828->890|2891->931|2985->989|3000->995|3068->1041|3162->1099|3177->1105|3242->1148|3336->1206|3351->1212|3414->1253|3508->1311|3523->1317|3578->1350|3672->1408|3687->1414|3749->1454|4273->1942|4288->1948|4345->1983|4526->2128|4542->2135|4569->2140|4614->2149|4630->2156|4658->2162|4798->2266|4813->2272|4856->2293|5183->2584|5198->2590|5265->2635|6810->4143|6826->4149|6854->4154|6956->4219|6972->4225|7010->4240|7184->4377|7200->4383|7235->4395|7587->4710|7603->4716|7654->4744|7889->4942|7905->4948|7961->4981|8190->5173|8206->5179|8261->5211|8489->5402|8505->5408|8556->5436|8796->5639|8812->5645|8866->5676|9093->5866|9109->5872|9165->5905|9400->6103|9416->6109|9467->6137|9708->6341|9724->6347|9776->6376|10002->6565|10018->6571|10072->6602|10299->6792|10315->6798|10372->6832|17162->13585|17178->13591|17206->13596
-                    LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|50->22|50->22|53->25|53->25|54->26|54->26|56->28|56->28|58->30|58->30|61->33|61->33|62->34|62->34|64->36|64->36|65->37|65->37|67->39|67->39|72->44|72->44|72->44|73->45|73->45|73->45|74->46|74->46|74->46|75->47|75->47|75->47|76->48|76->48|76->48|77->49|77->49|77->49|78->50|78->50|78->50|79->51|79->51|79->51|90->62|90->62|90->62|95->67|95->67|95->67|95->67|95->67|95->67|97->69|97->69|97->69|107->79|107->79|107->79|146->118|146->118|146->118|150->122|150->122|150->122|155->127|155->127|155->127|166->138|166->138|166->138|175->147|175->147|175->147|184->156|184->156|184->156|193->165|193->165|193->165|202->174|202->174|202->174|211->183|211->183|211->183|220->192|220->192|220->192|229->201|229->201|229->201|238->210|238->210|238->210|247->219|247->219|247->219|383->355|383->355|383->355
+                    HASH: 34d9708e33753478b13871847c676b43ea746587
+                    MATRIX: 795->1|942->54|1009->94|1037->95|1118->149|1146->150|1188->164|1217->165|1309->230|1337->231|1380->246|1409->247|1489->300|1517->301|1556->312|1585->313|1664->365|1692->366|1734->380|1763->381|1821->412|1849->413|1902->438|1931->439|2006->487|2034->488|2089->515|2118->516|2170->541|2198->542|2241->557|2270->558|2320->581|2348->582|2504->702|2519->708|2573->740|2682->813|2697->819|2754->853|2839->902|2854->908|2921->953|3047->1043|3062->1049|3126->1090|3243->1171|3258->1177|3326->1222|3388->1248|3403->1254|3465->1294|3536->1329|3551->1335|3617->1379|4141->1867|4156->1873|4213->1908|4394->2053|4410->2060|4437->2065|4482->2074|4498->2081|4526->2087|4666->2191|4681->2197|4724->2218|5051->2509|5066->2515|5133->2560|6678->4068|6694->4074|6722->4079|6824->4144|6840->4150|6878->4165|7052->4302|7068->4308|7103->4320|7455->4635|7471->4641|7522->4669|7757->4867|7773->4873|7829->4906|8058->5098|8074->5104|8129->5136|8357->5327|8373->5333|8424->5361|8664->5564|8680->5570|8734->5601|8961->5791|8977->5797|9033->5830|9268->6028|9284->6034|9335->6062|9576->6266|9592->6272|9644->6301|9870->6490|9886->6496|9940->6527|10167->6717|10183->6723|10240->6757|13459->9939|13476->9946|13504->9951|13956->10366|13973->10373|14005->10382|14427->10767|14444->10774|14471->10778|14886->11156|14903->11163|14932->11169|15328->11528|15345->11535|15378->11545|15680->11810|15696->11816|15724->11821
+                    LINES: 26->1|29->1|35->7|35->7|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|49->21|49->21|50->22|50->22|53->25|53->25|54->26|54->26|56->28|56->28|58->30|58->30|61->33|61->33|62->34|62->34|64->36|64->36|65->37|65->37|67->39|67->39|72->44|72->44|72->44|73->45|73->45|73->45|74->46|74->46|74->46|75->47|75->47|75->47|76->48|76->48|76->48|77->49|77->49|77->49|78->50|78->50|78->50|89->61|89->61|89->61|94->66|94->66|94->66|94->66|94->66|94->66|96->68|96->68|96->68|106->78|106->78|106->78|145->117|145->117|145->117|149->121|149->121|149->121|154->126|154->126|154->126|165->137|165->137|165->137|174->146|174->146|174->146|183->155|183->155|183->155|192->164|192->164|192->164|201->173|201->173|201->173|210->182|210->182|210->182|219->191|219->191|219->191|228->200|228->200|228->200|237->209|237->209|237->209|246->218|246->218|246->218|325->297|325->297|325->297|335->307|335->307|335->307|344->316|344->316|344->316|353->325|353->325|353->325|362->334|362->334|362->334|370->342|370->342|370->342
                     -- GENERATED --
                 */
             
