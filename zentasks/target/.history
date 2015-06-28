@@ -491,3 +491,4 @@ run
 clean
 compile
 run
+exit
