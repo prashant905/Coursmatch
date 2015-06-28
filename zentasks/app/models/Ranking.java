@@ -4,9 +4,10 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import models.Course;
+import play.Logger;
 import play.db.ebean.*;
 
-import com.avaje.ebean.*;
 @Entity
 public class Ranking extends Model {
 
@@ -18,17 +19,27 @@ public class Ranking extends Model {
 		@ManyToOne
 		public Course course;
 		
-		public Long fair;
+		public int fair;
 	    
-	    public Long material;
+	    public int material;
 	    
-	    public Long fun;
+	    public int fun;
 	    
-	    public Long grade;
+	    public int grade;
 	    
-	    public Long recommend;
+	    public int recommend;
+	    
+	    public int overall_rate;
 	    
 	    
+	    public Ranking(Course course){
+	    	this.course = course ;
+	    	this.overall_rate= 0;
+	    }
+	    
+	    public Ranking(){
+	    	
+	    }
 	    
 	    // -- Queries
 	    
@@ -45,11 +56,40 @@ public class Ranking extends Model {
 	        return find.where().eq("id", id).findUnique();
 	    }
 	    
-	    public static Ranking findByCourseId(Long courseId){
-	    	return find.where().eq("course_id", courseId).findUnique();
+	    public static List<Ranking> findByCourseId(Long courseId){
+	    	return find.where().eq("course_id", courseId).findList();
 	    }
 	    
-	    
+	    public static void findOverallRate(Long courseId){
+	    	Overallranking courseAcutalRanking = Overallranking.findById(courseId);
+	    	if(courseAcutalRanking == null){
+	    		courseAcutalRanking = new Overallranking();
+	    		courseAcutalRanking.course = Course.findById(courseId);
+	    		}
+	    	List<Ranking> rankings = findByCourseId(courseId);
+	    	int sum_fair = 0 ;
+	    	int sum_material = 0 ;
+	    	int sum_fun = 0;
+	    	int sum_grade = 0;
+	    	int sum_recommend = 0;
+	    	int sum_overall_rate = 0;
+	    	int numberOfRankingRecords = rankings.size()-1;
+	    	for(Ranking ranking : rankings){
+	    		sum_fair+= ranking.fair;
+	    		sum_material += ranking.material;
+	    		sum_fun += ranking.fun;
+	    		sum_grade += ranking.grade;
+	    		sum_recommend += ranking.recommend;
+	    		sum_overall_rate += ranking.overall_rate;
+	    		}
+	    	courseAcutalRanking.fair = sum_fair/numberOfRankingRecords;
+	    	courseAcutalRanking.material = sum_material/numberOfRankingRecords;
+	    	courseAcutalRanking.fun = sum_fun/numberOfRankingRecords;
+	    	courseAcutalRanking.grade = sum_grade/numberOfRankingRecords;
+	    	courseAcutalRanking.recommend = sum_recommend/numberOfRankingRecords;
+	    	courseAcutalRanking.overall_rate = sum_overall_rate/numberOfRankingRecords;
+	    	courseAcutalRanking.update();
+	    }
 	    
 	    /**
 	     * Retrieve project for user
@@ -104,6 +144,10 @@ public class Ranking extends Model {
 	    public String toString() {
 	        return "Uploads(" + id + ") with " ;
 	    }
+		public int calculateCurrentOverallRate() {
+			
+			return (fair+material+fun+grade+recommend)/5;
+		}
 
 	
 }

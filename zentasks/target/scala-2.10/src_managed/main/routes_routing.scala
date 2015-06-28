@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/conf/routes
-// @HASH:7772df18c24c05c0412fb5125b579bd9ef38a03c
-// @DATE:Sat Jun 27 21:23:52 CEST 2015
+// @HASH:16de856a32f0f30727b309509e84fb12142761c8
+// @DATE:Sun Jun 28 21:57:27 CEST 2015
 
 
 import play.core._
@@ -56,10 +56,22 @@ private[this] lazy val controllers_Application_viewAllCourses5 = Route("GET", Pa
 private[this] lazy val controllers_Application_viewCourse6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("course/"),DynamicPart("id", """[^/]+""",true))))
         
 
-// @LINE:21
-private[this] lazy val controllers_Assets_at7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:19
+private[this] lazy val controllers_Application_rateCourse7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("rateCourse/"),DynamicPart("id", """[^/]+""",true))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.authenticate()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dashboard""","""controllers.Application.dashboard()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """courses""","""controllers.Application.viewAllCourses()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """course/$id<[^/]+>""","""controllers.Application.viewCourse(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:20
+private[this] lazy val controllers_Application_compareCourses8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("compareCourses"))))
+        
+
+// @LINE:21
+private[this] lazy val controllers_Application_displayCourseRatings9 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("displayCourseRatings"))))
+        
+
+// @LINE:25
+private[this] lazy val controllers_Assets_at10 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.authenticate()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dashboard""","""controllers.Application.dashboard()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """courses""","""controllers.Application.viewAllCourses()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """course/$id<[^/]+>""","""controllers.Application.viewCourse(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """rateCourse/$id<[^/]+>""","""controllers.Application.rateCourse(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """compareCourses""","""controllers.Application.compareCourses()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """displayCourseRatings""","""controllers.Application.displayCourseRatings()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -123,8 +135,32 @@ case controllers_Application_viewCourse6(params) => {
 }
         
 
+// @LINE:19
+case controllers_Application_rateCourse7(params) => {
+   call(params.fromPath[Long]("id", None)) { (id) =>
+        invokeHandler(controllers.Application.rateCourse(id), HandlerDef(this, "controllers.Application", "rateCourse", Seq(classOf[Long]),"GET", """""", Routes.prefix + """rateCourse/$id<[^/]+>"""))
+   }
+}
+        
+
+// @LINE:20
+case controllers_Application_compareCourses8(params) => {
+   call { 
+        invokeHandler(controllers.Application.compareCourses(), HandlerDef(this, "controllers.Application", "compareCourses", Nil,"GET", """""", Routes.prefix + """compareCourses"""))
+   }
+}
+        
+
 // @LINE:21
-case controllers_Assets_at7(params) => {
+case controllers_Application_displayCourseRatings9(params) => {
+   call { 
+        invokeHandler(controllers.Application.displayCourseRatings(), HandlerDef(this, "controllers.Application", "displayCourseRatings", Nil,"GET", """""", Routes.prefix + """displayCourseRatings"""))
+   }
+}
+        
+
+// @LINE:25
+case controllers_Assets_at10(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /public path""", Routes.prefix + """assets/$file<.+>"""))
    }

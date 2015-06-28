@@ -15,6 +15,10 @@ GET 	/dashboard							controllers.Application.dashboard()
 GET		/courses						controllers.Application.viewAllCourses()
 
 GET    /course/:id                       controllers.Application.viewCourse(id:Long)
+
+GET  /rateCourse/:id                       controllers.Application.rateCourse(id:Long)
+GET /compareCourses                       controllers.Application.compareCourses()
+GET /displayCourseRatings                      controllers.Application.displayCourseRatings()
 # Javascript routing
 
 # Map static resources from the /public folder to the /public path

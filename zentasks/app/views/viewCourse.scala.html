@@ -1,4 +1,4 @@
-@(student: Student , course :Course ,ranking :Ranking)
+@(student: Student , course :Course , ranking:Overallranking)
 
 <html>
 
@@ -46,6 +46,7 @@
         <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
                 <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.css")">
                 <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.min.css")">
+                
         <script src="@routes.Assets.at("javascripts/star-rating.js")"></script>
         <script src="@routes.Assets.at("javascripts/star-rating.min.js")"></script>
         
@@ -279,13 +280,8 @@
           </div>
         </div>		
 		
-		
-		
-	
-		
-		
-		
-		
+	@(course :Course ,ranking :Overallranking)
+<form action="@routes.Application.rateCourse(course.id)">
          <div id="rating" style="padding: 50px 0 0 0">  
 		   <p class="coursesubtitle">Rating<p>
 		 
@@ -294,7 +290,8 @@
 			<table>
 				<tr>
 					<td><div style="float:left; width:300px">Fairness and help:</div></td>		
-					<td><input id="input-1" value="@ranking.fair" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+					<td><input id="input-1" name ="fair" value="@ranking.fair" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs">
+					</td>
             	</tr>
             </table>
             </div>
@@ -304,7 +301,7 @@
 			<table>
 				<tr>            
             		<td><div style="float:left; width:300px">Material und understanding:</div></td>            
-          			 <td><input id="input-2" value="@ranking.material" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+          			 <td><input id="input-3" name="material" value="@ranking.material" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
             	</tr>
             </table>
             </div>
@@ -313,7 +310,7 @@
 			<table>
 				<tr>               
             		<td><div style="float:left; width:300px">fun and level of interest:</div></td>
-            		<td><input id="input-2" value="@ranking.fun" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            		<td><input id="input-4" name="fun" value="@ranking.fun" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
             	</tr>
             </table>
             </div>
@@ -322,7 +319,7 @@
 			<table>
 				<tr>               
           			  <td><div style="float:left; width:300px">grade and effort:</div></td>
-          			  <td><input id="input-2" value="@ranking.grade" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+          			  <td><input id="input-2" name="grade" value="@ranking.grade" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
             	</tr>
             </table>
             </div>
@@ -331,7 +328,7 @@
 			<table>
 				<tr>                  
 		            <td><div style="float:left; width:300px">recommendation:</div></td>
-		   			<td><input id="input-2" value="@ranking.recommend" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+		   			<td><input id="input-2" name="recommend" value="@ranking.recommend" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
             	</tr>
             </table>
             </div>
@@ -339,15 +336,23 @@
 			
             
 	    	<div style="width:100%; height:30px">
-	    		<p class="text-title">Overall Rate: @course.rate </p>
+	    		<p class="text-title">Overall Rate: @ranking.overall_rate </p>
 			</div>
-			
 			<div style="width:100; min-height: 20px;">			
-			 <button type="button" class="btn btn-sm btn-primary" style="height: 30px; width: 200px"> 
+			 <button type="submit" class="btn btn-sm btn-primary" style="height: 30px; width: 200px"> 
 			 Rate the course </button>
 			</div>
+			</form>
 			
+
+		
+	
+		
+		
+		
+		
 			
+				
 			<!-- <button type="button" class="btn btn-sm btn-primary">Rate this course</button> -->
 	
 		 </div>

@@ -15,24 +15,15 @@ public class Course extends Model {
 		@Id
 	    public Long id;
 	    
-	    public String name;
+		public String professor_name;
+	
+		public String chair;
 	    
-	    public String professor_name;
+		public String name;
 	    
 	    public String description;
 	    
-	    public String chair;
 	    
-	    public String rate;
-	    
-	    
-	    public Course(String name, String professor_name, String description ,String chair,String rate) {
-	        this.name = name;
-	        this.professor_name = professor_name;
-	        this.description = description;
-	        this.chair = chair;
-	        this.rate = rate;
-	    }
 	    
 	    // -- Queries
 	    

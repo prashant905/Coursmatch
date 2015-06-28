@@ -6,8 +6,7 @@
 
 #menu_container{
 	position: relative;
-	margin-top: 80px;
-	margin-left:450px;
+	margin-left: 360px;   //not 450px please
 }
 
 .nav > li {
@@ -32,11 +31,20 @@
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
 
         
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
         
-          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+               <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
+               <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.dataTables.js")"></script>
+               <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.dataTables.min.js")"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.css")">
+                <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.min.css")">
+                
+        <script src="@routes.Assets.at("javascripts/star-rating.js")"></script>
+        <script src="@routes.Assets.at("javascripts/star-rating.min.js")"></script>
+  		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   		<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
   		<script src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
@@ -98,6 +106,10 @@
 		<div>
         
         <section>
+      <ul class="breadcrumb" style="margin-top:52px;margin-left:218px">
+      <li><a href="dashboard">Dashboard</a> <span class="divider">/</span></li>
+      <li><a href="compareCourses">CompareCourses</a> <span class="divider">/</span></li>
+    </ul>
             @body
         </section>
 		

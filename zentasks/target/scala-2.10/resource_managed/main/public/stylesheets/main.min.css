@@ -14,6 +14,7 @@ a{color:#4794c4;text-decoration:none}a:hover{color:#2a5e88}
 .coursesubtitle{font-size:20px}
 .uploaditem{float:left;padding-right:30px}.uploaditem div{height:140px;width:100px}.uploaditem div div{height:100px}
 .uploaditembox{height:100px;width:100px;border:1px solid #AAA;border-radius:6px;background:#FFF}
+.nav-pills>li.active>a,.nav-pills>li.active>a:focus,.nav-pills>li.active>a:hover{background:#0e5180 -moz-linear-gradient(center top, #155984, #003b84) repeat scroll 0 0;color:#fff}
 body>header{position:absolute;top:0;left:0;right:0;height:50px}
 body>nav{position:absolute;top:50px;left:0;width:220px;bottom:0;box-sizing:border-box}
 body>section{position:absolute;top:50px;left:220px;right:0;bottom:0}
