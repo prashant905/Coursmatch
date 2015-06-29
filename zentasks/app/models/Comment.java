@@ -15,19 +15,15 @@ public class Comment extends Model {
 		@Id
 	    public Long id;
 	    
-		@ManyToOne
-		public Course course;
-
-		public String student_id;
+	    public String name;
 	    
-		
-		public String comment;
+	    public String data;
 	    
-	    public Comment(Course course ,String student_id , String comment){
-	    	this.course = course;
-	    	this.student_id = student_id;
-	    	this.comment = comment;
-	    	save();
+	    
+	    
+	    public Comment(String name, String data) {
+	        this.name = name;
+	        this.data = data;
 	    }
 	    
 	    // -- Queries
@@ -41,8 +37,8 @@ public class Comment extends Model {
 	    public static List<Comment> findAll() {
 	        return find.all();
 	    }
-	    public static List<Comment> findByCourseId(Long id) {
-	        return find.where().eq("course_id", id).findList();
+	    public static Comment findById(Long id) {
+	        return find.where().eq("id", id).findUnique();
 	    }
 	    
 	    

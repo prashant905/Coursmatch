@@ -12,12 +12,13 @@ GET     /logout                             controllers.Application.logout()
 
 GET 	/dashboard							controllers.Application.dashboard()
 
+GET		/courses						controllers.Application.viewAllCourses()
+
 GET    /course/:id                       controllers.Application.viewCourse(id:Long)
 
 GET  /rateCourse/:id                       controllers.Application.rateCourse(id:Long)
 GET /compareCourses                       controllers.Application.compareCourses()
 GET /displayCourseRatings                      controllers.Application.displayCourseRatings()
-GET    /course/:id/                       controllers.Application.saveComment(id:Long)
 # Javascript routing
 
 # Map static resources from the /public folder to the /public path

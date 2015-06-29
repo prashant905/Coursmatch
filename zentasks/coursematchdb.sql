@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2015 at 05:18 AM
+-- Generation Time: Jun 29, 2015 at 12:06 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -28,18 +28,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `comment` (
   `id` int(11) NOT NULL,
-  `course_id` bigint(20) NOT NULL,
-  `student_id` varchar(255) NOT NULL,
-  `comment` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `name` text,
+  `data` text
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`id`, `course_id`, `student_id`, `comment`) VALUES
-(4, 11, 'mohamed.ragab@tum.de', 'hii'),
-(5, 11, 'thomas@tum.de', 'i think otherwise');
+INSERT INTO `comment` (`id`, `name`, `data`) VALUES
+(1, 'mohamed.ragab@tum.de', 'hello'),
+(2, 'mohamed.ragab@tum.de', 'hello'),
+(3, 'mohamed.ragab@tum.de', 'hello'),
+(4, 'mohamed.ragab@tum.de', 'hello'),
+(5, 'mohamed.ragab@tum.de', 'hello'),
+(6, 'mohamed.ragab@tum.de', 'hello'),
+(7, 'mohamed.ragab@tum.de', 'hello'),
+(8, 'mohamed.ragab@tum.de', 'hello');
 
 -- --------------------------------------------------------
 
@@ -143,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `ranking` (
   `course_id` bigint(20) NOT NULL,
   `grade` double NOT NULL,
   `overall_rate` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ranking`
@@ -164,8 +169,7 @@ INSERT INTO `ranking` (`id`, `fair`, `material`, `fun`, `recommend`, `course_id`
 (41, 5, 4, 4, 5, 11, 4, 4),
 (42, 5, 2, 2, 5, 11, 4, 3),
 (43, 5, 1, 1, 5, 1, 1, 2),
-(44, 0, 1, 1, 1, 3, 1, 0),
-(45, 5, 1, 1, 5, 1, 1, 2);
+(44, 0, 1, 1, 1, 3, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -184,8 +188,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`email`, `name`, `password`) VALUES
-('mohamed.ragab@tum.de', 'mohamed ragab', '1234'),
-('thomas@tum.de', 'thomas', '1234');
+('mohamed.ragab@tum.de', 'mohamed ragab', '1234');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +198,7 @@ INSERT INTO `student` (`email`, `name`, `password`) VALUES
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
-  ADD PRIMARY KEY (`id`), ADD KEY `course_id` (`course_id`), ADD KEY `student_id` (`student_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `course`
@@ -235,7 +238,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `overallranking`
 --
@@ -245,16 +248,10 @@ ALTER TABLE `overallranking`
 -- AUTO_INCREMENT for table `ranking`
 --
 ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `comment`
---
-ALTER TABLE `comment`
-ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
 
 --
 -- Constraints for table `overallranking`

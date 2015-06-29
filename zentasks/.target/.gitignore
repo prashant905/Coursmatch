@@ -1,6 +1,2 @@
-/assets/
-/controllers/
-/models/
 /views/
-/Global$InitialData.class
-/Global.class
+/controllers/

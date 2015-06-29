@@ -1,432 +1,396 @@
-@(student: Student , course :Course , ranking:Overallranking,comments:List[Comment])
+@(student: Student , course :Course , ranking:Overallranking)
+
 <html>
 
 <style>
-#menu_container {
+
+#menu_container{
 	position: relative;
-	margin-top: 4%;
-	width: 50%;
+	margin-top:4%;
+	width:50%;
 }
 
-.nav>li {
-	width: 220px !important;
-	text-align: center !important;
+.nav > li {
+   width: 220px !important;
+  text-align: center !important;
 }
 
-.text-title {
-	font-style: italic;
+.text-title{
+	font-style:italic;
 	text-decoration: underline;
 }
+    	.row{
+		    margin-top:40px;
+		    padding: 0 10px;
+		}
+		.clickable{
+		    cursor: pointer;   
+		}
 
-.row {
-	margin-top: 40px;
-	padding: 0 10px;
-}
+		.panel-heading div {
+			margin-top: -18px;
+			font-size: 15px;
+		}
+		.panel-heading div span{
+			margin-left:5px;
+		}
+		.panel-body{
+			display: none;
+		}
 
-.clickable {
-	cursor: pointer;
-}
-
-.panel-heading div {
-	margin-top: -18px;
-	font-size: 15px;
-}
-
-.panel-heading div span {
-	margin-left: 5px;
-}
-
-.panel-body {
-	display: none;
-}
 </style>
-<head>
-<title>CourseMatch</title>
-<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-<link rel="stylesheet" type="text/css" media="screen"
-	href="@routes.Assets.at("stylesheets/main.css")">
-<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
-<link rel="stylesheet" type="text/css" media="screen"
-	href="@routes.Assets.at("stylesheets/star-rating.css")">
-<link rel="stylesheet" type="text/css" media="screen"
-	href="@routes.Assets.at("stylesheets/star-rating.min.css")">
+    <head>
+        <title>CourseMatch</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.css")">
+                <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/star-rating.min.css")">
+                
+        <script src="@routes.Assets.at("javascripts/star-rating.js")"></script>
+        <script src="@routes.Assets.at("javascripts/star-rating.min.js")"></script>
+        
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        
+        <header style="padding-top: 12px">
+            
+            <a href="/dashboard" id="logo"> 
+             <img src="@routes.Assets.at("images/logo-white.png")" height="26px">
+            </a>
+            
+            <dl id="user" >
+                <dt style="padding-top: 10px">
+                 @student.name <span>(@student.email)</span></dt>
+                <dd>
+                  <a class="glyphicon glyphicon-off logout" href="@routes.Application.logout()" style="padding: 8px 5px;"> 
+                   <b style="font-family:arial; font-size: 14px"> Logout </b>
+                  </a>    
+                </dd>
+            </dl>
+        </header>
+       
+        
+	  	<nav>
+		    <div style="padding: 10px 0 0 15px">
+		     <img src="@routes.Assets.at("images/TU_Muenchen_Logo.svg.png")" height="60px">
+		    </div>
+		
+		    <div style="padding: 10px 0 0 0px">
+             <h4 class="dashboard">
+                Courses
+             </h4>
+             <ul class="navlist">
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+             </ul> 
+            </div>
+            
+            <div style="padding: 10px 0 0 0px">
+             <h4 class="dashboard">
+                Favorites
+             </h4>
+             <ul class="navlist">
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+              <li><a href="../course/1">Introduction to software Eng.</a></li>
+             </ul> 
+            </div>
+  
+        </nav>
+        
+        
+        
+        
+        
+       
+   		<div class="well well-lg" style="position: relative; top: 100px; width: 66%; left: 260;
+   		 background-color: #FFFFFF; border: 0px; box-shadow: 0 0 0 rgba(0, 0, 0, 0)">
+   		
+		  <div style="line-height: 30px">
+			<p class="coursetitle">@course.name<p>			
+		  </div>
+		
+		  <div>
+		   <p class="">(Professor: @course.professor_name)<p>
+		  </div>	
+		
+		  <div id="description" style="padding: 30px 0 0 0">  
+		   <p class="coursesubtitle">Description<p>
+		   <p>@course.description</p>
+		  </div>	
+			 
+		  <div id="uploads" style="padding: 30px 0 0 0">  
+			<p class="coursesubtitle">Uploads<p>
+			
+			<div style="width:100%; min-height: 250px">
+			
+    		 <a href="google.de" style="float:left; padding-right:30px">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/tum.png")">
+			   </div>
+			   <div> TU München </div>
+			  </div>
+			 </a>
 
-<script src="@routes.Assets.at("javascripts/star-rating.js")"></script>
-<script src="@routes.Assets.at("javascripts/star-rating.min.js")"></script>
+             <a href="google.de" class="uploaditem">
+		 	  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/unistuff.png")">
+			   </div>
+			   <div> Unistuff </div>
+			  </div>
+			 </a>
+			
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/dropbox.png")">
+			   </div>
+			   <div> Dropbox </div>
+			  </div>
+			 </a>			
 
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
-<body>
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/pdf.png")">
+			   </div>
+			   <div> Student-Summary.pdf </div>
+			  </div>
+			 </a>			
 
-	<header style="padding-top: 12px">
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/moodle.png")">
+			   </div>
+			   <div> Moodle </div>
+			  </div>
+			 </a>			
 
-		<a href="/dashboard" id="logo"> <img src="@routes.Assets.at("images/logo-white.png")" height="26px">
-		</a>
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/facebook.png")">
+			   </div>
+			   <div> Facebook Group </div>
+			  </div>
+			 </a>			
 
-		<dl id="user">
-			<dt style="padding-top: 10px">
-				@student.name <span>(@student.email)</span>
-			</dt>
-			<dd>
-				<a class="glyphicon glyphicon-off logout"
-					href="@routes.Application.logout()" style="padding: 8px 5px;">
-					<b style="font-family: arial; font-size: 14px"> Logout </b>
-				</a>
-			</dd>
-		</dl>
-	</header>
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/pdf.png")">
+			   </div>
+			   <div> Student-Summary2.pdf </div>
+			  </div>
+			 </a>			
 
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/link.png")">
+			   </div>
+			   <div> Link </div>
+			  </div>
+			 </a>	
+			
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/piazza.png")">
+			   </div>
+			   <div> Piazza </div>
+			  </div>
+			 </a>			
 
-	<nav>
-		<div style="padding: 10px 0 0 15px">
-			<img src="@routes.Assets.at("images/TU_Muenchen_Logo.svg.png")" height="60px">
-		</div>
-
-		<div style="padding: 10px 0 0 0px">
-			<h4 class="dashboard">Courses</h4>
-			<ul class="navlist">
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-			</ul>
-		</div>
-
-		<div style="padding: 10px 0 0 0px">
-			<h4 class="dashboard">Favorites</h4>
-			<ul class="navlist">
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-			</ul>
-		</div>
-
-	</nav>
-
-
-	<ul class="breadcrumb" style="margin-top: 52px; margin-left: 218px">
-		<li><a href="dashboard">Dashboard</a> <span class="divider">/</span></li>
-		<li><a href="compareCourses">CompareCourses</a> <span
-			class="divider">/</span></li>
-	</ul>
-
-
-
-
-	<div class="well well-lg"
-		style="position: relative; width: 66%; left: 260; background-color: #FFFFFF; border: 0px; box-shadow: 0 0 0 rgba(0, 0, 0, 0)">
-
-		<div style="line-height: 30px">
-			<p class="coursetitle">@course.name
-			<p>
-		</div>
-
-		<div>
-			<p class="">(Professor: @course.professor_name)
-			<p>
-		</div>
-
-		<div id="description" style="padding: 30px 0 0 0">
-			<p class="coursesubtitle">Description
-			<p>
-			<p>@course.description</p>
-		</div>
-
-		<div id="uploads" style="padding: 30px 0 0 0">
-			<p class="coursesubtitle">Uploads
-			<p>
-			<div style="width: 100%; min-height: 250px">
-
-				<a href="google.de" style="float: left; padding-right: 30px">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/tum.png")">
-						</div>
-						<div>TU München</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/unistuff.png")">
-						</div>
-						<div>Unistuff</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/dropbox.png")">
-						</div>
-						<div>Dropbox</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/pdf.png")">
-						</div>
-						<div>Student-Summary.pdf</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/moodle.png")">
-						</div>
-						<div>Moodle</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/facebook.png")">
-						</div>
-						<div>Facebook Group</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/pdf.png")">
-						</div>
-						<div>Student-Summary2.pdf</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/link.png")">
-						</div>
-						<div>Link</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/piazza.png")">
-						</div>
-						<div>Piazza</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src="@routes.Assets.at("images/tumonline.png")">
-						</div>
-						<div>TumOnline</div>
-					</div>
-				</a>
+		   	 <a href="google.de" class="uploaditem">
+			  <div> 
+			   <div class="uploaditembox"> 
+			      <img src="@routes.Assets.at("images/tumonline.png")">
+			   </div>
+			   <div> TumOnline </div>
+			  </div>
+			 </a>	
 
 			</div>
-
-			<div style="width: 100; min-height: 20px;">
-				<button type="button" class="btn btn-sm btn-primary"
-					data-toggle="modal" data-target="#myModal"
-					style="height: 30px; width: 200px">Upload more...</button>
+						
+			<div style="width:100; min-height: 20px;">			
+			 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal"
+			 style="height: 30px; width: 200px"> Upload more... </button>
 			</div>
-
+		
 		</div>
+		
+		
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Upload new teaching material</h4>
+              </div>
+              <div class="modal-body">
+                
+                <div class="input-group">
+                  <span class="input-group-addon fileinput-button" id="basic-addon1"> Document </span>
+                  <input type="file" name="files[]" multiple="" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                
+                <span class="btn fileinput-button">
+                  <i class="glyphicon glyphicon-plus"></i>
+                  <span>Add file</span>
+                  <input type="file" multiple="" name="files[]">
+                </span>
+                
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">TumOnline</a></li>
+                          <li><a href="#">Unistuff</a></li>
+                          <li><a href="#">Dropbox</a></li>
+                          <li><a href="#">Link</a></li>
+                          <li><a href="#">Sonstiges</a></li>
+                        </ul>
+                      </div><!-- /btn-group -->
+                      <input type="text" class="form-control" aria-label="...">
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                </div>
+                
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary"> Upload </button>
+              </div>
+            </div>
+          </div>
+        </div>		
+		
+	@(course :Course ,ranking :Overallranking)
+<form action="@routes.Application.rateCourse(course.id)">
+         <div id="rating" style="padding: 50px 0 0 0">  
+		   <p class="coursesubtitle">Rating<p>
+		 
+			
+			<div style="width:100%; height:30px">
+			<table>
+				<tr>
+					<td><div style="float:left; width:300px">Fairness and help:</div></td>		
+					<td><input id="input-1" name ="fair" value="@ranking.fair" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs">
+					</td>
+            	</tr>
+            </table>
+            </div>
+            </div>
+            
+            <div style="width:100%; height:30px">
+			<table>
+				<tr>            
+            		<td><div style="float:left; width:300px">Material und understanding:</div></td>            
+          			 <td><input id="input-3" name="material" value="@ranking.material" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
+            </div>
+            
+            <div style="width:100%; height:30px">
+			<table>
+				<tr>               
+            		<td><div style="float:left; width:300px">fun and level of interest:</div></td>
+            		<td><input id="input-4" name="fun" value="@ranking.fun" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
+            </div>
+            
+            <div style="width:100%; height:30px">
+			<table>
+				<tr>               
+          			  <td><div style="float:left; width:300px">grade and effort:</div></td>
+          			  <td><input id="input-2" name="grade" value="@ranking.grade" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
+            </div>
 
-
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel">Upload new teaching
-							material</h4>
-					</div>
-					<div class="modal-body">
-
-						<div class="input-group">
-							<span class="input-group-addon fileinput-button"
-								id="basic-addon1"> Document </span> <input type="file"
-								name="files[]" multiple="" class="form-control"
-								placeholder="Username" aria-describedby="basic-addon1">
-						</div>
-
-						<span class="btn fileinput-button"> <i
-							class="glyphicon glyphicon-plus"></i> <span>Add file</span> <input
-							type="file" multiple="" name="files[]">
-						</span>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="input-group">
-									<div class="input-group-btn">
-										<button type="button" class="btn btn-default dropdown-toggle"
-											data-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false">
-											Action <span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu">
-											<li><a href="#">TumOnline</a></li>
-											<li><a href="#">Unistuff</a></li>
-											<li><a href="#">Dropbox</a></li>
-											<li><a href="#">Link</a></li>
-											<li><a href="#">Sonstiges</a></li>
-										</ul>
-									</div>
-									<!-- /btn-group -->
-									<input type="text" class="form-control" aria-label="...">
-								</div>
-								<!-- /input-group -->
-							</div>
-							<!-- /.col-lg-6 -->
-						</div>
-
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<button type="button" class="btn btn-primary">Upload</button>
-					</div>
-				</div>
+            <div style="width:100%; height:30px">
+			<table>
+				<tr>                  
+		            <td><div style="float:left; width:300px">recommendation:</div></td>
+		   			<td><input id="input-2" name="recommend" value="@ranking.recommend" class="rating" data-min="0" data-max="5" data-step="0.5" data-size="xs"></td>
+            	</tr>
+            </table>
+            </div>
+            
+			
+            
+	    	<div style="width:100%; height:30px">
+	    		<p class="text-title">Overall Rate: @ranking.overall_rate </p>
 			</div>
+			<div style="width:100; min-height: 20px;">			
+			 <button type="submit" class="btn btn-sm btn-primary" style="height: 30px; width: 200px"> 
+			 Rate the course </button>
+			</div>
+			</form>
+			
+
+		
+	
+		
+		
+		
+		
+			
+				
+			<!-- <button type="button" class="btn btn-sm btn-primary">Rate this course</button> -->
+	
+		 </div>
+		
+		
+		
+		
+		
+		
+          <div id="comments" style="padding: 50px 0 0 0">  
+		    <p class="coursesubtitle">Comments<p>
+		    <div class="panel panel-default">
+		      <ul class="list-group">
+		       <li class="list-group-item"> I took this course last year. It was great!! I learned a lot. :)</li>
+		       <li class="list-group-item"> You just need to learn the slides for the exam.</li> 
+		   	   <li class="list-group-item"> This professor is so awesome. Its easy to get a good grade.</li>
+		      </ul>   
+		   	   <textarea type="text" id="comment" class="form-control" style="height: 70px" 
+		   	    placeholder="Type in your comment here..." cols="40" rows="5"></textarea>		   	   	
+		      </div>
+		      
+		       <!--<button type="button" class="btn btn- btn-primary" style="float:right">Comment</button>-->
+		   	   	<div style="width:100; min-height: 20px; padding-top:0px">			
+			     <button type="button" class="btn btn-sm btn-primary" style="height: 30px; width: 200px"> 
+			     Comment this course </button>
+			   </div>
+		      
+		     </div>
+		    
+		  </div>	
+			 
+		  
+		    
+		
 		</div>
-
-		@(course :Course ,ranking :Overallranking)
-		<form action="@routes.Application.rateCourse(course.id)">
-			<div id="rating" style="padding: 50px 0 0 0">
-				<p class="coursesubtitle">Rating
-				<p>
-				<div style="width: 100%; height: 30px">
-					<table>
-						<tr>
-							<td><div style="float: left; width: 300px">Fairness
-									and help:</div></td>
-							<td><input id="input-1" name="fair" value="@ranking.fair"
-								class="rating" data-min="0" data-max="5" data-step="0.5"
-								data-size="xs"></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-
-			<div style="width: 100%; height: 30px">
-				<table>
-					<tr>
-						<td><div style="float: left; width: 300px">Material und
-								understanding:</div></td>
-						<td><input id="input-3" name="material"
-							value="@ranking.material" class="rating" data-min="0"
-							data-max="5" data-step="0.5" data-size="xs"></td>
-					</tr>
-				</table>
-			</div>
-
-			<div style="width: 100%; height: 30px">
-				<table>
-					<tr>
-						<td><div style="float: left; width: 300px">fun and
-								level of interest:</div></td>
-						<td><input id="input-4" name="fun" value="@ranking.fun"
-							class="rating" data-min="0" data-max="5" data-step="0.5"
-							data-size="xs"></td>
-					</tr>
-				</table>
-			</div>
-
-			<div style="width: 100%; height: 30px">
-				<table>
-					<tr>
-						<td><div style="float: left; width: 300px">grade and
-								effort:</div></td>
-						<td><input id="input-2" name="grade" value="@ranking.grade"
-							class="rating" data-min="0" data-max="5" data-step="0.5"
-							data-size="xs"></td>
-					</tr>
-				</table>
-			</div>
-
-			<div style="width: 100%; height: 30px">
-				<table>
-					<tr>
-						<td><div style="float: left; width: 300px">recommendation:</div></td>
-						<td><input id="input-2" name="recommend"
-							value="@ranking.recommend" class="rating" data-min="0"
-							data-max="5" data-step="0.5" data-size="xs"></td>
-					</tr>
-				</table>
-			</div>
-
-
-
-			<div style="width: 100%; height: 30px">
-				<p class="text-title">Overall Rate: @ranking.overall_rate</p>
-			</div>
-			<div style="width: 100; min-height: 20px;">
-				<button type="submit" class="btn btn-sm btn-primary"
-					style="height: 30px; width: 200px">Rate the course</button>
-			</div>
-		</form>
-
-
-
-
-
-
-
-
-
-
-		<!-- <button type="button" class="btn btn-sm btn-primary">Rate this course</button> -->
-
-	</div>
-
-
-
-
-
-		<form method="get" action="@routes.Application.saveComment(course.id)" id="commentForm">
-	<div  style="padding: 50px 0 0 0">
-		<p class="coursesubtitle">Comments
-		<p>
-		<div class="panel panel-default">
-			<ul class="list-group" id="comments">
-			@for(comment <- comments){
-				<li class="list-group-item"><p>(@comment.student_id)</p>@comment.comment </li>
-			}
-			</ul>
-			<input type="text" id="comment" class="form-control"
-				style="height: 70px" name="commentPlace" placeholder="Type in your comment here..."
-				cols="40" rows="5" ></input>
-		</div>
-
-		<!--<button type="button" class="btn btn- btn-primary" style="float:right">Comment</button>-->
-		<div style="width: 100; min-height: 20px; padding-top: 0px">
-			<button type="button" id="commentBtn" class="btn btn-sm btn-primary"
-				style="height: 30px; width: 200px">Comment this course</button>
-		</div>
-	</div>
-	</div>
-		</form>
-
-
-
-
-	</div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-				 $('#commentBtn').on('click', function(e) {
-				        var ul = $("#comments");
-				        var li = document.createElement("li");
-				        var name =document.createElement("p");
-				        var comment = document.createElement("p");
-				        name.appendChild(document.createTextNode("(@student.name)"));
-				        comment.appendChild(document.createTextNode(document.getElementById("comment").value));
-						li.appendChild(name);
-				        li.appendChild(comment);
-				        li.setAttribute("class","list-group-item");
-				        ul.append(li).fadeIn(3000);
-				        $('#commentForm').submit();
-			});
-		});
-	</script>
-
-
-</body>
-</html>
+		
+			
+		
+		</body>
+		</html>
+        

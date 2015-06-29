@@ -20,7 +20,7 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object compareCoursesForm extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+object viewAllCourses extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
 
     /**/
     def apply():play.api.templates.HtmlFormat.Appendable = {
@@ -38,8 +38,8 @@ Seq[Any]()}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 28 21:57:27 CEST 2015
-                    SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/compareCoursesForm.scala.html
+                    DATE: Sun Jun 28 21:57:28 CEST 2015
+                    SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/viewAllCourses.scala.html
                     HASH: c7efc0f75c87094f54f4173904bb22e85df9d1e0
                     MATRIX: 
                     LINES: 
