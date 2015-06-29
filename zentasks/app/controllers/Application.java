@@ -4,31 +4,40 @@ import static play.data.Form.form;
 
 import java.util.ArrayList;
 
+import models.Comment;
 import models.Course;
 import models.Job;
 import models.Overallranking;
 import models.Ranking;
 import models.Student;
 import play.Logger;
+import play.data.DynamicForm;
 import play.data.Form;
 import play.db.ebean.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
-import views.html.*;
+import views.html.compare;
+import views.html.dashboard;
 import views.html.fiveStarRate;
+import views.html.login;
+import views.html.viewCourse;
 
 @Security.Authenticated(Secured.class)
 public class Application extends Controller {
 	final static Form<Overallranking> rankingForm = form(Overallranking.class);
 
-	public static Result viewAllCourses() {
-		return ok(viewAllCourses.render());
+	
+	public static Result saveComment(Long id){
+		
+		 new Comment(Course.findById(id),request().username(),request().getQueryString("commentPlace"));
+		 return ok(viewCourse.render(Student.find.byId(request().username()),
+					Course.findById(id), Overallranking.findByCourseId(id),Comment.findByCourseId(id)));
 	}
-
+	
 	public static Result viewCourse(Long id) {
 		return ok(viewCourse.render(Student.find.byId(request().username()),
-				Course.findById(id), Overallranking.findByCourseId(id)));
+				Course.findById(id), Overallranking.findByCourseId(id),Comment.findByCourseId(id)));
 	}
 
 	public static Result dashboard() {

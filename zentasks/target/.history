@@ -1,6 +1,3 @@
-run
-eclipse
-run
 clean
 compile
 clean
@@ -489,6 +486,15 @@ clean
 compile
 run
 clean
+compile
+run
+exit
+run
+clean
+compile
+run
+clean
+reload
 compile
 run
 exit

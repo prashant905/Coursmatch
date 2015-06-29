@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/conf/routes
-// @HASH:16de856a32f0f30727b309509e84fb12142761c8
-// @DATE:Sun Jun 28 21:57:27 CEST 2015
+// @HASH:af961fe2907a2b327863c098d555c9ad7ed9b9cb
+// @DATE:Mon Jun 29 05:09:25 CEST 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,10 +13,10 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:25
-// @LINE:21
+// @LINE:24
 // @LINE:20
 // @LINE:19
+// @LINE:18
 // @LINE:17
 // @LINE:15
 // @LINE:13
@@ -26,11 +26,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:25
+// @LINE:24
 class ReverseAssets {
     
 
-// @LINE:25
+// @LINE:24
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -39,9 +39,9 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:21
 // @LINE:20
 // @LINE:19
+// @LINE:18
 // @LINE:17
 // @LINE:15
 // @LINE:13
@@ -52,13 +52,7 @@ def at(file:String): Call = {
 class ReverseApplication {
     
 
-// @LINE:15
-def viewAllCourses(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "courses")
-}
-                                                
-
-// @LINE:20
+// @LINE:18
 def compareCourses(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "compareCourses")
 }
@@ -70,7 +64,7 @@ def dashboard(): Call = {
 }
                                                 
 
-// @LINE:17
+// @LINE:15
 def viewCourse(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "course/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
@@ -82,13 +76,19 @@ def logout(): Call = {
 }
                                                 
 
-// @LINE:19
+// @LINE:17
 def rateCourse(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "rateCourse/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:21
+// @LINE:20
+def saveComment(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "course/" + implicitly[PathBindable[Long]].unbind("id", id) + "/")
+}
+                                                
+
+// @LINE:19
 def displayCourseRatings(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "displayCourseRatings")
 }
@@ -120,10 +120,10 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "login")
                   
 
 
-// @LINE:25
-// @LINE:21
+// @LINE:24
 // @LINE:20
 // @LINE:19
+// @LINE:18
 // @LINE:17
 // @LINE:15
 // @LINE:13
@@ -133,11 +133,11 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "login")
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:25
+// @LINE:24
 class ReverseAssets {
     
 
-// @LINE:25
+// @LINE:24
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -151,9 +151,9 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:21
 // @LINE:20
 // @LINE:19
+// @LINE:18
 // @LINE:17
 // @LINE:15
 // @LINE:13
@@ -164,18 +164,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 class ReverseApplication {
     
 
-// @LINE:15
-def viewAllCourses : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.viewAllCourses",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "courses"})
-      }
-   """
-)
-                        
-
-// @LINE:20
+// @LINE:18
 def compareCourses : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.compareCourses",
    """
@@ -197,7 +186,7 @@ def dashboard : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:17
+// @LINE:15
 def viewCourse : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.viewCourse",
    """
@@ -219,7 +208,7 @@ def logout : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:19
+// @LINE:17
 def rateCourse : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.rateCourse",
    """
@@ -230,7 +219,18 @@ def rateCourse : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:21
+// @LINE:20
+def saveComment : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.saveComment",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "course/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/"})
+      }
+   """
+)
+                        
+
+// @LINE:19
 def displayCourseRatings : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.displayCourseRatings",
    """
@@ -275,10 +275,10 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:25
-// @LINE:21
+// @LINE:24
 // @LINE:20
 // @LINE:19
+// @LINE:18
 // @LINE:17
 // @LINE:15
 // @LINE:13
@@ -289,11 +289,11 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:25
+// @LINE:24
 class ReverseAssets {
     
 
-// @LINE:25
+// @LINE:24
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /public path""", _prefix + """assets/$file<.+>""")
 )
@@ -302,9 +302,9 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:21
 // @LINE:20
 // @LINE:19
+// @LINE:18
 // @LINE:17
 // @LINE:15
 // @LINE:13
@@ -315,13 +315,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 class ReverseApplication {
     
 
-// @LINE:15
-def viewAllCourses(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.viewAllCourses(), HandlerDef(this, "controllers.Application", "viewAllCourses", Seq(), "GET", """""", _prefix + """courses""")
-)
-                      
-
-// @LINE:20
+// @LINE:18
 def compareCourses(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.compareCourses(), HandlerDef(this, "controllers.Application", "compareCourses", Seq(), "GET", """""", _prefix + """compareCourses""")
 )
@@ -333,7 +327,7 @@ def dashboard(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:17
+// @LINE:15
 def viewCourse(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.viewCourse(id), HandlerDef(this, "controllers.Application", "viewCourse", Seq(classOf[Long]), "GET", """""", _prefix + """course/$id<[^/]+>""")
 )
@@ -345,13 +339,19 @@ def logout(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:19
+// @LINE:17
 def rateCourse(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.rateCourse(id), HandlerDef(this, "controllers.Application", "rateCourse", Seq(classOf[Long]), "GET", """""", _prefix + """rateCourse/$id<[^/]+>""")
 )
                       
 
-// @LINE:21
+// @LINE:20
+def saveComment(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.saveComment(id), HandlerDef(this, "controllers.Application", "saveComment", Seq(classOf[Long]), "GET", """""", _prefix + """course/$id<[^/]+>/""")
+)
+                      
+
+// @LINE:19
 def displayCourseRatings(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.displayCourseRatings(), HandlerDef(this, "controllers.Application", "displayCourseRatings", Seq(), "GET", """""", _prefix + """displayCourseRatings""")
 )
