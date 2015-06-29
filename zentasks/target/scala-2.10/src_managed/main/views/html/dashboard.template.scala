@@ -76,7 +76,7 @@ Seq[Any](format.raw/*1.60*/("""
 		<div id="menu2" class="tab-pane fade">
 
 			<h3>Search Courses</h3>
-			<form style="top: 45px; position: relative;z-index:1000;"
+			<form style="top: 45px; position: relative; z-index: 1000;"
 				action=""""),_display_(Seq[Any](/*52.14*/routes/*52.20*/.Application.compareCourses())),format.raw/*52.49*/("""">
 				<div
 					style="width: 100; min-height: 20px; margin: auto; padding-bottom: 15px;">
@@ -109,149 +109,146 @@ Seq[Any](format.raw/*1.60*/("""
 				</tbody>
 			</table>
 		</div>
-	</div>
-</div>
 
-<div id="menu3" class="tab-pane fade">
-	<h3>Jobs</h3>
+		<div id="menu3" class="tab-pane fade">
+			<h3>Jobs</h3>
 
-	"""),_display_(Seq[Any](/*90.3*/for(job <- jobs) yield /*90.19*/ {_display_(Seq[Any](format.raw/*90.21*/("""
+			"""),_display_(Seq[Any](/*88.5*/for(job <- jobs) yield /*88.21*/ {_display_(Seq[Any](format.raw/*88.23*/("""
 
-	<div class="panel panel-default">
-		<div class="panel-body">
+			<div class="panel panel-default">
+				<div class="panel-body">
 
 
-			<div style="float: left; width: 160px">
-				<img src="""),_display_(Seq[Any](/*97.15*/{"assets/images/" + job.company_name + ".png"})),format.raw/*97.61*/(""">
-			</div>
-			<div style="float: left">
+					<div style="float: left; width: 160px">
+						<img src="""),_display_(Seq[Any](/*95.17*/{"assets/images/" + job.company_name + ".png"})),format.raw/*95.63*/(""">
+					</div>
+					<div style="float: left">
 
 
-				<div style="float: left; width: 500px">
-					<span class="text-title">Description</span>
-					<p>"""),_display_(Seq[Any](/*104.10*/job/*104.13*/.description)),format.raw/*104.25*/("""</p>
+						<div style="float: left; width: 500px">
+							<span class="text-title">Description</span>
+							<p>"""),_display_(Seq[Any](/*102.12*/job/*102.15*/.description)),format.raw/*102.27*/("""</p>
+						</div>
+
+						<div style="float: left; padding-left: 30px">
+							<span class="text-title">Company</span> <span>"""),_display_(Seq[Any](/*106.55*/job/*106.58*/.company_name)),format.raw/*106.71*/("""</span><br>
+							<span class="text-title">Salary </span> <span>"""),_display_(Seq[Any](/*107.55*/job/*107.58*/.salary)),format.raw/*107.65*/("""</span><br>
+							<span class="text-title">Beginning Time</span> <span>"""),_display_(Seq[Any](/*108.62*/job/*108.65*/.begin_time)),format.raw/*108.76*/("""</span>
+						</div>
+
+
+					</div>
+
 				</div>
-
-				<div style="float: left; padding-left: 30px">
-					<span class="text-title">Company</span> <span>"""),_display_(Seq[Any](/*108.53*/job/*108.56*/.company_name)),format.raw/*108.69*/("""</span><br>
-					<span class="text-title">Salary </span> <span>"""),_display_(Seq[Any](/*109.53*/job/*109.56*/.salary)),format.raw/*109.63*/("""</span><br>
-					<span class="text-title">Beginning Time</span> <span>"""),_display_(Seq[Any](/*110.60*/job/*110.63*/.begin_time)),format.raw/*110.74*/("""</span>
-				</div>
-
-
 			</div>
+			""")))})),format.raw/*116.5*/("""
+
+		</div>
+
+
+
+
+
+		<div id="menu4" class="tab-pane fade">
+			<h3>About Us</h3>
+			<p>
+				CourseMatch is a team project, which was created by students as part
+				of the Web Application Engineering<br> course at the Technical
+				University Munich. As a result of the hard time finding university
+				courses and<br> jobs the team decided to implement a web
+				application for universities to make life for students easier<br>
+				when it comes to choosing courses.
+			</p>
+
+			<h3>Imprint</h3>
+			<p>
+				CourseMatch GmbH</br> Hauptstrasse 123</br> 80333 Munich - Germany
+			</p>
+
+			<p>
+				Contact</br> + 49 42-123456789</br> team[at]coursematch.de
+			</p>
+
+			<p>
+				CourseMatch GmbH</br> Headquarters: Munich</br> Register Court: Munich HRB
+				102273</br> Ust-Ident-Nr .: DE123456789
+			</p>
+
+			<p>Managing Director: The CourseMatch Team</p>
+
+			<p>
+				Responsible for content according to § 55 II RStV: CourseMatch</br> ©
+				Copyright 2015-2123</br> CourseMatch GmbH
+			</p>
+
+			<p>All rights reserved.</p>
+
+			<p>
+				The information on this website has been carefully compiled and
+				checked to the best of its knowledge and belief.<br> No
+				guarantee or liability for the information, particularly regarding
+				its accuracy, completeness, timeliness or<br> availability at
+				any time, but can not be accepted. Any liability for damages arising
+				from the use of the <br> information, is - to the extent
+				permitted by law - excluded. The website also contains links or
+				references to <br> other websites. The CourseMatch GmbH is not
+				responsible for the content of other Web sites, it dissociates <br>
+				itself and makes this content as its own. The CourseMatch GmbH
+				reserves the right to amend without notice the<br> information
+				provided, to change or remove.
+			</p>
+
+			<p>
+				Privacy: The radio.de GmbH will abide strictly by the data
+				protection regulations and only use particular<br> personally
+				identifiable information such as name or e-mail address to answer or
+				to process requests concern.
+			</p>
+
+
 
 		</div>
 	</div>
-	""")))})),format.raw/*118.3*/("""
-
 </div>
 
-
-
-
-<div id="menu4" class="tab-pane fade">
-	<h3>About Us</h3>
-	<p>
-		CourseMatch is a team project, which was created by students as part
-		of the Web Application Engineering<br> course at the Technical
-		University Munich. As a result of the hard time finding university
-		courses and<br> jobs the team decided to implement a web
-		application for universities to make life for students easier<br>
-		when it comes to choosing courses.
-	</p>
-
-	<h3>Imprint</h3>
-	<p>
-		CourseMatch GmbH</br> Hauptstrasse 123</br> 80333 Munich - Germany
-	</p>
-
-	<p>
-		Contact</br> + 49 42-123456789</br> team[at]coursematch.de
-	</p>
-
-	<p>
-		CourseMatch GmbH</br> Headquarters: Munich</br> Register Court: Munich HRB
-		102273</br> Ust-Ident-Nr .: DE123456789
-	</p>
-
-	<p>Managing Director: The CourseMatch Team</p>
-
-	<p>
-		Responsible for content according to § 55 II RStV: CourseMatch</br> ©
-		Copyright 2015-2123</br> CourseMatch GmbH
-	</p>
-
-	<p>All rights reserved.</p>
-
-	<p>
-		The information on this website has been carefully compiled and
-		checked to the best of its knowledge and belief.<br> No guarantee
-		or liability for the information, particularly regarding its accuracy,
-		completeness, timeliness or<br> availability at any time, but can
-		not be accepted. Any liability for damages arising from the use of the
-		<br> information, is - to the extent permitted by law - excluded.
-		The website also contains links or references to <br> other
-		websites. The CourseMatch GmbH is not responsible for the content of
-		other Web sites, it dissociates <br> itself and makes this
-		content as its own. The CourseMatch GmbH reserves the right to amend
-		without notice the<br> information provided, to change or remove.
-	</p>
-
-	<p>
-		Privacy: The radio.de GmbH will abide strictly by the data protection
-		regulations and only use particular<br> personally identifiable
-		information such as name or e-mail address to answer or to process
-		requests concern.
-	</p>
-
-
-
-
-
-
-
-</div>
-</div>
-</div>
 
 <script>
-	$(document).ready(function() """),format.raw/*191.31*/("""{"""),format.raw/*191.32*/("""
+	$(document).ready(function() """),format.raw/*188.31*/("""{"""),format.raw/*188.32*/("""
 		$('#courses').dataTable();
-	"""),format.raw/*193.2*/("""}"""),format.raw/*193.3*/(""");
+	"""),format.raw/*190.2*/("""}"""),format.raw/*190.3*/(""");
 </script>
 <style>
-div.dropdown-menu>ul.dropdown-menu """),format.raw/*196.36*/("""{"""),format.raw/*196.37*/("""
+div.dropdown-menu>ul.dropdown-menu """),format.raw/*193.36*/("""{"""),format.raw/*193.37*/("""
 	max-height: 135px !important;
-"""),format.raw/*198.1*/("""}"""),format.raw/*198.2*/("""
+"""),format.raw/*195.1*/("""}"""),format.raw/*195.2*/("""
 
-#courses_wrapper>div.row """),format.raw/*200.26*/("""{"""),format.raw/*200.27*/("""
+#courses_wrapper>div.row """),format.raw/*197.26*/("""{"""),format.raw/*197.27*/("""
 	width: 1250px;
-"""),format.raw/*202.1*/("""}"""),format.raw/*202.2*/("""
+"""),format.raw/*199.1*/("""}"""),format.raw/*199.2*/("""
 
-#courses_filter>label """),format.raw/*204.23*/("""{"""),format.raw/*204.24*/("""
+#courses_filter>label """),format.raw/*201.23*/("""{"""),format.raw/*201.24*/("""
 	float: right;
-"""),format.raw/*206.1*/("""}"""),format.raw/*206.2*/("""
+"""),format.raw/*203.1*/("""}"""),format.raw/*203.2*/("""
 
-#courses_filter>label>input[type="search"] """),format.raw/*208.44*/("""{"""),format.raw/*208.45*/("""
+#courses_filter>label>input[type="search"] """),format.raw/*205.44*/("""{"""),format.raw/*205.45*/("""
 	width: 400px !important;
-"""),format.raw/*210.1*/("""}"""),format.raw/*210.2*/("""
+"""),format.raw/*207.1*/("""}"""),format.raw/*207.2*/("""
 
-.pagination """),format.raw/*212.13*/("""{"""),format.raw/*212.14*/("""
+.pagination """),format.raw/*209.13*/("""{"""),format.raw/*209.14*/("""
 	top: -25px;
 	position: relative;
-"""),format.raw/*215.1*/("""}"""),format.raw/*215.2*/("""
+"""),format.raw/*212.1*/("""}"""),format.raw/*212.2*/("""
 
-.panel-body """),format.raw/*217.13*/("""{"""),format.raw/*217.14*/("""
+.panel-body """),format.raw/*214.13*/("""{"""),format.raw/*214.14*/("""
 	padding: 5px 15px 0;
-"""),format.raw/*219.1*/("""}"""),format.raw/*219.2*/("""
+"""),format.raw/*216.1*/("""}"""),format.raw/*216.2*/("""
 
-.panel """),format.raw/*221.8*/("""{"""),format.raw/*221.9*/("""
+.panel """),format.raw/*218.8*/("""{"""),format.raw/*218.9*/("""
 	margin-bottom: 3px;
-"""),format.raw/*223.1*/("""}"""),format.raw/*223.2*/("""
+"""),format.raw/*220.1*/("""}"""),format.raw/*220.2*/("""
 </style>
 
-""")))})),format.raw/*226.2*/("""
+""")))})),format.raw/*223.2*/("""
 """))}
     }
     
@@ -264,11 +261,11 @@ div.dropdown-menu>ul.dropdown-menu """),format.raw/*196.36*/("""{"""),format.raw
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 28 21:57:28 CEST 2015
+                    DATE: Mon Jun 29 14:33:57 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/dashboard.scala.html
-                    HASH: 4f9b47a53dcc77423afa1ccab9e2f33865b07051
-                    MATRIX: 802->1|954->59|991->62|1025->88|1063->89|1637->628|1669->644|1709->646|2090->991|2102->994|2136->1006|2294->1133|2493->1296|2508->1302|2559->1331|3155->1892|3193->1914|3233->1916|3304->1951|3319->1957|3375->1991|3414->1994|3429->2000|3456->2005|3510->2023|3525->2029|3562->2044|3616->2062|3631->2068|3659->2074|3713->2092|3728->2098|3762->2110|3818->2135|3971->2253|4003->2269|4043->2271|4209->2401|4277->2447|4466->2599|4479->2602|4514->2614|4674->2737|4687->2740|4723->2753|4825->2818|4838->2821|4868->2828|4977->2900|4990->2903|5024->2914|5115->2973|7246->5075|7276->5076|7337->5109|7366->5110|7454->5169|7484->5170|7546->5204|7575->5205|7633->5234|7663->5235|7710->5254|7739->5255|7794->5281|7824->5282|7870->5300|7899->5301|7975->5348|8005->5349|8062->5378|8091->5379|8136->5395|8166->5396|8232->5434|8261->5435|8306->5451|8336->5452|8389->5477|8418->5478|8457->5489|8486->5490|8538->5514|8567->5515|8614->5530
-                    LINES: 26->1|29->1|30->2|30->2|30->2|48->20|48->20|48->20|62->34|62->34|62->34|72->44|80->52|80->52|80->52|100->72|100->72|100->72|103->75|103->75|103->75|103->75|103->75|103->75|104->76|104->76|104->76|105->77|105->77|105->77|106->78|106->78|106->78|108->80|118->90|118->90|118->90|125->97|125->97|132->104|132->104|132->104|136->108|136->108|136->108|137->109|137->109|137->109|138->110|138->110|138->110|146->118|219->191|219->191|221->193|221->193|224->196|224->196|226->198|226->198|228->200|228->200|230->202|230->202|232->204|232->204|234->206|234->206|236->208|236->208|238->210|238->210|240->212|240->212|243->215|243->215|245->217|245->217|247->219|247->219|249->221|249->221|251->223|251->223|254->226
+                    HASH: 7876ff87b200420b6cad90fb777e895f980766ab
+                    MATRIX: 802->1|954->59|991->62|1025->88|1063->89|1637->628|1669->644|1709->646|2090->991|2102->994|2136->1006|2294->1133|2495->1298|2510->1304|2561->1333|3157->1894|3195->1916|3235->1918|3306->1953|3321->1959|3377->1993|3416->1996|3431->2002|3458->2007|3512->2025|3527->2031|3564->2046|3618->2064|3633->2070|3661->2076|3715->2094|3730->2100|3764->2112|3820->2137|3962->2244|3994->2260|4034->2262|4208->2400|4276->2446|4475->2608|4488->2611|4523->2623|4689->2752|4702->2755|4738->2768|4842->2835|4855->2838|4885->2845|4996->2919|5009->2922|5043->2933|5144->3002|7373->5202|7403->5203|7464->5236|7493->5237|7581->5296|7611->5297|7673->5331|7702->5332|7760->5361|7790->5362|7837->5381|7866->5382|7921->5408|7951->5409|7997->5427|8026->5428|8102->5475|8132->5476|8189->5505|8218->5506|8263->5522|8293->5523|8359->5561|8388->5562|8433->5578|8463->5579|8516->5604|8545->5605|8584->5616|8613->5617|8665->5641|8694->5642|8741->5657
+                    LINES: 26->1|29->1|30->2|30->2|30->2|48->20|48->20|48->20|62->34|62->34|62->34|72->44|80->52|80->52|80->52|100->72|100->72|100->72|103->75|103->75|103->75|103->75|103->75|103->75|104->76|104->76|104->76|105->77|105->77|105->77|106->78|106->78|106->78|108->80|116->88|116->88|116->88|123->95|123->95|130->102|130->102|130->102|134->106|134->106|134->106|135->107|135->107|135->107|136->108|136->108|136->108|144->116|216->188|216->188|218->190|218->190|221->193|221->193|223->195|223->195|225->197|225->197|227->199|227->199|229->201|229->201|231->203|231->203|233->205|233->205|235->207|235->207|237->209|237->209|240->212|240->212|242->214|242->214|244->216|244->216|246->218|246->218|248->220|248->220|251->223
                     -- GENERATED --
                 */
             

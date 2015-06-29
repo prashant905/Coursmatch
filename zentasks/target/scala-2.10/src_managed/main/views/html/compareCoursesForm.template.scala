@@ -38,7 +38,7 @@ Seq[Any]()}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 28 21:57:27 CEST 2015
+                    DATE: Mon Jun 29 04:56:33 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/compareCoursesForm.scala.html
                     HASH: c7efc0f75c87094f54f4173904bb22e85df9d1e0
                     MATRIX: 

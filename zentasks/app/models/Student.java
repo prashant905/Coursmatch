@@ -11,14 +11,12 @@ import play.data.validation.*;
  * User entity managed by Ebean
  */
 @Entity 
-@Table(name="student")
 public class Student extends Model {
 
     private static final long serialVersionUID = 1L;
 
 	@Id
     @Constraints.Required
-    @Formats.NonEmpty
     public String email;
     
     @Constraints.Required
