@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/conf/routes
-// @HASH:af961fe2907a2b327863c098d555c9ad7ed9b9cb
-// @DATE:Mon Jun 29 05:09:25 CEST 2015
+// @HASH:81886b1ccee44bfbd9833ff858c09cb36da17467
+// @DATE:Tue Jun 30 05:16:09 CEST 2015
 
 package controllers;
 

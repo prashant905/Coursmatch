@@ -18,6 +18,10 @@ GET  /rateCourse/:id                       controllers.Application.rateCourse(id
 GET /compareCourses                       controllers.Application.compareCourses()
 GET /displayCourseRatings                      controllers.Application.displayCourseRatings()
 GET    /course/:id/                       controllers.Application.saveComment(id:Long)
+
+GET /dashboard/                       controllers.Application.saveStudentTags()
+GET /course/                       controllers.Application.saveCourseTags()
+POST    /course/                            controllers.Application.uploadMaterial()
 # Javascript routing
 
 # Map static resources from the /public folder to the /public path

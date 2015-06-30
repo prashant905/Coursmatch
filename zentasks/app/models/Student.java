@@ -25,6 +25,9 @@ public class Student extends Model {
     @Constraints.Required
     public String password;
     
+    public String course_tags;
+    public String job_tags;
+    
     // -- Queries
     
     public static Model.Finder<String,Student> find = new Model.Finder<String,Student>(String.class, Student.class);

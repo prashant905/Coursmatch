@@ -20,14 +20,14 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object dashboard extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template3[Student,List[Course],List[Job],play.api.templates.HtmlFormat.Appendable] {
+object dashboard extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template7[List[Course],List[Job],Student,List[Course],List[Job],String,String,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(student: Student , courses: List[Course], jobs:List[Job]):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(matchedCourses:List[Course],matchJobs:List[Job],student: Student , courses: List[Course], jobs:List[Job],course_tags:String,job_tags:String):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.60*/("""
-"""),_display_(Seq[Any](/*2.2*/main(student,courses,jobs)/*2.28*/{_display_(Seq[Any](format.raw/*2.29*/("""
+Seq[Any](format.raw/*1.143*/("""
+"""),_display_(Seq[Any](/*2.2*/main(student,courses,jobs,course_tags,job_tags)/*2.49*/{_display_(Seq[Any](format.raw/*2.50*/("""
 
 
 <div id="menu_container" class="container">
@@ -42,10 +42,37 @@ Seq[Any](format.raw/*1.60*/("""
 
 	<div class="tab-content">
 		<div id="home" class="tab-pane fade in active">
-			<h3>Dashboard... actually we need there the dashboard table with
-				news</h3>
+			<h3>Dashboard</h3>
 
-			"""),_display_(Seq[Any](/*20.5*/for(job <- jobs) yield /*20.21*/ {_display_(Seq[Any](format.raw/*20.23*/("""
+	
+<div class="panel panel-danger" style="margin-bottom:60px">
+	<div class="panel-heading">Recommended Courses</div>
+		<table id="recommendedCourses" class="table table-striped" cellspacing="0"
+				>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Professor</th>
+						<th>Chair</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody class="searchable">
+					"""),_display_(Seq[Any](/*33.7*/for(course <- matchedCourses) yield /*33.36*/ {_display_(Seq[Any](format.raw/*33.38*/("""
+					<tr>
+
+						<td><a href=""""),_display_(Seq[Any](/*36.21*/routes/*36.27*/.Application.viewCourse(course.id))),format.raw/*36.61*/("""">"""),_display_(Seq[Any](/*36.64*/course/*36.70*/.name)),format.raw/*36.75*/("""</td>
+						<td>"""),_display_(Seq[Any](/*37.12*/course/*37.18*/.professor_name)),format.raw/*37.33*/("""</td>
+						<td>"""),_display_(Seq[Any](/*38.12*/course/*38.18*/.chair)),format.raw/*38.24*/("""</td>
+						<td>"""),_display_(Seq[Any](/*39.12*/course/*39.18*/.description)),format.raw/*39.30*/("""</td>
+					</tr>
+					""")))})),format.raw/*41.7*/("""
+				</tbody>
+			</table>
+		</div>
+	<div class="panel panel-danger">
+		<div class="panel-heading">Recommended Jobs</div>
+			"""),_display_(Seq[Any](/*47.5*/for(job <- matchJobs) yield /*47.26*/ {_display_(Seq[Any](format.raw/*47.28*/("""
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -59,7 +86,8 @@ Seq[Any](format.raw/*1.60*/("""
 
 						<div style="float: left; width: 500px">
 							<span class="text-title">Description</span>
-							<p>"""),_display_(Seq[Any](/*34.12*/job/*34.15*/.description)),format.raw/*34.27*/("""</p>
+							<p>"""),_display_(Seq[Any](/*61.12*/job/*61.15*/.description)),format.raw/*61.27*/("""</p>
+							<p>"""),_display_(Seq[Any](/*62.12*/job/*62.15*/.company_name)),format.raw/*62.28*/("""</p>
 						</div>
 
 						<div style="float: left; padding-left: 30px"></div>
@@ -69,15 +97,16 @@ Seq[Any](format.raw/*1.60*/("""
 
 				</div>
 			</div>
-			""")))})),format.raw/*44.5*/("""
+			""")))})),format.raw/*72.5*/("""
 		</div>
-
+	</div>
 
 		<div id="menu2" class="tab-pane fade">
 
 			<h3>Search Courses</h3>
-			<form style="top: 45px; position: relative; z-index: 1000;"
-				action=""""),_display_(Seq[Any](/*52.14*/routes/*52.20*/.Application.compareCourses())),format.raw/*52.49*/("""">
+			<form
+				style="top: -38px; position: relative; z-index: 1000; left: -288px;"
+				action=""""),_display_(Seq[Any](/*81.14*/routes/*81.20*/.Application.compareCourses())),format.raw/*81.49*/("""">
 				<div
 					style="width: 100; min-height: 20px; margin: auto; padding-bottom: 15px;">
 					<button id="compareCoursesButton" type="submit"
@@ -97,15 +126,15 @@ Seq[Any](format.raw/*1.60*/("""
 					</tr>
 				</thead>
 				<tbody class="searchable">
-					"""),_display_(Seq[Any](/*72.7*/for(course <- courses) yield /*72.29*/ {_display_(Seq[Any](format.raw/*72.31*/("""
+					"""),_display_(Seq[Any](/*101.7*/for(course <- courses) yield /*101.29*/ {_display_(Seq[Any](format.raw/*101.31*/("""
 					<tr>
 
-						<td><a href=""""),_display_(Seq[Any](/*75.21*/routes/*75.27*/.Application.viewCourse(course.id))),format.raw/*75.61*/("""">"""),_display_(Seq[Any](/*75.64*/course/*75.70*/.name)),format.raw/*75.75*/("""</td>
-						<td>"""),_display_(Seq[Any](/*76.12*/course/*76.18*/.professor_name)),format.raw/*76.33*/("""</td>
-						<td>"""),_display_(Seq[Any](/*77.12*/course/*77.18*/.chair)),format.raw/*77.24*/("""</td>
-						<td>"""),_display_(Seq[Any](/*78.12*/course/*78.18*/.description)),format.raw/*78.30*/("""</td>
+						<td><a href=""""),_display_(Seq[Any](/*104.21*/routes/*104.27*/.Application.viewCourse(course.id))),format.raw/*104.61*/("""">"""),_display_(Seq[Any](/*104.64*/course/*104.70*/.name)),format.raw/*104.75*/("""</td>
+						<td>"""),_display_(Seq[Any](/*105.12*/course/*105.18*/.professor_name)),format.raw/*105.33*/("""</td>
+						<td>"""),_display_(Seq[Any](/*106.12*/course/*106.18*/.chair)),format.raw/*106.24*/("""</td>
+						<td>"""),_display_(Seq[Any](/*107.12*/course/*107.18*/.description)),format.raw/*107.30*/("""</td>
 					</tr>
-					""")))})),format.raw/*80.7*/("""
+					""")))})),format.raw/*109.7*/("""
 				</tbody>
 			</table>
 		</div>
@@ -113,27 +142,30 @@ Seq[Any](format.raw/*1.60*/("""
 		<div id="menu3" class="tab-pane fade">
 			<h3>Jobs</h3>
 
-			"""),_display_(Seq[Any](/*88.5*/for(job <- jobs) yield /*88.21*/ {_display_(Seq[Any](format.raw/*88.23*/("""
-
-			<div class="panel panel-default">
+				<table id="jobs" class="table table-striped" cellspacing="0">
+				<th></th>
+				<tbody class="searchable">
+					"""),_display_(Seq[Any](/*120.7*/for(job <- jobs) yield /*120.23*/ {_display_(Seq[Any](format.raw/*120.25*/("""
+					<tr>
+						<td>
+				<a href="""),_display_(Seq[Any](/*123.14*/job/*123.17*/.link)),format.raw/*123.22*/(""" target="_blank" >
+  	 			<div class="panel panel-default">
 				<div class="panel-body">
-
-
 					<div style="float: left; width: 160px">
-						<img src="""),_display_(Seq[Any](/*95.17*/{"assets/images/" + job.company_name + ".png"})),format.raw/*95.63*/(""">
+						<img src="""),_display_(Seq[Any](/*127.17*/{"assets/images/" + job.company_name + ".png"})),format.raw/*127.63*/(""">
 					</div>
 					<div style="float: left">
 
-
 						<div style="float: left; width: 500px">
 							<span class="text-title">Description</span>
-							<p>"""),_display_(Seq[Any](/*102.12*/job/*102.15*/.description)),format.raw/*102.27*/("""</p>
+							<p>"""),_display_(Seq[Any](/*133.12*/job/*133.15*/.description)),format.raw/*133.27*/("""</p>
 						</div>
 
 						<div style="float: left; padding-left: 30px">
-							<span class="text-title">Company</span> <span>"""),_display_(Seq[Any](/*106.55*/job/*106.58*/.company_name)),format.raw/*106.71*/("""</span><br>
-							<span class="text-title">Salary </span> <span>"""),_display_(Seq[Any](/*107.55*/job/*107.58*/.salary)),format.raw/*107.65*/("""</span><br>
-							<span class="text-title">Beginning Time</span> <span>"""),_display_(Seq[Any](/*108.62*/job/*108.65*/.begin_time)),format.raw/*108.76*/("""</span>
+							<span class="text-title">Company</span> <span>"""),_display_(Seq[Any](/*137.55*/job/*137.58*/.company_name)),format.raw/*137.71*/("""</span><br>
+							<span class="text-title">Salary </span> <span>"""),_display_(Seq[Any](/*138.55*/job/*138.58*/.salary)),format.raw/*138.65*/("""</span><br>
+							<span class="text-title">Beginning Time</span> <span>"""),_display_(Seq[Any](/*139.62*/job/*139.65*/.begin_time)),format.raw/*139.76*/("""</span>
+							<span class="text-title"><b>Contact:</b></span> <span>"""),_display_(Seq[Any](/*140.63*/job/*140.66*/.contact)),format.raw/*140.74*/("""</span>
 						</div>
 
 
@@ -141,7 +173,14 @@ Seq[Any](format.raw/*1.60*/("""
 
 				</div>
 			</div>
-			""")))})),format.raw/*116.5*/("""
+			</a>
+						
+						</td>
+					</tr>
+					""")))})),format.raw/*152.7*/("""
+				</tbody>
+			</table>
+
 
 		</div>
 
@@ -213,59 +252,61 @@ Seq[Any](format.raw/*1.60*/("""
 
 
 <script>
-	$(document).ready(function() """),format.raw/*188.31*/("""{"""),format.raw/*188.32*/("""
+	$(document).ready(function() """),format.raw/*227.31*/("""{"""),format.raw/*227.32*/("""
 		$('#courses').dataTable();
-	"""),format.raw/*190.2*/("""}"""),format.raw/*190.3*/(""");
+		$('#recommendedCourses').dataTable();
+		$('#jobs').dataTable();
+	"""),format.raw/*231.2*/("""}"""),format.raw/*231.3*/(""");
 </script>
 <style>
-div.dropdown-menu>ul.dropdown-menu """),format.raw/*193.36*/("""{"""),format.raw/*193.37*/("""
+div.dropdown-menu>ul.dropdown-menu """),format.raw/*234.36*/("""{"""),format.raw/*234.37*/("""
 	max-height: 135px !important;
-"""),format.raw/*195.1*/("""}"""),format.raw/*195.2*/("""
+"""),format.raw/*236.1*/("""}"""),format.raw/*236.2*/("""
 
-#courses_wrapper>div.row """),format.raw/*197.26*/("""{"""),format.raw/*197.27*/("""
+#courses_wrapper>div.row """),format.raw/*238.26*/("""{"""),format.raw/*238.27*/("""
 	width: 1250px;
-"""),format.raw/*199.1*/("""}"""),format.raw/*199.2*/("""
+"""),format.raw/*240.1*/("""}"""),format.raw/*240.2*/("""
 
-#courses_filter>label """),format.raw/*201.23*/("""{"""),format.raw/*201.24*/("""
+#courses_filter>label """),format.raw/*242.23*/("""{"""),format.raw/*242.24*/("""
 	float: right;
-"""),format.raw/*203.1*/("""}"""),format.raw/*203.2*/("""
+"""),format.raw/*244.1*/("""}"""),format.raw/*244.2*/("""
 
-#courses_filter>label>input[type="search"] """),format.raw/*205.44*/("""{"""),format.raw/*205.45*/("""
+#courses_filter>label>input[type="search"] """),format.raw/*246.44*/("""{"""),format.raw/*246.45*/("""
 	width: 400px !important;
-"""),format.raw/*207.1*/("""}"""),format.raw/*207.2*/("""
+"""),format.raw/*248.1*/("""}"""),format.raw/*248.2*/("""
 
-.pagination """),format.raw/*209.13*/("""{"""),format.raw/*209.14*/("""
+.pagination """),format.raw/*250.13*/("""{"""),format.raw/*250.14*/("""
 	top: -25px;
 	position: relative;
-"""),format.raw/*212.1*/("""}"""),format.raw/*212.2*/("""
+"""),format.raw/*253.1*/("""}"""),format.raw/*253.2*/("""
 
-.panel-body """),format.raw/*214.13*/("""{"""),format.raw/*214.14*/("""
+.panel-body """),format.raw/*255.13*/("""{"""),format.raw/*255.14*/("""
 	padding: 5px 15px 0;
-"""),format.raw/*216.1*/("""}"""),format.raw/*216.2*/("""
+"""),format.raw/*257.1*/("""}"""),format.raw/*257.2*/("""
 
-.panel """),format.raw/*218.8*/("""{"""),format.raw/*218.9*/("""
+.panel """),format.raw/*259.8*/("""{"""),format.raw/*259.9*/("""
 	margin-bottom: 3px;
-"""),format.raw/*220.1*/("""}"""),format.raw/*220.2*/("""
+"""),format.raw/*261.1*/("""}"""),format.raw/*261.2*/("""
 </style>
 
-""")))})),format.raw/*223.2*/("""
+""")))})),format.raw/*264.2*/("""
 """))}
     }
     
-    def render(student:Student,courses:List[Course],jobs:List[Job]): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs)
+    def render(matchedCourses:List[Course],matchJobs:List[Job],student:Student,courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String): play.api.templates.HtmlFormat.Appendable = apply(matchedCourses,matchJobs,student,courses,jobs,course_tags,job_tags)
     
-    def f:((Student,List[Course],List[Job]) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs) => apply(student,courses,jobs)
+    def f:((List[Course],List[Job],Student,List[Course],List[Job],String,String) => play.api.templates.HtmlFormat.Appendable) = (matchedCourses,matchJobs,student,courses,jobs,course_tags,job_tags) => apply(matchedCourses,matchJobs,student,courses,jobs,course_tags,job_tags)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 29 14:33:57 CEST 2015
+                    DATE: Tue Jun 30 05:16:09 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/dashboard.scala.html
-                    HASH: 7876ff87b200420b6cad90fb777e895f980766ab
-                    MATRIX: 802->1|954->59|991->62|1025->88|1063->89|1637->628|1669->644|1709->646|2090->991|2102->994|2136->1006|2294->1133|2495->1298|2510->1304|2561->1333|3157->1894|3195->1916|3235->1918|3306->1953|3321->1959|3377->1993|3416->1996|3431->2002|3458->2007|3512->2025|3527->2031|3564->2046|3618->2064|3633->2070|3661->2076|3715->2094|3730->2100|3764->2112|3820->2137|3962->2244|3994->2260|4034->2262|4208->2400|4276->2446|4475->2608|4488->2611|4523->2623|4689->2752|4702->2755|4738->2768|4842->2835|4855->2838|4885->2845|4996->2919|5009->2922|5043->2933|5144->3002|7373->5202|7403->5203|7464->5236|7493->5237|7581->5296|7611->5297|7673->5331|7702->5332|7760->5361|7790->5362|7837->5381|7866->5382|7921->5408|7951->5409|7997->5427|8026->5428|8102->5475|8132->5476|8189->5505|8218->5506|8263->5522|8293->5523|8359->5561|8388->5562|8433->5578|8463->5579|8516->5604|8545->5605|8584->5616|8613->5617|8665->5641|8694->5642|8741->5657
-                    LINES: 26->1|29->1|30->2|30->2|30->2|48->20|48->20|48->20|62->34|62->34|62->34|72->44|80->52|80->52|80->52|100->72|100->72|100->72|103->75|103->75|103->75|103->75|103->75|103->75|104->76|104->76|104->76|105->77|105->77|105->77|106->78|106->78|106->78|108->80|116->88|116->88|116->88|123->95|123->95|130->102|130->102|130->102|134->106|134->106|134->106|135->107|135->107|135->107|136->108|136->108|136->108|144->116|216->188|216->188|218->190|218->190|221->193|221->193|223->195|223->195|225->197|225->197|227->199|227->199|229->201|229->201|231->203|231->203|233->205|233->205|235->207|235->207|237->209|237->209|240->212|240->212|242->214|242->214|244->216|244->216|246->218|246->218|248->220|248->220|251->223
+                    HASH: 6a0625b57deb02e20028a9bba1fe9ac99476a94d
+                    MATRIX: 839->1|1075->142|1112->145|1167->192|1205->193|2103->1056|2148->1085|2188->1087|2259->1122|2274->1128|2330->1162|2369->1165|2384->1171|2411->1176|2465->1194|2480->1200|2517->1215|2571->1233|2586->1239|2614->1245|2668->1263|2683->1269|2717->1281|2773->1306|2939->1437|2976->1458|3016->1460|3397->1805|3409->1808|3443->1820|3496->1837|3508->1840|3543->1853|3701->1980|3929->2172|3944->2178|3995->2207|4592->2768|4631->2790|4672->2792|4744->2827|4760->2833|4817->2867|4857->2870|4873->2876|4901->2881|4956->2899|4972->2905|5010->2920|5065->2938|5081->2944|5110->2950|5165->2968|5181->2974|5216->2986|5273->3011|5532->3234|5565->3250|5606->3252|5681->3290|5694->3293|5722->3298|5913->3452|5982->3498|6179->3658|6192->3661|6227->3673|6393->3802|6406->3805|6442->3818|6546->3885|6559->3888|6589->3895|6700->3969|6713->3972|6747->3983|6855->4054|6868->4057|6899->4065|7044->4178|9302->6407|9332->6408|9461->6509|9490->6510|9578->6569|9608->6570|9670->6604|9699->6605|9757->6634|9787->6635|9834->6654|9863->6655|9918->6681|9948->6682|9994->6700|10023->6701|10099->6748|10129->6749|10186->6778|10215->6779|10260->6795|10290->6796|10356->6834|10385->6835|10430->6851|10460->6852|10513->6877|10542->6878|10581->6889|10610->6890|10662->6914|10691->6915|10738->6930
+                    LINES: 26->1|29->1|30->2|30->2|30->2|61->33|61->33|61->33|64->36|64->36|64->36|64->36|64->36|64->36|65->37|65->37|65->37|66->38|66->38|66->38|67->39|67->39|67->39|69->41|75->47|75->47|75->47|89->61|89->61|89->61|90->62|90->62|90->62|100->72|109->81|109->81|109->81|129->101|129->101|129->101|132->104|132->104|132->104|132->104|132->104|132->104|133->105|133->105|133->105|134->106|134->106|134->106|135->107|135->107|135->107|137->109|148->120|148->120|148->120|151->123|151->123|151->123|155->127|155->127|161->133|161->133|161->133|165->137|165->137|165->137|166->138|166->138|166->138|167->139|167->139|167->139|168->140|168->140|168->140|180->152|255->227|255->227|259->231|259->231|262->234|262->234|264->236|264->236|266->238|266->238|268->240|268->240|270->242|270->242|272->244|272->244|274->246|274->246|276->248|276->248|278->250|278->250|281->253|281->253|283->255|283->255|285->257|285->257|287->259|287->259|289->261|289->261|292->264
                     -- GENERATED --
                 */
             

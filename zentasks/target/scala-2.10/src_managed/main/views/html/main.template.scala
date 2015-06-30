@@ -20,13 +20,13 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object main extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template4[Student,List[Course],List[Job],Html,play.api.templates.HtmlFormat.Appendable] {
+object main extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template6[Student,List[Course],List[Job],String,String,Html,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(student: Student , courses: List[Course],jobs:List[Job])(body: Html):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(student: Student , courses: List[Course],jobs:List[Job],course_tags:String,job_tags:String)(body: Html):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.71*/("""
+Seq[Any](format.raw/*1.106*/("""
 
 <html>
 
@@ -57,22 +57,30 @@ Seq[Any](format.raw/*1.71*/("""
         <title>CourseMatch</title>
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*30.59*/routes/*30.65*/.Assets.at("images/favicon.png"))),format.raw/*30.97*/("""">
         <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*31.70*/routes/*31.76*/.Assets.at("stylesheets/main.css"))),format.raw/*31.110*/("""">
+        <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*32.70*/routes/*32.76*/.Assets.at("stylesheets/tags.css"))),format.raw/*32.110*/("""">
 
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
-        
-               <script type="text/javascript" src=""""),_display_(Seq[Any](/*38.53*/routes/*38.59*/.Assets.at("javascripts/jquery-2.1.4.min.js"))),format.raw/*38.104*/(""""></script>
-               <script type="text/javascript" src=""""),_display_(Seq[Any](/*39.53*/routes/*39.59*/.Assets.at("javascripts/jquery.dataTables.js"))),format.raw/*39.105*/(""""></script>
-               <script type="text/javascript" src=""""),_display_(Seq[Any](/*40.53*/routes/*40.59*/.Assets.at("javascripts/jquery.dataTables.min.js"))),format.raw/*40.109*/(""""></script>
-                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*41.78*/routes/*41.84*/.Assets.at("stylesheets/star-rating.css"))),format.raw/*41.125*/("""">
-                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*42.78*/routes/*42.84*/.Assets.at("stylesheets/star-rating.min.css"))),format.raw/*42.129*/("""">
-                
-        <script src=""""),_display_(Seq[Any](/*44.23*/routes/*44.29*/.Assets.at("javascripts/star-rating.js"))),format.raw/*44.69*/(""""></script>
-        <script src=""""),_display_(Seq[Any](/*45.23*/routes/*45.29*/.Assets.at("javascripts/star-rating.min.js"))),format.raw/*45.73*/(""""></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css">
+          
+               <script type="text/javascript" src=""""),_display_(Seq[Any](/*43.53*/routes/*43.59*/.Assets.at("javascripts/jquery-2.1.4.min.js"))),format.raw/*43.104*/(""""></script>
+               <script type="text/javascript" src=""""),_display_(Seq[Any](/*44.53*/routes/*44.59*/.Assets.at("javascripts/jquery.dataTables.js"))),format.raw/*44.105*/(""""></script>
+               <script type="text/javascript" src=""""),_display_(Seq[Any](/*45.53*/routes/*45.59*/.Assets.at("javascripts/jquery.dataTables.min.js"))),format.raw/*45.109*/(""""></script>
+               
+                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*47.78*/routes/*47.84*/.Assets.at("stylesheets/star-rating.css"))),format.raw/*47.125*/("""">
+                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*48.78*/routes/*48.84*/.Assets.at("stylesheets/star-rating.min.css"))),format.raw/*48.129*/("""">
+        <script  src=""""),_display_(Seq[Any](/*49.24*/routes/*49.30*/.Assets.at("javascripts/tags.js"))),format.raw/*49.63*/(""""></script>
+        <script src=""""),_display_(Seq[Any](/*50.23*/routes/*50.29*/.Assets.at("javascripts/star-rating.js"))),format.raw/*50.69*/(""""></script>
+        <script src=""""),_display_(Seq[Any](/*51.23*/routes/*51.29*/.Assets.at("javascripts/star-rating.min.js"))),format.raw/*51.73*/(""""></script>
   		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   		<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
   		<script src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
@@ -80,17 +88,24 @@ Seq[Any](format.raw/*1.71*/("""
     </head>
     <body>
        
-        <header style="padding-top: 12px">
-            
+        <header style="padding-top: 12px; position:fixed">
+			
+			
+			 
             <a href="" id="logo"> 
-             <img src=""""),_display_(Seq[Any](/*58.25*/routes/*58.31*/.Assets.at("images/logo-white.png"))),format.raw/*58.66*/("""" height="26px">
+             <img src=""""),_display_(Seq[Any](/*68.25*/routes/*68.31*/.Assets.at("images/logo-white.png"))),format.raw/*68.66*/("""" height="26px">
             </a>
             
+		<button class="btn btn-danger" style="float: right;
+  											  left: -355px;
+  											   position: relative;" type="button" 
+  		data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+			 Recommendation Tags</button>
             <dl id="user" >
                 <dt style="padding-top: 10px">
-                 """),_display_(Seq[Any](/*63.19*/student/*63.26*/.name)),format.raw/*63.31*/(""" <span>("""),_display_(Seq[Any](/*63.40*/student/*63.47*/.email)),format.raw/*63.53*/(""")</span></dt>
+                 """),_display_(Seq[Any](/*78.19*/student/*78.26*/.name)),format.raw/*78.31*/(""" <span>("""),_display_(Seq[Any](/*78.40*/student/*78.47*/.email)),format.raw/*78.53*/(""")</span></dt>
                 <dd>
-                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*65.68*/routes/*65.74*/.Application.logout())),format.raw/*65.95*/("""" style="padding: 8px 5px;"> 
+                  <a class="glyphicon glyphicon-off logout" href=""""),_display_(Seq[Any](/*80.68*/routes/*80.74*/.Application.logout())),format.raw/*80.95*/("""" style="padding: 8px 5px;"> 
                    <b style="font-family:arial; font-size: 14px"> Logout </b>
                   </a>    
                 </dd>
@@ -100,7 +115,7 @@ Seq[Any](format.raw/*1.71*/("""
         
 		<nav>
 		    <div style="padding: 10px 0 0 15px">
-		     <img src=""""),_display_(Seq[Any](/*75.19*/routes/*75.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*75.70*/("""" height="60px">
+		     <img src=""""),_display_(Seq[Any](/*90.19*/routes/*90.25*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*90.70*/("""" height="60px">
 		    </div>
 		
 		    <div style="padding: 10px 0 0 0px">
@@ -132,37 +147,60 @@ Seq[Any](format.raw/*1.71*/("""
         
 		
 		<div>
-        
+        <div class="collapse" id="collapseExample" style="   position: fixed;
+													  right: 0;
+													  z-index: 100;
+													  top: 50px;
+													  width: 540px;">
+			  <div class="well">
+			  <form action=""""),_display_(Seq[Any](/*128.21*/routes/*128.27*/.Application.saveStudentTags())),format.raw/*128.57*/("""">
+				 <div class="well">
+				 <p> Courses Recommendation Tags:<p>
+				 <input name="course_tags" type="text" class="form-control" id="ct" value=""""),_display_(Seq[Any](/*131.81*/course_tags)),format.raw/*131.92*/("""" />
+	 			 <p> Jobs Recommendation Tags :<p>
+				 <input name="job_tags" type="text" class="form-control" id="jt" value=""""),_display_(Seq[Any](/*133.78*/job_tags)),format.raw/*133.86*/("""" />
+	 			 </div>
+	 			 <button type="submit" style="  width: 100%;
+  					"class="btn btn-danger">Submit</button>
+	 			 </div>
+ 			 </form>
+ 		</div>
         <section>
       <ul class="breadcrumb" style="margin-top:52px;margin-left:218px">
-      <li><a href="dashboard">Dashboard</a> <span class="divider">/</span></li>
-      <li><a href="compareCourses">CompareCourses</a> <span class="divider">/</span></li>
+      <li><a href=""""),_display_(Seq[Any](/*142.21*/routes/*142.27*/.Application.dashboard())),format.raw/*142.51*/("""">Dashboard</a> <span class="divider">/</span></li>
+		<li><a href=""""),_display_(Seq[Any](/*143.17*/routes/*143.23*/.Application.compareCourses())),format.raw/*143.52*/("""">CompareCourses</a> <span
+			class="divider"></span></li>
     </ul>
-            """),_display_(Seq[Any](/*113.14*/body)),format.raw/*113.18*/("""
+            """),_display_(Seq[Any](/*146.14*/body)),format.raw/*146.18*/("""
         </section>
 		
 		
 		</div>
     </body>
+ <script>
+				  $('#ct').tokenfield();
+				  $('#jt').tokenfield();
+				  
+			  </script>
 </html>
 
 """))}
     }
     
-    def render(student:Student,courses:List[Course],jobs:List[Job],body:Html): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs)(body)
+    def render(student:Student,courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,body:Html): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs,course_tags,job_tags)(body)
     
-    def f:((Student,List[Course],List[Job]) => (Html) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs) => (body) => apply(student,courses,jobs)(body)
+    def f:((Student,List[Course],List[Job],String,String) => (Html) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs,course_tags,job_tags) => (body) => apply(student,courses,jobs,course_tags,job_tags)(body)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 29 04:56:33 CEST 2015
+                    DATE: Tue Jun 30 05:16:09 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/main.scala.html
-                    HASH: b716c4a8f4fc3ecae974996d0b9d34718c68e4ee
-                    MATRIX: 802->1|965->70|1032->110|1060->111|1154->178|1182->179|1224->193|1253->194|1345->259|1373->260|1416->275|1445->276|1525->329|1553->330|1719->460|1734->466|1788->498|1897->571|1912->577|1969->611|2450->1056|2465->1062|2533->1107|2634->1172|2649->1178|2718->1224|2819->1289|2834->1295|2907->1345|3033->1435|3048->1441|3112->1482|3229->1563|3244->1569|3312->1614|3392->1658|3407->1664|3469->1704|3540->1739|3555->1745|3621->1789|4346->2478|4361->2484|4418->2519|4599->2664|4615->2671|4642->2676|4687->2685|4703->2692|4731->2698|4871->2802|4886->2808|4929->2829|5255->3119|5270->3125|5337->3170|6868->4664|6895->4668
-                    LINES: 26->1|29->1|35->7|35->7|38->10|38->10|40->12|40->12|43->15|43->15|45->17|45->17|48->20|48->20|58->30|58->30|58->30|59->31|59->31|59->31|66->38|66->38|66->38|67->39|67->39|67->39|68->40|68->40|68->40|69->41|69->41|69->41|70->42|70->42|70->42|72->44|72->44|72->44|73->45|73->45|73->45|86->58|86->58|86->58|91->63|91->63|91->63|91->63|91->63|91->63|93->65|93->65|93->65|103->75|103->75|103->75|141->113|141->113
+                    HASH: 3f224f4c0de0750a092bf3a548d0d56eba30cb56
+                    MATRIX: 816->1|1015->105|1082->145|1110->146|1204->213|1232->214|1274->228|1303->229|1395->294|1423->295|1466->310|1495->311|1575->364|1603->365|1769->495|1784->501|1838->533|1947->606|1962->612|2019->646|2128->719|2143->725|2200->759|3233->1756|3248->1762|3316->1807|3417->1872|3432->1878|3501->1924|3602->1989|3617->1995|3690->2045|3833->2152|3848->2158|3912->2199|4029->2280|4044->2286|4112->2331|4175->2358|4190->2364|4245->2397|4316->2432|4331->2438|4393->2478|4464->2513|4479->2519|4545->2563|5536->3518|5551->3524|5608->3559|6075->3990|6091->3997|6118->4002|6163->4011|6179->4018|6207->4024|6347->4128|6362->4134|6405->4155|6731->4445|6746->4451|6813->4496|8285->5931|8301->5937|8354->5967|8542->6118|8576->6129|8737->6253|8768->6261|9075->6531|9091->6537|9138->6561|9244->6630|9260->6636|9312->6665|9434->6750|9461->6754
+                    LINES: 26->1|29->1|35->7|35->7|38->10|38->10|40->12|40->12|43->15|43->15|45->17|45->17|48->20|48->20|58->30|58->30|58->30|59->31|59->31|59->31|60->32|60->32|60->32|71->43|71->43|71->43|72->44|72->44|72->44|73->45|73->45|73->45|75->47|75->47|75->47|76->48|76->48|76->48|77->49|77->49|77->49|78->50|78->50|78->50|79->51|79->51|79->51|96->68|96->68|96->68|106->78|106->78|106->78|106->78|106->78|106->78|108->80|108->80|108->80|118->90|118->90|118->90|156->128|156->128|156->128|159->131|159->131|161->133|161->133|170->142|170->142|170->142|171->143|171->143|171->143|174->146|174->146
                     -- GENERATED --
                 */
             

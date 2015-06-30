@@ -1,5 +1,5 @@
-@(student: Student , courses: List[Course], jobs:List[Job])
-@main(student,courses,jobs){
+@(matchedCourses:List[Course],matchJobs:List[Job],student: Student , courses: List[Course], jobs:List[Job],course_tags:String,job_tags:String)
+@main(student,courses,jobs,course_tags,job_tags){
 
 
 <div id="menu_container" class="container">
@@ -14,10 +14,37 @@
 
 	<div class="tab-content">
 		<div id="home" class="tab-pane fade in active">
-			<h3>Dashboard... actually we need there the dashboard table with
-				news</h3>
+			<h3>Dashboard</h3>
 
-			@for(job <- jobs) {
+	
+<div class="panel panel-danger" style="margin-bottom:60px">
+	<div class="panel-heading">Recommended Courses</div>
+		<table id="recommendedCourses" class="table table-striped" cellspacing="0"
+				>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Professor</th>
+						<th>Chair</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody class="searchable">
+					@for(course <- matchedCourses) {
+					<tr>
+
+						<td><a href="@routes.Application.viewCourse(course.id)">@course.name</td>
+						<td>@course.professor_name</td>
+						<td>@course.chair</td>
+						<td>@course.description</td>
+					</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	<div class="panel panel-danger">
+		<div class="panel-heading">Recommended Jobs</div>
+			@for(job <- matchJobs) {
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -32,6 +59,7 @@
 						<div style="float: left; width: 500px">
 							<span class="text-title">Description</span>
 							<p>@job.description</p>
+							<p>@job.company_name</p>
 						</div>
 
 						<div style="float: left; padding-left: 30px"></div>
@@ -43,12 +71,13 @@
 			</div>
 			}
 		</div>
-
+	</div>
 
 		<div id="menu2" class="tab-pane fade">
 
 			<h3>Search Courses</h3>
-			<form style="top: 45px; position: relative; z-index: 1000;"
+			<form
+				style="top: -38px; position: relative; z-index: 1000; left: -288px;"
 				action="@routes.Application.compareCourses()">
 				<div
 					style="width: 100; min-height: 20px; margin: auto; padding-bottom: 15px;">
@@ -85,17 +114,19 @@
 		<div id="menu3" class="tab-pane fade">
 			<h3>Jobs</h3>
 
-			@for(job <- jobs) {
-
-			<div class="panel panel-default">
+				<table id="jobs" class="table table-striped" cellspacing="0">
+				<th></th>
+				<tbody class="searchable">
+					@for(job <- jobs) {
+					<tr>
+						<td>
+				<a href=@job.link target="_blank" >
+  	 			<div class="panel panel-default">
 				<div class="panel-body">
-
-
 					<div style="float: left; width: 160px">
 						<img src=@{"assets/images/" + job.company_name + ".png"}>
 					</div>
 					<div style="float: left">
-
 
 						<div style="float: left; width: 500px">
 							<span class="text-title">Description</span>
@@ -106,6 +137,7 @@
 							<span class="text-title">Company</span> <span>@job.company_name</span><br>
 							<span class="text-title">Salary </span> <span>@job.salary</span><br>
 							<span class="text-title">Beginning Time</span> <span>@job.begin_time</span>
+							<span class="text-title"><b>Contact:</b></span> <span>@job.contact</span>
 						</div>
 
 
@@ -113,7 +145,14 @@
 
 				</div>
 			</div>
-			}
+			</a>
+						
+						</td>
+					</tr>
+					}
+				</tbody>
+			</table>
+
 
 		</div>
 
@@ -187,6 +226,8 @@
 <script>
 	$(document).ready(function() {
 		$('#courses').dataTable();
+		$('#recommendedCourses').dataTable();
+		$('#jobs').dataTable();
 	});
 </script>
 <style>

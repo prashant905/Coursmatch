@@ -3,29 +3,6 @@ clean
 compile
 clean
 compile
-run
-clean
-compile
-clean
-compile
-clean
-compile
-run
-compile
-run
-clean
-compile
-run
-clean
-compile
-run
-compile
-run
-compile
-clean
-compile
-clean
-compile
 clea
 run
 clea
@@ -497,4 +474,27 @@ reload
 compile
 run
 exit
+run
+compile
+clean
+reload
+compile
+last compile
+last compile managed recouses
+last compile
+exit
+compile
+ruin
+run
+clean
+compile
+run
+clean
+compile
+run
+clean
+compile
+run
+clean
+compile
 run

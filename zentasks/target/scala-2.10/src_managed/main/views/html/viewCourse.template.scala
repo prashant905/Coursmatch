@@ -20,13 +20,13 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object viewCourse extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template4[Student,Course,Overallranking,List[Comment],play.api.templates.HtmlFormat.Appendable] {
+object viewCourse extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template6[Student,Course,Overallranking,List[Comment],String,List[Uploads],play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(student: Student , course :Course , ranking:Overallranking,comments:List[Comment]):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(student: Student , course :Course , ranking:Overallranking,comments:List[Comment],course_tags:String,uploads: List[Uploads]):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.85*/("""
+Seq[Any](format.raw/*1.127*/("""
 <html>
 
 <style>
@@ -70,39 +70,55 @@ Seq[Any](format.raw/*1.85*/("""
 </style>
 <head>
 <title>CourseMatch</title>
-<link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*45.51*/routes/*45.57*/.Assets.at("images/favicon.png"))),format.raw/*45.89*/("""">
-<link rel="stylesheet" type="text/css" media="screen"
-	href=""""),_display_(Seq[Any](/*47.9*/routes/*47.15*/.Assets.at("stylesheets/main.css"))),format.raw/*47.49*/("""">
-<script type="text/javascript" src=""""),_display_(Seq[Any](/*48.38*/routes/*48.44*/.Assets.at("javascripts/jquery-2.1.4.min.js"))),format.raw/*48.89*/(""""></script>
-<link rel="stylesheet" type="text/css" media="screen"
-	href=""""),_display_(Seq[Any](/*50.9*/routes/*50.15*/.Assets.at("stylesheets/star-rating.css"))),format.raw/*50.56*/("""">
-<link rel="stylesheet" type="text/css" media="screen"
-	href=""""),_display_(Seq[Any](/*52.9*/routes/*52.15*/.Assets.at("stylesheets/star-rating.min.css"))),format.raw/*52.60*/("""">
+ <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*45.52*/routes/*45.58*/.Assets.at("images/favicon.png"))),format.raw/*45.90*/("""">
+        <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*46.70*/routes/*46.76*/.Assets.at("stylesheets/main.css"))),format.raw/*46.110*/("""">
+        <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*47.70*/routes/*47.76*/.Assets.at("stylesheets/tags.css"))),format.raw/*47.110*/("""">
 
-<script src=""""),_display_(Seq[Any](/*54.15*/routes/*54.21*/.Assets.at("javascripts/star-rating.js"))),format.raw/*54.61*/(""""></script>
-<script src=""""),_display_(Seq[Any](/*55.15*/routes/*55.21*/.Assets.at("javascripts/star-rating.min.js"))),format.raw/*55.65*/(""""></script>
-
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css">
+          
+               <script type="text/javascript" src=""""),_display_(Seq[Any](/*58.53*/routes/*58.59*/.Assets.at("javascripts/jquery-2.1.4.min.js"))),format.raw/*58.104*/(""""></script>
+               <script type="text/javascript" src=""""),_display_(Seq[Any](/*59.53*/routes/*59.59*/.Assets.at("javascripts/jquery.dataTables.js"))),format.raw/*59.105*/(""""></script>
+               <script type="text/javascript" src=""""),_display_(Seq[Any](/*60.53*/routes/*60.59*/.Assets.at("javascripts/jquery.dataTables.min.js"))),format.raw/*60.109*/(""""></script>
+               
+                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*62.78*/routes/*62.84*/.Assets.at("stylesheets/star-rating.css"))),format.raw/*62.125*/("""">
+                <link rel="stylesheet" type="text/css" media="screen" href=""""),_display_(Seq[Any](/*63.78*/routes/*63.84*/.Assets.at("stylesheets/star-rating.min.css"))),format.raw/*63.129*/("""">
+        <script  src=""""),_display_(Seq[Any](/*64.24*/routes/*64.30*/.Assets.at("javascripts/tags.js"))),format.raw/*64.63*/(""""></script>
+        <script src=""""),_display_(Seq[Any](/*65.23*/routes/*65.29*/.Assets.at("javascripts/star-rating.js"))),format.raw/*65.69*/(""""></script>
+        <script src=""""),_display_(Seq[Any](/*66.23*/routes/*66.29*/.Assets.at("javascripts/star-rating.min.js"))),format.raw/*66.73*/(""""></script>
+  		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  		<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+  		<script src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/js/bootstrap-select.js"></script>
 </head>
 <body>
 
-	<header style="padding-top: 12px">
+	<header style="padding-top: 12px; position:fixed">
 
-		<a href="/dashboard" id="logo"> <img src=""""),_display_(Seq[Any](/*68.46*/routes/*68.52*/.Assets.at("images/logo-white.png"))),format.raw/*68.87*/("""" height="26px">
+		<a href="/dashboard" id="logo"> <img src=""""),_display_(Seq[Any](/*80.46*/routes/*80.52*/.Assets.at("images/logo-white.png"))),format.raw/*80.87*/("""" height="26px">
 		</a>
-
+				<button class="btn btn-danger" style="float: right;
+  											  left: -355px;
+  											   position: relative;" type="button" 
+  		data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+			 Course Tags</button>
 		<dl id="user">
 			<dt style="padding-top: 10px">
-				"""),_display_(Seq[Any](/*73.6*/student/*73.13*/.name)),format.raw/*73.18*/(""" <span>("""),_display_(Seq[Any](/*73.27*/student/*73.34*/.email)),format.raw/*73.40*/(""")</span>
+				"""),_display_(Seq[Any](/*89.6*/student/*89.13*/.name)),format.raw/*89.18*/(""" <span>("""),_display_(Seq[Any](/*89.27*/student/*89.34*/.email)),format.raw/*89.40*/(""")</span>
 			</dt>
 			<dd>
 				<a class="glyphicon glyphicon-off logout"
-					href=""""),_display_(Seq[Any](/*77.13*/routes/*77.19*/.Application.logout())),format.raw/*77.40*/("""" style="padding: 8px 5px;">
+					href=""""),_display_(Seq[Any](/*93.13*/routes/*93.19*/.Application.logout())),format.raw/*93.40*/("""" style="padding: 8px 5px;">
 					<b style="font-family: arial; font-size: 14px"> Logout </b>
 				</a>
 			</dd>
@@ -112,7 +128,7 @@ Seq[Any](format.raw/*1.85*/("""
 
 	<nav>
 		<div style="padding: 10px 0 0 15px">
-			<img src=""""),_display_(Seq[Any](/*87.15*/routes/*87.21*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*87.66*/("""" height="60px">
+			<img src=""""),_display_(Seq[Any](/*103.15*/routes/*103.21*/.Assets.at("images/TU_Muenchen_Logo.svg.png"))),format.raw/*103.66*/("""" height="60px">
 		</div>
 
 		<div style="padding: 10px 0 0 0px">
@@ -138,11 +154,32 @@ Seq[Any](format.raw/*1.85*/("""
 
 	</nav>
 
-
+	        <div class="collapse" id="collapseExample" style="   position: fixed;
+													  right: 0;
+													  z-index: 100;
+													  top: 50px;
+													  width: 540px;">
+			  <div class="well">
+			  <form action=""""),_display_(Seq[Any](/*135.21*/routes/*135.27*/.Application.saveCourseTags())),format.raw/*135.56*/("""">
+				 <div class="well">
+				 <p> """),_display_(Seq[Any](/*137.11*/course/*137.17*/.name)),format.raw/*137.22*/(""" Tags:<p>
+				 <input name ="course_id" value=""""),_display_(Seq[Any](/*138.39*/course/*138.45*/.id)),format.raw/*138.48*/("""" type="hidden"> 
+				 <input name="course_tags" type="text" class="form-control" id="ct" value=""""),_display_(Seq[Any](/*139.81*/course_tags)),format.raw/*139.92*/("""" />
+	 			 </div>
+	 			 <button type="submit" style="  width: 100%;
+  					"class="btn btn-danger">Submit</button>
+ 			 </form>
+	 			 </div>
+ 			</div>
+ 			<script type="text/javascript">
+ 			$('#ct').tokenfield();
+ 			</script>
+ 			
+ 			
 	<ul class="breadcrumb" style="margin-top: 52px; margin-left: 218px">
-		<li><a href="dashboard">Dashboard</a> <span class="divider">/</span></li>
-		<li><a href="compareCourses">CompareCourses</a> <span
-			class="divider">/</span></li>
+		<li><a href=""""),_display_(Seq[Any](/*152.17*/routes/*152.23*/.Application.dashboard())),format.raw/*152.47*/("""">Dashboard</a> <span class="divider">/</span></li>
+		<li><a href=""""),_display_(Seq[Any](/*153.17*/routes/*153.23*/.Application.compareCourses())),format.raw/*153.52*/("""">CompareCourses</a> <span
+			class="divider"></span></li>
 	</ul>
 
 
@@ -152,172 +189,108 @@ Seq[Any](format.raw/*1.85*/("""
 		style="position: relative; width: 66%; left: 260; background-color: #FFFFFF; border: 0px; box-shadow: 0 0 0 rgba(0, 0, 0, 0)">
 
 		<div style="line-height: 30px">
-			<p class="coursetitle">"""),_display_(Seq[Any](/*127.28*/course/*127.34*/.name)),format.raw/*127.39*/("""
+			<p class="coursetitle">"""),_display_(Seq[Any](/*164.28*/course/*164.34*/.name)),format.raw/*164.39*/("""
 			<p>
 		</div>
 
 		<div>
-			<p class="">(Professor: """),_display_(Seq[Any](/*132.29*/course/*132.35*/.professor_name)),format.raw/*132.50*/(""")
+			<p class="">(Professor: """),_display_(Seq[Any](/*169.29*/course/*169.35*/.professor_name)),format.raw/*169.50*/(""")
 			<p>
 		</div>
 
 		<div id="description" style="padding: 30px 0 0 0">
 			<p class="coursesubtitle">Description
 			<p>
-			<p>"""),_display_(Seq[Any](/*139.8*/course/*139.14*/.description)),format.raw/*139.26*/("""</p>
+			<p>"""),_display_(Seq[Any](/*176.8*/course/*176.14*/.description)),format.raw/*176.26*/("""</p>
 		</div>
 
-		<div id="uploads" style="padding: 30px 0 0 0">
-			<p class="coursesubtitle">Uploads
-			<p>
-			<div style="width: 100%; min-height: 250px">
-
-				<a href="google.de" style="float: left; padding-right: 30px">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*150.19*/routes/*150.25*/.Assets.at("images/tum.png"))),format.raw/*150.53*/("""">
-						</div>
-						<div>TU München</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*157.19*/routes/*157.25*/.Assets.at("images/unistuff.png"))),format.raw/*157.58*/("""">
-						</div>
-						<div>Unistuff</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*164.19*/routes/*164.25*/.Assets.at("images/dropbox.png"))),format.raw/*164.57*/("""">
-						</div>
-						<div>Dropbox</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*171.19*/routes/*171.25*/.Assets.at("images/pdf.png"))),format.raw/*171.53*/("""">
-						</div>
-						<div>Student-Summary.pdf</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*178.19*/routes/*178.25*/.Assets.at("images/moodle.png"))),format.raw/*178.56*/("""">
-						</div>
-						<div>Moodle</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*185.19*/routes/*185.25*/.Assets.at("images/facebook.png"))),format.raw/*185.58*/("""">
-						</div>
-						<div>Facebook Group</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*192.19*/routes/*192.25*/.Assets.at("images/pdf.png"))),format.raw/*192.53*/("""">
-						</div>
-						<div>Student-Summary2.pdf</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*199.19*/routes/*199.25*/.Assets.at("images/link.png"))),format.raw/*199.54*/("""">
-						</div>
-						<div>Link</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*206.19*/routes/*206.25*/.Assets.at("images/piazza.png"))),format.raw/*206.56*/("""">
-						</div>
-						<div>Piazza</div>
-					</div>
-				</a> <a href="google.de" class="uploaditem">
-					<div>
-						<div class="uploaditembox">
-							<img src=""""),_display_(Seq[Any](/*213.19*/routes/*213.25*/.Assets.at("images/tumonline.png"))),format.raw/*213.59*/("""">
-						</div>
-						<div>TumOnline</div>
-					</div>
-				</a>
-
+		  
+   		  <form method="post" action=""""),_display_(Seq[Any](/*180.37*/routes/*180.43*/.Application.uploadMaterial())),format.raw/*180.72*/("""">	 
+			 
+		  <div id="uploads" style="padding: 30px 0 0 0">  
+		    <p class="coursesubtitle">Uploads <div style="width:100; min-height: 20px;">			
+			 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal"
+			 style="height: 30px; width: 200px"> Upload more... </button>
+			</div><p>
+			
+			<div style="width:100%; min-height: 250px">
+               """),_display_(Seq[Any](/*189.17*/for(upload <- uploads) yield /*189.39*/ {_display_(Seq[Any](format.raw/*189.41*/("""
+                 <a href="""),_display_(Seq[Any](/*190.27*/upload/*190.33*/.content)),format.raw/*190.41*/(""" class="uploaditem">
+			       <div> 
+			         <div class="uploaditembox"> 
+			           <img src="""),_display_(Seq[Any](/*193.25*/{"../../assets/images/" + upload.source + ".png"})),format.raw/*193.74*/(""">
+			         </div>
+			         <div> <span>"""),_display_(Seq[Any](/*195.26*/upload/*195.32*/.source)),format.raw/*195.39*/("""</span><span>("""),_display_(Seq[Any](/*195.54*/upload/*195.60*/.name)),format.raw/*195.65*/(""")</span> </div>
+			       </div>
+			     </a>
+               """)))})),format.raw/*198.17*/("""               
 			</div>
+						
+		   </div>
+		
+		
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Upload new teaching material</h4>
+              </div>
+              <div class="modal-body">
+                
+               <div class="input-group" sytle="padding-top:40px">
+               <span class="input-group-addon fileinput-button" id="basic-addon1"> Document </span> 
+                <select class="form-control" id="source" name="uploadSource">
+                 <option value="Tum">Tum</option>
+                 <option value="Facebook2">Facebook</option>
+                 <option value="Dropbox">Dropbox</option>
+                 <option value="Google">Google</option>
+                 <option value="Unistuff">Unistuff</option>
+                 <option value="Pdf">Pdf</option>
+                 <option value="Piazza">Moodle</option>
+                 <option value="Link">Link</option>
+                 <option value="Piazza">Piazza</option>
+                 <option value="Tumonline">Tumonline</option>
+                 <option value="Coursera">Coursera</option>
+                 <option value="Github">Github</option>
+                 <option value="Bitbucket">Bitbucket</option>
+                </select>
+               </div>
+               
+               <p> </p>
+               
+               <div class="input-group">
+                 <span class="input-group-addon fileinput-button" id="basic-addon1"> Document </span>
+                 <input type="text" id="content" name="uploadContent" class="form-control" placeholder="Type in the link here e.g. http://www.google.de" >
+                 <input type="text" id="name" name="uploadName" class="form-control" placeholder="Type in brief name" >
+                 <input type="hidden" id="course" name="course_id" value=""""),_display_(Seq[Any](/*238.76*/course/*238.82*/.id)),format.raw/*238.85*/("""" > 
+                  <!--
+                  <input type="file" name="files[]" multiple="" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                  -->
+               </div>
+               
+               
+               
+               
+                <!--
+                <span class="btn fileinput-button">
+                  <i class="glyphicon glyphicon-plus"></i>
+                  <span>Add file</span>
+                  <input type="file" multiple="" name="files[]">
+                </span> -->
+               
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary"> Upload </button>
+              </div>
+            </div>
+          </div>
+        </div>		
+		</form>
 
-			<div style="width: 100; min-height: 20px;">
-				<button type="button" class="btn btn-sm btn-primary"
-					data-toggle="modal" data-target="#myModal"
-					style="height: 30px; width: 200px">Upload more...</button>
-			</div>
-
-		</div>
-
-
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel">Upload new teaching
-							material</h4>
-					</div>
-					<div class="modal-body">
-
-						<div class="input-group">
-							<span class="input-group-addon fileinput-button"
-								id="basic-addon1"> Document </span> <input type="file"
-								name="files[]" multiple="" class="form-control"
-								placeholder="Username" aria-describedby="basic-addon1">
-						</div>
-
-						<span class="btn fileinput-button"> <i
-							class="glyphicon glyphicon-plus"></i> <span>Add file</span> <input
-							type="file" multiple="" name="files[]">
-						</span>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="input-group">
-									<div class="input-group-btn">
-										<button type="button" class="btn btn-default dropdown-toggle"
-											data-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false">
-											Action <span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu">
-											<li><a href="#">TumOnline</a></li>
-											<li><a href="#">Unistuff</a></li>
-											<li><a href="#">Dropbox</a></li>
-											<li><a href="#">Link</a></li>
-											<li><a href="#">Sonstiges</a></li>
-										</ul>
-									</div>
-									<!-- /btn-group -->
-									<input type="text" class="form-control" aria-label="...">
-								</div>
-								<!-- /input-group -->
-							</div>
-							<!-- /.col-lg-6 -->
-						</div>
-
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<button type="button" class="btn btn-primary">Upload</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		"""),_display_(Seq[Any](/*291.4*/(course :Course ,ranking :Overallranking))),format.raw/*291.45*/("""
-		<form action=""""),_display_(Seq[Any](/*292.18*/routes/*292.24*/.Application.rateCourse(course.id))),format.raw/*292.58*/("""">
+		<form action=""""),_display_(Seq[Any](/*265.18*/routes/*265.24*/.Application.rateCourse(course.id))),format.raw/*265.58*/("""">
 			<div id="rating" style="padding: 50px 0 0 0">
 				<p class="coursesubtitle">Rating
 				<p>
@@ -326,7 +299,7 @@ Seq[Any](format.raw/*1.85*/("""
 						<tr>
 							<td><div style="float: left; width: 300px">Fairness
 									and help:</div></td>
-							<td><input id="input-1" name="fair" value=""""),_display_(Seq[Any](/*301.52*/ranking/*301.59*/.fair)),format.raw/*301.64*/(""""
+							<td><input id="input-1" name="fair" value=""""),_display_(Seq[Any](/*274.52*/ranking/*274.59*/.fair)),format.raw/*274.64*/(""""
 								class="rating" data-min="0" data-max="5" data-step="0.5"
 								data-size="xs"></td>
 						</tr>
@@ -340,7 +313,7 @@ Seq[Any](format.raw/*1.85*/("""
 						<td><div style="float: left; width: 300px">Material und
 								understanding:</div></td>
 						<td><input id="input-3" name="material"
-							value=""""),_display_(Seq[Any](/*315.16*/ranking/*315.23*/.material)),format.raw/*315.32*/("""" class="rating" data-min="0"
+							value=""""),_display_(Seq[Any](/*288.16*/ranking/*288.23*/.material)),format.raw/*288.32*/("""" class="rating" data-min="0"
 							data-max="5" data-step="0.5" data-size="xs"></td>
 					</tr>
 				</table>
@@ -351,7 +324,7 @@ Seq[Any](format.raw/*1.85*/("""
 					<tr>
 						<td><div style="float: left; width: 300px">fun and
 								level of interest:</div></td>
-						<td><input id="input-4" name="fun" value=""""),_display_(Seq[Any](/*326.50*/ranking/*326.57*/.fun)),format.raw/*326.61*/(""""
+						<td><input id="input-4" name="fun" value=""""),_display_(Seq[Any](/*299.50*/ranking/*299.57*/.fun)),format.raw/*299.61*/(""""
 							class="rating" data-min="0" data-max="5" data-step="0.5"
 							data-size="xs"></td>
 					</tr>
@@ -363,7 +336,7 @@ Seq[Any](format.raw/*1.85*/("""
 					<tr>
 						<td><div style="float: left; width: 300px">grade and
 								effort:</div></td>
-						<td><input id="input-2" name="grade" value=""""),_display_(Seq[Any](/*338.52*/ranking/*338.59*/.grade)),format.raw/*338.65*/(""""
+						<td><input id="input-2" name="grade" value=""""),_display_(Seq[Any](/*311.52*/ranking/*311.59*/.grade)),format.raw/*311.65*/(""""
 							class="rating" data-min="0" data-max="5" data-step="0.5"
 							data-size="xs"></td>
 					</tr>
@@ -375,7 +348,7 @@ Seq[Any](format.raw/*1.85*/("""
 					<tr>
 						<td><div style="float: left; width: 300px">recommendation:</div></td>
 						<td><input id="input-2" name="recommend"
-							value=""""),_display_(Seq[Any](/*350.16*/ranking/*350.23*/.recommend)),format.raw/*350.33*/("""" class="rating" data-min="0"
+							value=""""),_display_(Seq[Any](/*323.16*/ranking/*323.23*/.recommend)),format.raw/*323.33*/("""" class="rating" data-min="0"
 							data-max="5" data-step="0.5" data-size="xs"></td>
 					</tr>
 				</table>
@@ -384,7 +357,7 @@ Seq[Any](format.raw/*1.85*/("""
 
 
 			<div style="width: 100%; height: 30px">
-				<p class="text-title">Overall Rate: """),_display_(Seq[Any](/*359.42*/ranking/*359.49*/.overall_rate)),format.raw/*359.62*/("""</p>
+				<p class="text-title">Overall Rate: """),_display_(Seq[Any](/*332.42*/ranking/*332.49*/.overall_rate)),format.raw/*332.62*/("""</p>
 			</div>
 			<div style="width: 100; min-height: 20px;">
 				<button type="submit" class="btn btn-sm btn-primary"
@@ -409,15 +382,15 @@ Seq[Any](format.raw/*1.85*/("""
 
 
 
-		<form method="get" action=""""),_display_(Seq[Any](/*384.31*/routes/*384.37*/.Application.saveComment(course.id))),format.raw/*384.72*/("""" id="commentForm">
+		<form method="get" action=""""),_display_(Seq[Any](/*357.31*/routes/*357.37*/.Application.saveComment(course.id))),format.raw/*357.72*/("""" id="commentForm">
 	<div  style="padding: 50px 0 0 0">
 		<p class="coursesubtitle">Comments
 		<p>
 		<div class="panel panel-default">
 			<ul class="list-group" id="comments">
-			"""),_display_(Seq[Any](/*390.5*/for(comment <- comments) yield /*390.29*/{_display_(Seq[Any](format.raw/*390.30*/("""
-				<li class="list-group-item"><p>("""),_display_(Seq[Any](/*391.38*/comment/*391.45*/.student_id)),format.raw/*391.56*/(""")</p>"""),_display_(Seq[Any](/*391.62*/comment/*391.69*/.comment)),format.raw/*391.77*/(""" </li>
-			""")))})),format.raw/*392.5*/("""
+			"""),_display_(Seq[Any](/*363.5*/for(comment <- comments) yield /*363.29*/{_display_(Seq[Any](format.raw/*363.30*/("""
+				<li class="list-group-item"><p>("""),_display_(Seq[Any](/*364.38*/comment/*364.45*/.student_id)),format.raw/*364.56*/(""")</p>"""),_display_(Seq[Any](/*364.62*/comment/*364.69*/.comment)),format.raw/*364.77*/(""" </li>
+			""")))})),format.raw/*365.5*/("""
 			</ul>
 			<input type="text" id="comment" class="form-control"
 				style="height: 70px" name="commentPlace" placeholder="Type in your comment here..."
@@ -438,21 +411,21 @@ Seq[Any](format.raw/*1.85*/("""
 
 	</div>
 	<script type="text/javascript">
-		$(document).ready(function() """),format.raw/*413.32*/("""{"""),format.raw/*413.33*/("""
-				 $('#commentBtn').on('click', function(e) """),format.raw/*414.47*/("""{"""),format.raw/*414.48*/("""
+		$(document).ready(function() """),format.raw/*386.32*/("""{"""),format.raw/*386.33*/("""
+				 $('#commentBtn').on('click', function(e) """),format.raw/*387.47*/("""{"""),format.raw/*387.48*/("""
 				        var ul = $("#comments");
 				        var li = document.createElement("li");
 				        var name =document.createElement("p");
 				        var comment = document.createElement("p");
-				        name.appendChild(document.createTextNode("("""),_display_(Seq[Any](/*419.57*/student/*419.64*/.name)),format.raw/*419.69*/(""")"));
+				        name.appendChild(document.createTextNode("("""),_display_(Seq[Any](/*392.57*/student/*392.64*/.name)),format.raw/*392.69*/(""")"));
 				        comment.appendChild(document.createTextNode(document.getElementById("comment").value));
 						li.appendChild(name);
 				        li.appendChild(comment);
 				        li.setAttribute("class","list-group-item");
 				        ul.append(li).fadeIn(3000);
 				        $('#commentForm').submit();
-			"""),format.raw/*426.4*/("""}"""),format.raw/*426.5*/(""");
-		"""),format.raw/*427.3*/("""}"""),format.raw/*427.4*/(""");
+			"""),format.raw/*399.4*/("""}"""),format.raw/*399.5*/(""");
+		"""),format.raw/*400.3*/("""}"""),format.raw/*400.4*/(""");
 	</script>
 
 
@@ -461,20 +434,20 @@ Seq[Any](format.raw/*1.85*/("""
 """))}
     }
     
-    def render(student:Student,course:Course,ranking:Overallranking,comments:List[Comment]): play.api.templates.HtmlFormat.Appendable = apply(student,course,ranking,comments)
+    def render(student:Student,course:Course,ranking:Overallranking,comments:List[Comment],course_tags:String,uploads:List[Uploads]): play.api.templates.HtmlFormat.Appendable = apply(student,course,ranking,comments,course_tags,uploads)
     
-    def f:((Student,Course,Overallranking,List[Comment]) => play.api.templates.HtmlFormat.Appendable) = (student,course,ranking,comments) => apply(student,course,ranking,comments)
+    def f:((Student,Course,Overallranking,List[Comment],String,List[Uploads]) => play.api.templates.HtmlFormat.Appendable) = (student,course,ranking,comments,course_tags,uploads) => apply(student,course,ranking,comments,course_tags,uploads)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 29 05:16:15 CEST 2015
+                    DATE: Tue Jun 30 05:24:29 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/viewCourse.scala.html
-                    HASH: b410b331ce20187b96cf6d55b91f75a57f2d54dc
-                    MATRIX: 816->1|993->84|1057->121|1085->122|1167->178|1194->179|1233->191|1262->192|1351->254|1379->255|1423->271|1452->272|1533->326|1561->327|1597->336|1625->337|1693->378|1721->379|1764->394|1793->395|1841->416|1869->417|1920->440|1949->441|2018->483|2046->484|2102->512|2131->513|2180->535|2208->536|2252->552|2281->553|2327->572|2355->573|2489->671|2504->677|2558->709|2660->776|2675->782|2731->816|2808->857|2823->863|2890->908|3001->984|3016->990|3079->1031|3181->1098|3196->1104|3263->1149|3319->1169|3334->1175|3396->1215|3459->1242|3474->1248|3540->1292|3984->1700|3999->1706|4056->1741|4177->1827|4193->1834|4220->1839|4265->1848|4281->1855|4309->1861|4433->1949|4448->1955|4491->1976|4730->2179|4745->2185|4812->2230|6251->3632|6267->3638|6295->3643|6391->3702|6407->3708|6445->3723|6615->3857|6631->3863|6666->3875|7000->4172|7016->4178|7067->4206|7279->4381|7295->4387|7351->4420|7561->4593|7577->4599|7632->4631|7841->4803|7857->4809|7908->4837|8129->5021|8145->5027|8199->5058|8407->5229|8423->5235|8479->5268|8695->5447|8711->5453|8762->5481|8984->5666|9000->5672|9052->5701|9258->5870|9274->5876|9328->5907|9536->6078|9552->6084|9609->6118|12089->8562|12153->8603|12209->8622|12225->8628|12282->8662|12633->8976|12650->8983|12678->8988|13095->9368|13112->9375|13144->9384|13523->9726|13540->9733|13567->9737|13947->10080|13964->10087|13993->10093|14374->10437|14391->10444|14424->10454|14678->10671|14695->10678|14731->10691|15141->11064|15157->11070|15215->11105|15437->11291|15478->11315|15518->11316|15594->11355|15611->11362|15645->11373|15688->11379|15705->11386|15736->11394|15780->11406|16438->12035|16468->12036|16545->12084|16575->12085|16868->12341|16885->12348|16913->12353|17258->12670|17287->12671|17321->12677|17350->12678
-                    LINES: 26->1|29->1|33->5|33->5|37->9|37->9|39->11|39->11|42->14|42->14|44->16|44->16|47->19|47->19|49->21|49->21|52->24|52->24|54->26|54->26|56->28|56->28|58->30|58->30|61->33|61->33|63->35|63->35|65->37|65->37|67->39|67->39|69->41|69->41|73->45|73->45|73->45|75->47|75->47|75->47|76->48|76->48|76->48|78->50|78->50|78->50|80->52|80->52|80->52|82->54|82->54|82->54|83->55|83->55|83->55|96->68|96->68|96->68|101->73|101->73|101->73|101->73|101->73|101->73|105->77|105->77|105->77|115->87|115->87|115->87|155->127|155->127|155->127|160->132|160->132|160->132|167->139|167->139|167->139|178->150|178->150|178->150|185->157|185->157|185->157|192->164|192->164|192->164|199->171|199->171|199->171|206->178|206->178|206->178|213->185|213->185|213->185|220->192|220->192|220->192|227->199|227->199|227->199|234->206|234->206|234->206|241->213|241->213|241->213|319->291|319->291|320->292|320->292|320->292|329->301|329->301|329->301|343->315|343->315|343->315|354->326|354->326|354->326|366->338|366->338|366->338|378->350|378->350|378->350|387->359|387->359|387->359|412->384|412->384|412->384|418->390|418->390|418->390|419->391|419->391|419->391|419->391|419->391|419->391|420->392|441->413|441->413|442->414|442->414|447->419|447->419|447->419|454->426|454->426|455->427|455->427
+                    HASH: 0ee607bffcb1b6a5db652e446be15bd47538857d
+                    MATRIX: 837->1|1057->126|1121->163|1149->164|1231->220|1258->221|1297->233|1326->234|1415->296|1443->297|1487->313|1516->314|1597->368|1625->369|1661->378|1689->379|1757->420|1785->421|1828->436|1857->437|1905->458|1933->459|1984->482|2013->483|2082->525|2110->526|2166->554|2195->555|2244->577|2272->578|2316->594|2345->595|2391->614|2419->615|2554->714|2569->720|2623->752|2732->825|2747->831|2804->865|2913->938|2928->944|2985->978|4018->1975|4033->1981|4101->2026|4202->2091|4217->2097|4286->2143|4387->2208|4402->2214|4475->2264|4618->2371|4633->2377|4697->2418|4814->2499|4829->2505|4897->2550|4960->2577|4975->2583|5030->2616|5101->2651|5116->2657|5178->2697|5249->2732|5264->2738|5330->2782|6270->3686|6285->3692|6342->3727|6741->4091|6757->4098|6784->4103|6829->4112|6845->4119|6873->4125|6997->4213|7012->4219|7055->4240|7295->4443|7311->4449|7379->4494|8579->5657|8595->5663|8647->5692|8723->5731|8739->5737|8767->5742|8853->5791|8869->5797|8895->5800|9031->5899|9065->5910|9440->6248|9456->6254|9503->6278|9609->6347|9625->6353|9677->6382|10013->6681|10029->6687|10057->6692|10153->6751|10169->6757|10207->6772|10377->6906|10393->6912|10428->6924|10525->6984|10541->6990|10593->7019|11033->7422|11072->7444|11113->7446|11178->7474|11194->7480|11225->7488|11368->7594|11440->7643|11525->7691|11541->7697|11571->7704|11623->7719|11639->7725|11667->7730|11765->7795|14023->10016|14039->10022|14065->10025|15047->10970|15063->10976|15120->11010|15471->11324|15488->11331|15516->11336|15933->11716|15950->11723|15982->11732|16361->12074|16378->12081|16405->12085|16785->12428|16802->12435|16831->12441|17212->12785|17229->12792|17262->12802|17516->13019|17533->13026|17569->13039|17979->13412|17995->13418|18053->13453|18275->13639|18316->13663|18356->13664|18432->13703|18449->13710|18483->13721|18526->13727|18543->13734|18574->13742|18618->13754|19276->14383|19306->14384|19383->14432|19413->14433|19706->14689|19723->14696|19751->14701|20096->15018|20125->15019|20159->15025|20188->15026
+                    LINES: 26->1|29->1|33->5|33->5|37->9|37->9|39->11|39->11|42->14|42->14|44->16|44->16|47->19|47->19|49->21|49->21|52->24|52->24|54->26|54->26|56->28|56->28|58->30|58->30|61->33|61->33|63->35|63->35|65->37|65->37|67->39|67->39|69->41|69->41|73->45|73->45|73->45|74->46|74->46|74->46|75->47|75->47|75->47|86->58|86->58|86->58|87->59|87->59|87->59|88->60|88->60|88->60|90->62|90->62|90->62|91->63|91->63|91->63|92->64|92->64|92->64|93->65|93->65|93->65|94->66|94->66|94->66|108->80|108->80|108->80|117->89|117->89|117->89|117->89|117->89|117->89|121->93|121->93|121->93|131->103|131->103|131->103|163->135|163->135|163->135|165->137|165->137|165->137|166->138|166->138|166->138|167->139|167->139|180->152|180->152|180->152|181->153|181->153|181->153|192->164|192->164|192->164|197->169|197->169|197->169|204->176|204->176|204->176|208->180|208->180|208->180|217->189|217->189|217->189|218->190|218->190|218->190|221->193|221->193|223->195|223->195|223->195|223->195|223->195|223->195|226->198|266->238|266->238|266->238|293->265|293->265|293->265|302->274|302->274|302->274|316->288|316->288|316->288|327->299|327->299|327->299|339->311|339->311|339->311|351->323|351->323|351->323|360->332|360->332|360->332|385->357|385->357|385->357|391->363|391->363|391->363|392->364|392->364|392->364|392->364|392->364|392->364|393->365|414->386|414->386|415->387|415->387|420->392|420->392|420->392|427->399|427->399|428->400|428->400
                     -- GENERATED --
                 */
             

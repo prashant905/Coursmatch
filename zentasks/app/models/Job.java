@@ -25,15 +25,22 @@ public class Job extends Model {
 	    
 	    public String begin_time;
 	    
+	    public String tags;
 	    
-	    public Job(String title, String company_name, String description ,String salary,String begin_name) {
+	    public String contact;
+	    
+	    public String link;
+	    
+	    
+	    public Job(String title, String company_name, String description ,String salary,String begin_name,String contact,String link) {
 	    	this.title = title;
 	    	this.company_name = company_name;
 	    	this.description = description;
 	    	this.salary = salary;
 	    	this.begin_time = begin_name;
+	    	this.contact = contact;
+	    	this.link = link;
 	    }
-	    
 	    // -- Queries
 	    
 	    public static Model.Finder<Long,Job> find = new Model.Finder<Long,Job>(Long.class, Job.class);

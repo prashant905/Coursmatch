@@ -1,15 +1,129 @@
-2015-06-29 14:29:34,143 - [INFO] - from play in pool-4-thread-4 
+2015-06-30 05:16:23,020 - [INFO] - from play in pool-42-thread-5 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-06-29 14:30:00,568 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-30 05:16:40,577 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-06-29 14:30:01,374 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-30 05:16:41,173 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-06-29 14:34:03,087 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-30 05:20:27,951 - [INFO] - from play in play-internal-execution-context-7 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-06-29 14:34:03,220 - [INFO] - from play in play-internal-execution-context-1 
+2015-06-30 05:20:28,100 - [INFO] - from play in play-internal-execution-context-7 
 Application started (Dev)
+
+2015-06-30 05:23:03,364 - [ERROR] - from play in play-internal-execution-context-19 
+Cannot invoke the action, eventually got an error: javax.persistence.PersistenceException: Query threw SQLException:Unknown column 't0.autor' in 'field list' 
+Bind values:[1] 
+Query was:
+select t0.id c0, t0.content c1, t0.autor c2, t0.source c3, t0.name c4, t0.course_id c5 from uploads t0 where course_id = ?  
+
+
+
+2015-06-30 05:23:03,420 - [ERROR] - from application in play-internal-execution-context-19 
+
+
+! @6mj8h8hnn - Internal server error, for (GET) [/course/1] ->
+
+play.api.Application$$anon$1: Execution exception[[PersistenceException: Query threw SQLException:Unknown column 't0.autor' in 'field list' 
+Bind values:[1] 
+Query was:
+select t0.id c0, t0.content c1, t0.autor c2, t0.source c3, t0.name c4, t0.course_id c5 from uploads t0 where course_id = ?  
+
+]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.6]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.6]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10.jar:2.2.6]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.6]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: javax.persistence.PersistenceException: Query threw SQLException:Unknown column 't0.autor' in 'field list' 
+Bind values:[1] 
+Query was:
+select t0.id c0, t0.content c1, t0.autor c2, t0.source c3, t0.name c4, t0.course_id c5 from uploads t0 where course_id = ?  
+
+
+	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:790) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:767) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:202) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:265) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1460) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.util.DefaultExpressionList.findList(DefaultExpressionList.java:177) ~[avaje-ebeanorm.jar:na]
+	at models.Uploads.findById(Uploads.java:48) ~[na:na]
+	at controllers.Application.viewCourse(Application.java:104) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.apply(routes_routing.scala:137) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.apply(routes_routing.scala:137) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.6]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.6]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.6]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.6]
+	at play.mvc.Security$AuthenticatedAction.call(Security.java:45) ~[play_2.10.jar:2.2.6]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.6]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.6]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.6]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.6]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 't0.autor' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_45]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.Util.getInstance(Util.java:386) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1054) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2825) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2323) ~[mysql-connector-java-5.1.27.jar:na]
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:174) ~[bonecp.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:377) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:162) ~[avaje-ebeanorm.jar:na]
+	... 28 common frames omitted
+
+2015-06-30 05:23:43,304 - [INFO] - from play in play-internal-execution-context-20 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-30 05:23:43,456 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2015-06-30 05:24:32,392 - [INFO] - from play in play-internal-execution-context-20 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-06-30 05:24:32,521 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2015-06-30 05:24:47,617 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
+Link
+
+2015-06-30 05:24:47,620 - [INFO] - from application in play-akka.actor.default-dispatcher-50 
+www.somelink.com
 

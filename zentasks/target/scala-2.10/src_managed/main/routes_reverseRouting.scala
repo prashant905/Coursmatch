@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/conf/routes
-// @HASH:af961fe2907a2b327863c098d555c9ad7ed9b9cb
-// @DATE:Mon Jun 29 05:09:25 CEST 2015
+// @HASH:81886b1ccee44bfbd9833ff858c09cb36da17467
+// @DATE:Tue Jun 30 05:16:09 CEST 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,10 @@ import play.libs.F
 import Router.queryString
 
 
+// @LINE:28
 // @LINE:24
+// @LINE:23
+// @LINE:22
 // @LINE:20
 // @LINE:19
 // @LINE:18
@@ -26,11 +29,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:24
+// @LINE:28
 class ReverseAssets {
     
 
-// @LINE:24
+// @LINE:28
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -39,6 +42,9 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:24
+// @LINE:23
+// @LINE:22
 // @LINE:20
 // @LINE:19
 // @LINE:18
@@ -51,6 +57,18 @@ def at(file:String): Call = {
 // @LINE:6
 class ReverseApplication {
     
+
+// @LINE:24
+def uploadMaterial(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "course/")
+}
+                                                
+
+// @LINE:23
+def saveCourseTags(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "course/")
+}
+                                                
 
 // @LINE:18
 def compareCourses(): Call = {
@@ -67,6 +85,12 @@ def dashboard(): Call = {
 // @LINE:15
 def viewCourse(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "course/" + implicitly[PathBindable[Long]].unbind("id", id))
+}
+                                                
+
+// @LINE:22
+def saveStudentTags(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "dashboard/")
 }
                                                 
 
@@ -120,7 +144,10 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "login")
                   
 
 
+// @LINE:28
 // @LINE:24
+// @LINE:23
+// @LINE:22
 // @LINE:20
 // @LINE:19
 // @LINE:18
@@ -133,11 +160,11 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "login")
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:24
+// @LINE:28
 class ReverseAssets {
     
 
-// @LINE:24
+// @LINE:28
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -151,6 +178,9 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:24
+// @LINE:23
+// @LINE:22
 // @LINE:20
 // @LINE:19
 // @LINE:18
@@ -163,6 +193,28 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:6
 class ReverseApplication {
     
+
+// @LINE:24
+def uploadMaterial : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.uploadMaterial",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "course/"})
+      }
+   """
+)
+                        
+
+// @LINE:23
+def saveCourseTags : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.saveCourseTags",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "course/"})
+      }
+   """
+)
+                        
 
 // @LINE:18
 def compareCourses : JavascriptReverseRoute = JavascriptReverseRoute(
@@ -192,6 +244,17 @@ def viewCourse : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(id) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "course/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      }
+   """
+)
+                        
+
+// @LINE:22
+def saveStudentTags : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.saveStudentTags",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "dashboard/"})
       }
    """
 )
@@ -275,7 +338,10 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:28
 // @LINE:24
+// @LINE:23
+// @LINE:22
 // @LINE:20
 // @LINE:19
 // @LINE:18
@@ -289,11 +355,11 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:24
+// @LINE:28
 class ReverseAssets {
     
 
-// @LINE:24
+// @LINE:28
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /public path""", _prefix + """assets/$file<.+>""")
 )
@@ -302,6 +368,9 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:24
+// @LINE:23
+// @LINE:22
 // @LINE:20
 // @LINE:19
 // @LINE:18
@@ -314,6 +383,18 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 // @LINE:6
 class ReverseApplication {
     
+
+// @LINE:24
+def uploadMaterial(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.uploadMaterial(), HandlerDef(this, "controllers.Application", "uploadMaterial", Seq(), "POST", """""", _prefix + """course/""")
+)
+                      
+
+// @LINE:23
+def saveCourseTags(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.saveCourseTags(), HandlerDef(this, "controllers.Application", "saveCourseTags", Seq(), "GET", """""", _prefix + """course/""")
+)
+                      
 
 // @LINE:18
 def compareCourses(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
@@ -330,6 +411,12 @@ def dashboard(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:15
 def viewCourse(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.viewCourse(id), HandlerDef(this, "controllers.Application", "viewCourse", Seq(classOf[Long]), "GET", """""", _prefix + """course/$id<[^/]+>""")
+)
+                      
+
+// @LINE:22
+def saveStudentTags(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.saveStudentTags(), HandlerDef(this, "controllers.Application", "saveStudentTags", Seq(), "GET", """""", _prefix + """dashboard/""")
 )
                       
 

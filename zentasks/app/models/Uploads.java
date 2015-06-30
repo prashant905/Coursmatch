@@ -15,16 +15,23 @@ public class Uploads extends Model {
 		@Id
 	    public Long id;
 	    
-	    public String text;
-	    
-	    public String autor;
-	    
-	    
-	    
-	    public Uploads(String text, String autor) {
-	        this.text = text;
-	        this.autor = autor;
-	    }
+		  public String content;
+		@ManyToOne  
+		  public Course course;
+		    
+		  public String author;
+		    
+		  public String source;
+		    
+		  public String name;  
+		    public Uploads(String content, Course course, String author, String source,String name) {
+		        this.content = content;
+		        this.course = course;
+		        this.author = author;
+		        this.source = source;
+		        this.name = name;
+		        save();
+		    }
 	    
 	    // -- Queries
 	    
@@ -37,8 +44,8 @@ public class Uploads extends Model {
 	    public static List<Uploads> findAll() {
 	        return find.all();
 	    }
-	    public static Uploads findById(Long id) {
-	        return find.where().eq("id", id).findUnique();
+	    public static List<Uploads> findById(Long id) {
+	    	 return find.where().eq("course_id", id).findList();
 	    }
 	    
 	    /**

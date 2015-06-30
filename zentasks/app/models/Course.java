@@ -23,7 +23,7 @@ public class Course extends Model {
 	    
 	    public String description;
 	    
-	    
+	    public String tags;
 	    
 	    // -- Queries
 	    

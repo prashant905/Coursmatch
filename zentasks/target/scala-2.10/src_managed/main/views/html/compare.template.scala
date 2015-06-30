@@ -20,14 +20,14 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object compare extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template4[Student,List[Course],List[Job],Html,play.api.templates.HtmlFormat.Appendable] {
+object compare extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template6[Student,List[Course],List[Job],String,String,Html,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(student: Student , courses:List[Course],jobs:List[Job])(content:Html):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(student: Student , courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String)(content:Html):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.72*/("""
-"""),_display_(Seq[Any](/*2.2*/main(student,courses,jobs)/*2.28*/{_display_(Seq[Any](format.raw/*2.29*/("""
+Seq[Any](format.raw/*1.107*/("""
+"""),_display_(Seq[Any](/*2.2*/main(student,courses,jobs,course_tags,job_tags)/*2.49*/{_display_(Seq[Any](format.raw/*2.50*/("""
 <html>
 <div id="menu_container" class="container">
 	<div class="panel panel-default">
@@ -98,19 +98,19 @@ $(document).ready(function() """),format.raw/*58.30*/("""{"""),format.raw/*58.31
 """))}
     }
     
-    def render(student:Student,courses:List[Course],jobs:List[Job],content:Html): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs)(content)
+    def render(student:Student,courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,content:Html): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs,course_tags,job_tags)(content)
     
-    def f:((Student,List[Course],List[Job]) => (Html) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs) => (content) => apply(student,courses,jobs)(content)
+    def f:((Student,List[Course],List[Job],String,String) => (Html) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs,course_tags,job_tags) => (content) => apply(student,courses,jobs,course_tags,job_tags)(content)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 29 04:56:33 CEST 2015
+                    DATE: Tue Jun 30 05:16:09 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/compare.scala.html
-                    HASH: bde74c9b83782cf1aa1a72c566ee9c304b81ca5c
-                    MATRIX: 805->1|969->71|1006->74|1040->100|1078->101|1268->256|1282->262|1338->297|1775->698|1813->720|1853->722|1917->750|1932->756|1957->759|1996->762|2011->768|2038->773|2081->784|2279->946|2317->968|2357->970|2421->998|2436->1004|2461->1007|2500->1010|2515->1016|2542->1021|2585->1032|2981->1392|3010->1399|3145->1507|3173->1508|3362->1670|3390->1671|3529->1783|3558->1784|3634->1833|3663->1834|3696->1840|3724->1841|3753->1843|3781->1844|3842->1877|3871->1878|4059->2039|4087->2040|4149->2071
+                    HASH: 748c8a4b7a89e6b3453a84c18976e3042ad6bfd4
+                    MATRIX: 819->1|1019->106|1056->109|1111->156|1149->157|1339->312|1353->318|1409->353|1846->754|1884->776|1924->778|1988->806|2003->812|2028->815|2067->818|2082->824|2109->829|2152->840|2350->1002|2388->1024|2428->1026|2492->1054|2507->1060|2532->1063|2571->1066|2586->1072|2613->1077|2656->1088|3052->1448|3081->1455|3216->1563|3244->1564|3433->1726|3461->1727|3600->1839|3629->1840|3705->1889|3734->1890|3767->1896|3795->1897|3824->1899|3852->1900|3913->1933|3942->1934|4130->2095|4158->2096|4220->2127
                     LINES: 26->1|29->1|30->2|30->2|30->2|36->8|36->8|36->8|47->19|47->19|47->19|48->20|48->20|48->20|48->20|48->20|48->20|48->20|52->24|52->24|52->24|53->25|53->25|53->25|53->25|53->25|53->25|53->25|66->38|66->38|73->45|73->45|77->49|77->49|80->52|80->52|82->54|82->54|83->55|83->55|84->56|84->56|86->58|86->58|91->63|91->63|97->69
                     -- GENERATED --
                 */
