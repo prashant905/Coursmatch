@@ -1,4 +1,3 @@
-compile
 run
 clean
 compile
@@ -498,3 +497,4 @@ compile
 run
 play
 run
+exit
