@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2015 at 05:42 AM
+-- Generation Time: Jul 01, 2015 at 05:32 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `course_id` bigint(20) NOT NULL,
   `student_id` varchar(255) NOT NULL,
   `comment` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
@@ -41,7 +41,28 @@ INSERT INTO `comment` (`id`, `course_id`, `student_id`, `comment`) VALUES
 (4, 11, 'mohamed.ragab@tum.de', 'hii'),
 (5, 11, 'thomas@tum.de', 'i think otherwise'),
 (6, 11, 'mohamed.ragab@tum.de', 'hiiii again thomas testing this is working or not'),
-(7, 11, 'thomas@tum.de', 'tags are done ');
+(7, 11, 'thomas@tum.de', 'tags are done '),
+(8, 3, 'mohamed.ragab@tum.de', 'best course');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE IF NOT EXISTS `company` (
+  `email` varchar(255) NOT NULL,
+  `password` text NOT NULL,
+  `name` text NOT NULL,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`email`, `password`, `name`, `description`) VALUES
+('apple@coursematch.de', '1234', 'Apple Ltd', 'multinational');
 
 -- --------------------------------------------------------
 
@@ -67,7 +88,7 @@ INSERT INTO `course` (`id`, `professor_name`, `chair`, `name`, `description`, `t
 (2, 'prof.1', 'software engineering', 'Introduction to Software Engineering', 'fun course for fresh students at the university recommended to begginers', 'complex'),
 (3, 'Prof.2', 'software engineering', 'Patterns', 'software patterns at its best . From MVC to fascade s', 'thomas'),
 (4, 'Prof.3', 'informatics', 'Web Services', 'fun A challenging course for those though are interested in web programming', 'fun, easy, playfull'),
-(5, 'Prof.1', 'software engineering', 'Introduction to Software application', 'fun course for fresh students at the university recommended to advanced people', 'fun'),
+(5, 'Prof.1', 'software engineering', 'Introduction to Software application', 'fun course for fresh students at the university recommended to advanced people', ''),
 (6, 'Prof.12', 'formal methods', 'Patterns studies', 'patterns studies for all chairs', ''),
 (7, 'Prof.3', 'informatics', 'Web Services techniques', 'fun A challenging course for those though are interested in theoretical web programming', 'bedan, 5awal'),
 (8, 'Prof.1', 'Database', 'Databases', 'theory of queries', ''),
@@ -83,29 +104,22 @@ INSERT INTO `course` (`id`, `professor_name`, `chair`, `name`, `description`, `t
 
 CREATE TABLE IF NOT EXISTS `job` (
   `id` int(11) NOT NULL,
-  `company_name` text,
   `title` text,
   `salary` text,
-  `begin_time` text,
+  `begin_date` text,
   `description` text,
   `contact` text,
   `link` text,
-  `tags` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `tags` text NOT NULL,
+  `company_name` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `job`
 --
 
-INSERT INTO `job` (`id`, `company_name`, `title`, `salary`, `begin_time`, `description`, `contact`, `link`, `tags`) VALUES
-(2, 'Siemens', 'Software Engineer ', '3420 €', 'As soon as possible', 'We are searching some students to build some software stuff. You shoud be able to use C#.', 'recruiting@siemens.de', 'http://www.siemens.de', 'java'),
-(3, 'SAP', 'Software Engineering Internship', '1234 €', '1.12.2015', 'We are seaching for IT students, which are interessted in an internship at our awesome company.', 'recruiting@sap.de', 'http://www.sap.de', ''),
-(4, 'TNG', 'Software Engineering Internship', '2015 €', '15.10.2015', 'We are searching for working students!!!', 'recruiting@tngtech.de', 'http://www.tngtech.de', ''),
-(5, 'Audi', 'Software Engineering Internship', '2541 €', '1.11.2015', 'We are searching for IT student, who want to attent at an internship at our awesome company.', 'recruiting@audi.de', 'http://www.audi.de', ''),
-(6, 'Apple', 'Software Engineering Internship', '2846 €', '17.10.2015', 'We are searching for IT student, who want to attent at an internship at our awesome company.', 'recruiting@apple.de', 'http://www.apple.de', ''),
-(7, 'IBM', 'Software Engineering Internship', '2446 €', '16.10.2015', 'We are searching for IT student, who want to attent at an internship at our awesome company.', 'recruiting@ibm.de', 'http://www.ibm.de', ''),
-(8, 'Tum', 'Hilfswissenschaftler', '123 €', 'Now', 'We are searching for working students!!!', 'recruiting@tum.de', 'http://www.tum.de', ''),
-(9, 'BMW', 'Software Engineering Internship', '2444 €', '1.11.2015', 'We are searching for IT student, who want to build cool cars at our company.', 'recruiting@bmw.de', 'http://www.bmw.de', 'frontend, java');
+INSERT INTO `job` (`id`, `title`, `salary`, `begin_date`, `description`, `contact`, `link`, `tags`, `company_name`) VALUES
+(13, 'IOS Frontend Developer changed', 'IOS Frontend Developer changed', '1st of august 2013', 'development IOS', 'recruit@apple.de', 'www.apple.de/jobs?id=1', 'IOS, Developer', 'Apple Ltd');
 
 -- --------------------------------------------------------
 
@@ -131,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `overallranking` (
 INSERT INTO `overallranking` (`id`, `course_id`, `fair`, `material`, `fun`, `grade`, `recommend`, `overall_rate`) VALUES
 (1, 1, 5, 1, 1, 1, 5, 2),
 (2, 2, 0, 0, 0, 0, 0, 0),
-(3, 3, 0, 1, 1, 1, 1, 0),
+(3, 3, 0, 3, 3, 1, 3, 1),
 (4, 4, 0, 0, 0, 0, 0, 0),
 (5, 5, 0, 0, 0, 0, 0, 0),
 (6, 6, 0, 0, 0, 0, 0, 0),
@@ -156,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `ranking` (
   `course_id` bigint(20) NOT NULL,
   `grade` double NOT NULL,
   `overall_rate` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ranking`
@@ -178,7 +192,8 @@ INSERT INTO `ranking` (`id`, `fair`, `material`, `fun`, `recommend`, `course_id`
 (42, 5, 2, 2, 5, 11, 4, 3),
 (43, 5, 1, 1, 5, 1, 1, 2),
 (44, 0, 1, 1, 1, 3, 1, 0),
-(45, 5, 1, 1, 5, 1, 1, 2);
+(45, 5, 1, 1, 5, 1, 1, 2),
+(46, 0, 5, 5, 5, 3, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -199,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`email`, `name`, `password`, `course_tags`, `job_tags`) VALUES
-('mohamed.ragab@tum.de', 'mohamed ragab', '1234', '', ''),
+('mohamed.ragab@tum.de', 'mohamed ragab', '1234', 'easy, thomas', 'IOS'),
 ('thomas@tum.de', 'thomas', '1234', 'fun, easy, modelingdata, boring as shit, 5awal', '');
 
 -- --------------------------------------------------------
@@ -233,6 +248,12 @@ INSERT INTO `uploads` (`id`, `course_id`, `author`, `source`, `name`, `content`)
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`), ADD KEY `course_id` (`course_id`), ADD KEY `student_id` (`student_id`);
+
+--
+-- Indexes for table `company`
+--
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `course`
@@ -278,12 +299,12 @@ ALTER TABLE `uploads`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `job`
 --
 ALTER TABLE `job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `overallranking`
 --
@@ -293,7 +314,7 @@ ALTER TABLE `overallranking`
 -- AUTO_INCREMENT for table `ranking`
 --
 ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `uploads`
 --

@@ -4,7 +4,7 @@
 		module="zentasks-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20150627221142"
+		publication="20150701030740"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

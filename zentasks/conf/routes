@@ -3,25 +3,45 @@
 # ~~~~
 
 # The home page
-GET     /                                   controllers.Application.login()
+GET     /                                              controllers.ChooseUser.login()
+GET     /coursematch                                   controllers.ChooseUser.login()
+GET     /coursematch/student                                   controllers.Application.login()
+GET     /coursematch/company                                   controllers.CompanyController.login()
+
 
 # Authentication
-GET     /login                              controllers.Application.login()
-POST    /login                              controllers.Application.authenticate()
-GET     /logout                             controllers.Application.logout()
+GET     /coursematch/student/login                              controllers.Application.login()
+POST    /coursematch/student/login                              controllers.Application.authenticate()
+GET     /coursematch/student/logout                             controllers.Application.logout()
 
-GET 	/dashboard							controllers.Application.dashboard()
+GET 	/coursematch/student/dashboard							controllers.Application.dashboard()
 
-GET    /course/:id                       controllers.Application.viewCourse(id:Long)
+GET     /coursematch/company/login                              controllers.CompanyController.login()
+POST    /coursematch/company/login                              controllers.CompanyController.authenticate()
+GET     /coursematch/company/logout                             controllers.CompanyController.logout()
 
-GET  /rateCourse/:id                       controllers.Application.rateCourse(id:Long)
-GET /compareCourses                       controllers.Application.compareCourses()
-GET /displayCourseRatings                      controllers.Application.displayCourseRatings()
-GET    /course/:id/                       controllers.Application.saveComment(id:Long)
+GET 	/coursematch/company/dashboard							controllers.CompanyController.dashboard()
+POST 	/coursematch/company/dashboard/saveJob					controllers.CompanyController.saveJob()
+GET 	/coursematch/company/dashboard/deleteJob/:id					controllers.CompanyController.deleteJob(id:Long)
+POST 	/coursematch/company/dashboard/editJob/:id					controllers.CompanyController.editJob(id:Long)
+GET 	/coursematch/company/dashboard/viewToEditJob/:id		controllers.CompanyController.viewToEditJob(id:Long)
 
-GET /dashboard/                       controllers.Application.saveStudentTags()
-GET /course/                       controllers.Application.saveCourseTags()
-POST    /course/                            controllers.Application.uploadMaterial()
+
+GET    /coursematch/student/course/:id                       controllers.Application.viewCourse(id:Long)
+
+GET  /coursematch/student/rateCourse/:id                       controllers.Application.rateCourse(id:Long)
+GET /coursematch/student/compareCourses                       controllers.Application.compareCourses()
+GET /coursematch/student/displayCourseRatings                      controllers.Application.displayCourseRatings()
+GET    /coursematch/student/course/:id/                       controllers.Application.saveComment(id:Long)
+
+GET /coursematch/student/dashboard/                       controllers.Application.saveStudentTags()
+GET /coursematch/student/course/                       controllers.Application.saveCourseTags()
+POST    /coursematch/student/course/                            controllers.Application.uploadMaterial()
+
+
+
+
+
 # Javascript routing
 
 # Map static resources from the /public folder to the /public path

@@ -36,7 +36,6 @@ public class Application extends Controller {
 		String student_job_tags = student.job_tags;
 		ArrayList<String> favCourseTags = new ArrayList<String>(Arrays.asList(student_course_tags.split(",")));
 		ArrayList<String> favJobTags = new ArrayList<String>(Arrays.asList(student_job_tags.split(",")));
-		
 		ArrayList<Course> courses = new ArrayList<Course>(Course.findAll());
 		matchedCourses = new ArrayList<Course>();
 		
@@ -45,24 +44,28 @@ public class Application extends Controller {
 		if(!student_course_tags.isEmpty()){
 			for(Course course : courses){
 				ArrayList<String> ct = new ArrayList<String>(Arrays.asList(course.tags.split(",")));
-				for(String tag : ct){
-					for(String favTag:favCourseTags){
-						if((tag.contains(favTag))){
-							if(!matchedCourses.contains(course))
-								matchedCourses.add(course);
+					for(String tag : ct){
+						if(!tag.isEmpty()){
+							for(String favTag:favCourseTags){
+								if((favTag.contains(tag.replaceAll("\\s+","")))){
+									if(!matchedCourses.contains(course))
+										matchedCourses.add(course);
+								}
+							}
 						}
 					}
-				}
 			}
 		}
 		if(!student_job_tags.isEmpty()){
 			for(Job job : jobs){
 				ArrayList<String> jt = new ArrayList<String>(Arrays.asList(job.tags.split(",")));
 				for(String tag : jt){
-					for(String favTag:favJobTags){
-						if((tag.contains(favTag))){
-							if(!matchedJobs.contains(job))
-								matchedJobs.add(job);
+					if(!tag.isEmpty()){
+						for(String favTag:favJobTags){
+							if((favTag.contains(tag.replaceAll("\\s+","")))){
+								if(!matchedJobs.contains(job))
+									matchedJobs.add(job);
+							}
 						}
 					}
 				}
@@ -219,7 +222,7 @@ public class Application extends Controller {
 	 */
 	public static Result logout() {
 		flash("success", "You've been logged out");
-		return redirect(routes.Application.login());
+		return redirect(routes.ChooseUser.login());
 	}
 
 	// -----------------------------------------------------------------------//
