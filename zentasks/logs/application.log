@@ -1,15 +1,106 @@
-2015-07-01 05:29:33,958 - [INFO] - from play in pool-266-thread-4 
+2015-07-01 21:17:44,113 - [INFO] - from play in pool-4-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-07-01 05:29:43,037 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-01 21:17:59,306 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-01 05:29:44,139 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-01 21:18:00,079 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-07-01 05:31:25,546 - [INFO] - from play in play-internal-execution-context-4 
+2015-07-01 21:24:53,655 - [INFO] - from play in play-internal-execution-context-8 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-01 05:31:25,738 - [INFO] - from play in play-internal-execution-context-4 
+2015-07-01 21:24:53,944 - [INFO] - from play in play-internal-execution-context-8 
+Application started (Dev)
+
+2015-07-01 21:27:20,291 - [INFO] - from play in play-internal-execution-context-16 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-01 21:27:20,532 - [INFO] - from play in play-internal-execution-context-16 
+Application started (Dev)
+
+2015-07-01 21:30:25,891 - [INFO] - from play in play-internal-execution-context-21 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-01 21:30:26,016 - [INFO] - from play in play-internal-execution-context-21 
+Application started (Dev)
+
+2015-07-01 21:31:15,529 - [INFO] - from play in play-internal-execution-context-24 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-01 21:31:15,659 - [INFO] - from play in play-internal-execution-context-24 
+Application started (Dev)
+
+2015-07-01 21:31:51,686 - [INFO] - from play in play-internal-execution-context-24 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-01 21:31:51,816 - [INFO] - from play in play-internal-execution-context-24 
+Application started (Dev)
+
+2015-07-01 21:32:34,585 - [INFO] - from play in play-internal-execution-context-24 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-01 21:32:34,787 - [INFO] - from play in play-internal-execution-context-24 
+Application started (Dev)
+
+2015-07-01 21:32:37,923 - [ERROR] - from play in play-internal-execution-context-24 
+Cannot invoke the action, eventually got an error: java.lang.NullPointerException: The id is null
+
+2015-07-01 21:32:37,970 - [ERROR] - from application in play-internal-execution-context-24 
+
+
+! @6mjkli9fh - Internal server error, for (GET) [/coursematch/student/dashboard] ->
+
+play.api.Application$$anon$1: Execution exception[[NullPointerException: The id is null]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.6]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.6]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:268) [play_2.10.jar:2.2.6]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10.jar:2.2.6]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.6]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: java.lang.NullPointerException: The id is null
+	at com.avaje.ebeaninternal.server.core.DefaultServer.find(DefaultServer.java:1042) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.find(DefaultServer.java:1033) ~[avaje-ebeanorm.jar:na]
+	at play.db.ebean.Model$Finder.byId(Model.java:261) ~[play-java-ebean_2.10.jar:2.2.6]
+	at controllers.Application.dashboard(Application.java:111) ~[classes/:2.2.6]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.apply(routes_routing.scala:197) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.apply(routes_routing.scala:197) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.6]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.6]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.6]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.6]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.6]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.6]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.6]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.6]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.6]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-07-01 21:32:53,823 - [INFO] - from play in play-internal-execution-context-24 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-01 21:32:54,063 - [INFO] - from play in play-internal-execution-context-24 
 Application started (Dev)
 

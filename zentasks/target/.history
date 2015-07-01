@@ -1,7 +1,5 @@
 compile
 run
-compile
-run
 clean
 compile
 run
@@ -497,4 +495,6 @@ cleam
 clean
 reload
 compile
+run
+play
 run

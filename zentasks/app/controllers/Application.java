@@ -47,7 +47,7 @@ public class Application extends Controller {
 					for(String tag : ct){
 						if(!tag.isEmpty()){
 							for(String favTag:favCourseTags){
-								if((favTag.contains(tag.replaceAll("\\s+","")))){
+								if((favTag.toLowerCase().contains(tag.replaceAll("\\s+","").toLowerCase()))){
 									if(!matchedCourses.contains(course))
 										matchedCourses.add(course);
 								}
@@ -62,7 +62,7 @@ public class Application extends Controller {
 				for(String tag : jt){
 					if(!tag.isEmpty()){
 						for(String favTag:favJobTags){
-							if((favTag.contains(tag.replaceAll("\\s+","")))){
+							if((favTag.toLowerCase().contains(tag.replaceAll("\\s+","").toLowerCase()))){
 								if(!matchedJobs.contains(job))
 									matchedJobs.add(job);
 							}
@@ -94,8 +94,8 @@ public class Application extends Controller {
 //-------------------------------------------------------------------------------//
 //------------------------------save comments------------------------------------//
 	public static Result saveComment(Long id){
-		
-		 new Comment(Course.findById(id),request().username(),request().getQueryString("commentPlace"));
+		DynamicForm form = form().bindFromRequest();
+		 new Comment(Course.findById(id),request().username(),form.get("commentPlace"));
 		 return viewCourse(id);
 	}
 //------------------------------------------------------------------------------//	
@@ -126,12 +126,10 @@ public class Application extends Controller {
 	}
 
 	public static Result displayCourseRatings(){
+		DynamicForm form = form().bindFromRequest();
 		Student student = Student.find.byId(request().username());
-		Overallranking ranking1 = Overallranking.findByCourseId((long) Double.parseDouble(request()
-				.getQueryString("course_1")));
-		Overallranking ranking2 = Overallranking.findByCourseId((long) Double.parseDouble(request()
-				.getQueryString("course_2")));
-		
+		Overallranking ranking1 = Overallranking.findByCourseId((long) Double.parseDouble(form.get("course_1")));
+		Overallranking ranking2 = Overallranking.findByCourseId((long) Double.parseDouble(form.get("course_2")));
 		return ok(compare.render(Student.find.byId(request().username()),
 				Course.findAll(), Job.findAll(),student.course_tags,student.job_tags,
 				fiveStarRate.render(ranking1,
@@ -144,17 +142,14 @@ public class Application extends Controller {
 	// Course-------------------------------------//
 	@Transactional
 	public static Result rateCourse(Long id) {
+		DynamicForm form = form().bindFromRequest();
 		Ranking ranking = new Ranking();
 		ranking.course = Course.findById(id);
-		ranking.fair = (int) Double.parseDouble(request()
-				.getQueryString("fair"));
-		ranking.material = (int) Double.parseDouble(request().getQueryString(
-				"material"));
-		ranking.fun = (int) Double.parseDouble(request().getQueryString("fun"));
-		ranking.grade = (int) Double.parseDouble(request().getQueryString(
-				"grade").toString());
-		ranking.recommend = (int) Double.parseDouble(request().getQueryString(
-				"recommend"));
+		ranking.fair = (int) Double.parseDouble(form.get("fair"));
+		ranking.material = (int) Double.parseDouble(form.get("material"));
+		ranking.fun = (int) Double.parseDouble(form.get("fun"));
+		ranking.grade = (int) Double.parseDouble(form.get("grade").toString());
+		ranking.recommend = (int) Double.parseDouble(form.get("recommend"));
 		ranking.overall_rate = ranking.calculateCurrentOverallRate();
 		ranking.save();
 		Ranking.findOverallRate(id);
