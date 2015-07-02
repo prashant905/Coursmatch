@@ -46,6 +46,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 			<div class="panel panel-primary">
 				<div class="panel-heading">Recommended Jobs</div>
 				<table id="jobs" class="table table-striped" cellspacing="0">
+				<input aria-controls="recommendedCourses" placeholder="" class="form-control input-sm" type="search">
 					<th></th>
 					<tbody class="searchable">
 						@for(job <- matchJobs) {

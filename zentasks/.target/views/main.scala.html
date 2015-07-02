@@ -4,8 +4,14 @@
 <style>
 #menu_container{
 	position: relative;
-	margin-left: 360px;   //not 450px please
+	margin-left: 360px;  
 }
+
+.posFixed{
+  position:fixed;
+  z-index: 1000;
+}
+
 .nav > li {
    width: 220px !important;
   text-align: center !important;
@@ -79,7 +85,7 @@
         </header>
         
         
-		<nav style="position:fixed">
+		<nav class="posFixed" >
 		    <div style="padding: 10px 0 0 15px">
 		     <img src="@routes.Assets.at("images/TU_Muenchen_Logo.svg.png")" height="60px">
 		    </div>
@@ -138,7 +144,7 @@
  			 </form>
  		</div>
         <section>
-      <ul class="breadcrumb" style="margin-top:52px;margin-left:218px">
+      <ul class="breadcrumb"  style="margin-top:52px;margin-left:218px">
       <li><a href="@routes.StudentOperationController.dashboard()">Dashboard</a> <span class="divider">/</span></li>
 		<li><a href="@routes.StudentOperationController.compareCourses()">CompareCourses</a> <span
 			class="divider"></span></li>

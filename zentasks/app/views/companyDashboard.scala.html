@@ -9,6 +9,11 @@
 	padding-top: 50px;
 }
 
+.posFixed{
+  position:fixed;
+  z-index: 1000;
+}
+
 .nav>li {
 	width: 220px !important;
 	text-align: center !important;
@@ -80,8 +85,8 @@
 
 
 
-		<a href="@routes.CompanyOperationController.dashboard()" id="logo"> <img
-			src="@routes.Assets.at(" images/logo-white.png")" height="26px">
+		<a href="@routes.CompanyOperationController.dashboard()" id="logo"> 
+		<img src="@routes.Assets.at("images/logo-white.png")" height="26px">
 		</a>
 
 		<dl id="user">
@@ -98,7 +103,7 @@
 	</header>
 
 
-	<nav style="position: fixed">
+	<nav class="posFixed">
 
 		<div style="padding: 10px 0 0 0px">
 			<h4 class="dashboard">Jobs</h4>

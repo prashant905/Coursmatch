@@ -9,6 +9,11 @@
 	padding-top: 50px;
 }
 
+.posFixed{
+  position:fixed;
+  z-index: 1000;
+}
+
 .nav>li {
 	width: 220px !important;
 	text-align: center !important;
@@ -98,7 +103,7 @@
 	</header>
 
 
-	<nav style="position:fixed">
+	<nav class="posFixed">
 
 		<div style="padding: 10px 0 0 0px">
 			<h4 class="dashboard">Jobs</h4>
@@ -108,7 +113,7 @@
 		</div>
 	</nav>
 	<div id="menu_container" class="container">
-		<div style="margin-top: 20px" class="panel panel-default">
+		<div style="margin-top: 20px" class="panel panel-primary">
 			<header class="panel-heading">
 				<h3 class="panel-title">Create A Job</h3>
 			</header>

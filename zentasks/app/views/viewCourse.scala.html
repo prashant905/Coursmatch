@@ -8,6 +8,11 @@
 	width: 50%;
 }
 
+.posFixed{
+  position:fixed;
+  z-index: 1000;
+}
+
 .nav>li {
 	width: 220px !important;
 	text-align: center !important;
@@ -98,7 +103,7 @@
 	</header>
 
 
-	<nav style="position:fixed">
+	<nav class="posFixed">
 		<div style="padding: 10px 0 0 15px">
 			<img src="@routes.Assets.at("images/TU_Muenchen_Logo.svg.png")" height="60px">
 		</div>
@@ -168,7 +173,7 @@
 
 		<div style="line-height: 30px">
 			<p class="coursetitle">@course.name</p>
-				<p><form style=" position: relative; left: -556px;"
+				<p><form style=" position: relative; left: -373px;"
 					action="@routes.StudentOperationController.addToFavorites(course.id)">
 					<div style="width: 100; min-height: 20px; margin: auto;">
 						<button id="compareCoursesButton" type="submit"
