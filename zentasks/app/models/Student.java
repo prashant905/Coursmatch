@@ -1,6 +1,7 @@
 package models;
 
 import java.util.*;
+
 import javax.persistence.*;
 
 import play.db.ebean.*;
@@ -17,6 +18,7 @@ public class Student extends Model {
 
 	@Id
     @Constraints.Required
+	@Formats.NonEmpty
     public String email;
     
     @Constraints.Required

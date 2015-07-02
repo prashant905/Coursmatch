@@ -80,7 +80,7 @@
 
 
 
-		<a href="@routes.CompanyController.dashboard()" id="logo"> <img
+		<a href="@routes.CompanyOperationController.dashboard()" id="logo"> <img
 			src="@routes.Assets.at(" images/logo-white.png")" height="26px">
 		</a>
 
@@ -98,7 +98,7 @@
 	</header>
 
 
-	<nav>
+	<nav style="position:fixed">
 
 		<div style="padding: 10px 0 0 0px">
 			<h4 class="dashboard">Jobs</h4>
@@ -115,7 +115,7 @@
 			<div class="panel-body">
 
 				<form class="form-horizontal" method="post"
-					action="@routes.CompanyController.editJob(job.id)">
+					action="@routes.CompanyOperationController.editJob(job.id)">
 					<div class="form-group ">
 						<label class="col-xs-2 control-label">Company Name</label>
 						<div class="col-xs-10">

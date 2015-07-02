@@ -1,5 +1,7 @@
-@(matchedCourses:List[Course],matchJobs:List[Job],student: Student , courses: List[Course], jobs:List[Job],course_tags:String,job_tags:String)
-@main(student,courses,jobs,course_tags,job_tags){
+@(matchedCourses:List[Course],matchJobs:List[Job],student: Student ,
+courses: List[Course],
+jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses])
+@main(student,courses,jobs,course_tags,job_tags,favCourses){
 
 
 <div id="menu_container" class="container">
@@ -14,149 +16,193 @@
 
 	<div class="tab-content">
 		<div id="home" class="tab-pane fade in active">
-			<h3>Dashboard</h3>
+			<h3></h3>
+			<div class="panel panel-primary" style="margin-bottom: 60px">
+				<div class="panel-heading">Recommended Courses</div>
+				<table id="recommendedCourses" class="table table-striped"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Professor</th>
+							<th>Chair</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody class="searchable">
+						@for(course <- matchedCourses) {
+						<tr>
 
-	
-<div class="panel panel-danger" style="margin-bottom:60px">
-	<div class="panel-heading">Recommended Courses</div>
-		<table id="recommendedCourses" class="table table-striped" cellspacing="0"
-				>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Professor</th>
-						<th>Chair</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody class="searchable">
-					@for(course <- matchedCourses) {
-					<tr>
-
-						<td><a href="@routes.Application.viewCourse(course.id)">@course.name</td>
-						<td>@course.professor_name</td>
-						<td>@course.chair</td>
-						<td>@course.description</td>
-					</tr>
-					}
-				</tbody>
-			</table>
-		</div>
-	<div class="panel panel-danger">
-		<div class="panel-heading">Recommended Jobs</div>
-			@for(job <- matchJobs) {
-
-			<div class="panel panel-default">
-				<div class="panel-body">
-
-
-					<div style="float: left; width: 160px">
-						<img src="assets/images/tum.png" height="60" width="60">
-					</div>
-					<div style="float: left">
-
-
-						<div style="float: left; width: 500px">
-							<span class="text-title">Description</span>
-							<p>@job.description</p>
-							<p>@job.company_name</p>
-						</div>
-
-						<div style="float: left; padding-left: 30px"></div>
-
-
-					</div>
-
-				</div>
+							<td><a href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
+							<td>@course.professor_name</td>
+							<td>@course.chair</td>
+							<td>@course.description</td>
+						</tr>
+						}
+					</tbody>
+				</table>
 			</div>
-			}
+			<div class="panel panel-primary">
+				<div class="panel-heading">Recommended Jobs</div>
+				<table id="jobs" class="table table-striped" cellspacing="0">
+					<th></th>
+					<tbody class="searchable">
+						@for(job <- jobs) {
+						<tr>
+							<td>
+								<div class="panel panel-default" style="margin-top: 10px">
+									<div class="panel-body">
+										<div style="float: left; width: 160px">
+											<img src=@{"assets/images/" + job.company_name + ".png"}>
+										</div>
+										<div style="float: left">
+
+											<div style="float: left; width: 500px">
+												<span class="text-title">Title</span>
+												<p>
+													<a href="@job.link">@job.title</a>
+												</p>
+												<span class="text-title">Description</span>
+												<p>@job.description</p>
+											</div>
+
+											<div style="float: left; padding-left: 30px">
+												<span class="text-title">Company</span> <span>@job.company_name</span><br>
+												<span class="text-title">Salary </span> <span>@job.salary</span><br>
+												<span class="text-title">Beginning Time</span> <span>@job.begin_date</span><br>
+
+												<span class="text-title"><b>Contact:</b></span> <span
+													style="padding-right: 15px">@job.contact</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</div>
 
 		<div id="menu2" class="tab-pane fade">
 
-			<h3>Search Courses</h3>
-			<form
-				style="top: -38px; position: relative; z-index: 1000; left: -288px;"
-				action="@routes.Application.compareCourses()">
-				<div
-					style="width: 100; min-height: 20px; margin: auto; padding-bottom: 15px;">
-					<button id="compareCoursesButton" type="submit"
-						class="btn btn-sm btn-primary" style="height: 30px; width: 200px">Compare
-						Courses</button>
-
-				</div>
-			</form>
-			<table id="courses" class="table table-striped" cellspacing="0"
-				style="width: 1250px">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Professor</th>
-						<th>Chair</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody class="searchable">
-					@for(course <- courses) {
-					<tr>
-
-						<td><a href="@routes.Application.viewCourse(course.id)">@course.name</td>
-						<td>@course.professor_name</td>
-						<td>@course.chair</td>
-						<td>@course.description</td>
-					</tr>
-					}
-				</tbody>
-			</table>
-		</div>
-
-		<div id="menu3" class="tab-pane fade">
-			<h3>Jobs</h3>
-
-				<table id="jobs" class="table table-striped" cellspacing="0">
-				<th></th>
-				<tbody class="searchable">
-					@for(job <- jobs) {
-					<tr>
-						<td>
-				<a href=@job.link target="_blank" >
-  	 			<div class="panel panel-default">
-				<div class="panel-body">
-					<div style="float: left; width: 160px">
-						<img src=@{"assets/images/" + job.company_name + ".png"}>
+			<h3></h3>
+			<div class="panel panel-primary" style="margin-bottom: 60px;">
+				<div class="panel-heading">Search Courses</div>
+				<form style="top: -36px; position: relative; left: -345px;"
+					action="@routes.StudentOperationController.compareCourses()">
+					<div style="width: 100; min-height: 20px; margin: auto;">
+						<button id="compareCoursesButton" type="submit"
+							class="btn btn-danger" style="height: 30px; width: 200px">Compare
+							Courses</button>
 					</div>
-					<div style="float: left">
+				</form>
+				<table id="courses" class="table table-striped" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Professor</th>
+							<th>Chair</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody class="searchable">
+						@for(course <- courses) {
+						<tr>
 
-						<div style="float: left; width: 500px">
-							<span class="text-title">Description</span>
-							<p>@job.description</p>
-						</div>
-
-						<div style="float: left; padding-left: 30px">
-							<span class="text-title">Company</span> <span>@job.company_name</span><br>
-							<span class="text-title">Salary </span> <span>@job.salary</span><br>
-							<span class="text-title">Beginning Time</span> <span>@job.begin_date</span>
-							<span class="text-title"><b>Contact:</b></span> <span>@job.contact</span>
-						</div>
-
-
-					</div>
-
-				</div>
+							<td><a href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
+							<td>@course.professor_name</td>
+							<td>@course.chair</td>
+							<td>@course.description</td>
+						</tr>
+						}
+					</tbody>
+				</table>
 			</div>
-			</a>
-						
-						</td>
-					</tr>
-					}
-				</tbody>
-			</table>
+			
+			
+			<div class="panel panel-primary" style="margin-bottom: 60px">
+				<div class="panel-heading">Favorite Courses</div>
+				<table id="favoriteCourses" class="table table-striped"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Professor</th>
+							<th>Chair</th>
+							<th>Description</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody class="searchable">
+						@for(course <- favCourses) {
+						<tr>
 
+							<td><a href="@routes.StudentOperationController.viewCourse(course.course.id)">@course.course.name</td>
+							<td>@course.course.professor_name</td>
+							<td>@course.course.chair</td>
+							<td>@course.course.description</td>
+							<td></a> <a class="glyphicon  logout"
+														href="@routes.StudentOperationController.removeFromFavorites(course.id)"
+														style="background: none; box-shadow: none; padding: 8px 5px;">
+														<b style="font-family: arial; color: red; font-size: 14px">
+															Remove from Favorites </b>
+													</a></td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+			
+			
+		</div>
+		<div id="menu3" class="tab-pane fade">
+			<h3></h3>
+
+			<div class="panel panel-primary" style="margin-bottom: 60px;">
+				<div class="panel-heading">Jobs</div>
+				<table id="jobs" class="table table-striped" cellspacing="0">
+					<th></th>
+					<tbody class="searchable">
+						@for(job <- jobs) {
+						<tr>
+							<td>
+								<div class="panel panel-default" style="margin-top: 10px">
+									<div class="panel-body">
+										<div style="float: left; width: 160px">
+											<img src=@{"assets/images/" + job.company_name + ".png"}>
+										</div>
+										<div style="float: left">
+
+											<div style="float: left; width: 500px">
+												<span class="text-title">Title</span>
+												<p>
+													<a href="@job.link">@job.title</a>
+												</p>
+												<span class="text-title">Description</span>
+												<p>@job.description</p>
+											</div>
+
+											<div style="float: left; padding-left: 30px">
+												<span class="text-title">Company</span> <span>@job.company_name</span><br>
+												<span class="text-title">Salary </span> <span>@job.salary</span><br>
+												<span class="text-title">Beginning Time</span> <span>@job.begin_date</span><br>
+
+												<span class="text-title"><b>Contact:</b></span> <span
+													style="padding-right: 15px">@job.contact</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
 
 		</div>
-
-
 
 
 
@@ -225,25 +271,31 @@
 
 <script>
 	$(document).ready(function() {
+		$('#favoriteCourses').dataTable();
 		$('#courses').dataTable();
 		$('#recommendedCourses').dataTable();
 		$('#jobs').dataTable();
 	});
 </script>
 <style>
+#recommendedCourses_wrapper,#favoriteCourses_wrapper {
+	margin-top: 30px;
+}
+
 div.dropdown-menu>ul.dropdown-menu {
 	max-height: 135px !important;
 }
 
-#courses_wrapper>div.row {
-	width: 1250px;
-}
 
-#courses_filter>label {
+#recommendedCourses_filter>label , #courses_filter>label , #favoriteCourses_filter>label{
 	float: right;
+	position: relative;
+	top: -66px;
+	margin-right: 5px;
+	color: transparent;
 }
 
-#courses_filter>label>input[type="search"] {
+#courses_filter>label>input[type="search"], #recommendedCourses_filter>label>input[type="search"], #favoriteCourses_filter>label>input[type="search"] {
 	width: 400px !important;
 }
 

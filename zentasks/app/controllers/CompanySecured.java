@@ -1,15 +1,8 @@
 package controllers;
 
-import controllers.CompanyController.Login;
-import play.mvc.*;
-import play.mvc.Http.*;
-import play.data.Form;
-import  play.data.Form.*;
-import play.*;
-import play.mvc.*;
-import play.data.*;
-import static play.data.Form.*;
-import models.*;
+import play.mvc.Http.Context;
+import play.mvc.Result;
+import play.mvc.Security;
 
 public class CompanySecured extends Security.Authenticator {
     

@@ -108,7 +108,7 @@ Seq[Any](format.raw/*1.35*/("""
 
 
 
-		<a href=""""),_display_(Seq[Any](/*83.13*/routes/*83.19*/.CompanyController.dashboard())),format.raw/*83.49*/("""" id="logo"> <img
+		<a href=""""),_display_(Seq[Any](/*83.13*/routes/*83.19*/.CompanyOperationController.dashboard())),format.raw/*83.58*/("""" id="logo"> <img
 			src=""""),_display_(Seq[Any](/*84.10*/routes/*84.16*/.Assets.at(" images/logo-white.png"))),format.raw/*84.52*/("""" height="26px">
 		</a>
 
@@ -126,7 +126,7 @@ Seq[Any](format.raw/*1.35*/("""
 	</header>
 
 
-	<nav>
+	<nav style="position: fixed">
 
 		<div style="padding: 10px 0 0 0px">
 			<h4 class="dashboard">Jobs</h4>
@@ -144,66 +144,74 @@ Seq[Any](format.raw/*1.35*/("""
 
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade active in">
-				<h3>Jobs</h3>
+				<h3></h3>
 
-				<table id="jobs" class="table table-striped" cellspacing="0">
-					<th></th>
-					<tbody class="searchable">
-						"""),_display_(Seq[Any](/*124.8*/for(job <- jobs) yield /*124.24*/ {_display_(Seq[Any](format.raw/*124.26*/("""
-						<tr>
+				<div class="panel panel-primary" style="margin-bottom: 60px;">
+					<div class="panel-heading">Jobs</div>
+					<table id="jobs" class="table table-striped" cellspacing="0">
+						<th></th>
+						<tbody class="searchable">
+							"""),_display_(Seq[Any](/*126.9*/for(job <- jobs) yield /*126.25*/ {_display_(Seq[Any](format.raw/*126.27*/("""
+							<tr>
+								<td>
 									<div class="panel panel-default">
 										<div class="panel-body">
 											<div style="float: left; width: 160px">
-												<img src="""),_display_(Seq[Any](/*129.23*/{"assets/images/" + job.company_name + ".png"})),format.raw/*129.69*/(""">
+												<img src="""),_display_(Seq[Any](/*132.23*/{"assets/images/" + job.company_name + ".png"})),format.raw/*132.69*/(""">
 											</div>
 											<div style="float: left">
 
 												<div style="float: left; width: 500px">
 													<span class="text-title">Title</span>
-													<p><a href=""""),_display_(Seq[Any](/*135.27*/job/*135.30*/.link)),format.raw/*135.35*/("""">"""),_display_(Seq[Any](/*135.38*/job/*135.41*/.title)),format.raw/*135.47*/("""</a></p>
+													<p>
+														<a href=""""),_display_(Seq[Any](/*139.25*/job/*139.28*/.link)),format.raw/*139.33*/("""">"""),_display_(Seq[Any](/*139.36*/job/*139.39*/.title)),format.raw/*139.45*/("""</a>
+													</p>
 													<span class="text-title">Description</span>
-													<p>"""),_display_(Seq[Any](/*137.18*/job/*137.21*/.description)),format.raw/*137.33*/("""</p>
+													<p>"""),_display_(Seq[Any](/*142.18*/job/*142.21*/.description)),format.raw/*142.33*/("""</p>
 												</div>
 
 												<div style="float: left; padding-left: 30px">
-													<span class="text-title">Company</span> <span>"""),_display_(Seq[Any](/*141.61*/job/*141.64*/.company_name)),format.raw/*141.77*/("""</span><br>
-													<span class="text-title">Salary </span> <span>"""),_display_(Seq[Any](/*142.61*/job/*142.64*/.salary)),format.raw/*142.71*/("""</span><br>
-													<span class="text-title">Beginning Time</span> <span>"""),_display_(Seq[Any](/*143.68*/job/*143.71*/.begin_date)),format.raw/*143.82*/("""</span><br>
-													
-													<span class="text-title" ><b>Contact:</b></span> <span style="padding-right:15px">"""),_display_(Seq[Any](/*145.97*/job/*145.100*/.contact)),format.raw/*145.108*/("""</span>
-													<a class="glyphicon  logout"
-														href=""""),_display_(Seq[Any](/*147.22*/routes/*147.28*/.CompanyController.deleteJob(job.id))),format.raw/*147.64*/(""""
-														style="background:none;box-shadow:none;padding: 8px 5px;"> <b
-														style="font-family: arial;color:red; font-size: 14px"> Delete </b>
+													<span class="text-title">Company</span> <span>"""),_display_(Seq[Any](/*146.61*/job/*146.64*/.company_name)),format.raw/*146.77*/("""</span><br>
+													<span class="text-title">Salary </span> <span>"""),_display_(Seq[Any](/*147.61*/job/*147.64*/.salary)),format.raw/*147.71*/("""</span><br>
+													<span class="text-title">Beginning Time</span> <span>"""),_display_(Seq[Any](/*148.68*/job/*148.71*/.begin_date)),format.raw/*148.82*/("""</span><br>
+
+													<span class="text-title"><b>Contact:</b></span> <span
+														style="padding-right: 15px">"""),_display_(Seq[Any](/*151.44*/job/*151.47*/.contact)),format.raw/*151.55*/("""</span> <a
+														class="glyphicon  logout"
+														href=""""),_display_(Seq[Any](/*153.22*/routes/*153.28*/.CompanyOperationController.deleteJob(job.id))),format.raw/*153.73*/(""""
+														style="background: none; box-shadow: none; padding: 8px 5px;">
+														<b style="font-family: arial; color: red; font-size: 14px">
+															Delete </b>
 													</a> <a class="glyphicon  logout"
-														href=""""),_display_(Seq[Any](/*151.22*/routes/*151.28*/.CompanyController.viewToEditJob(job.id))),format.raw/*151.68*/(""""
-														style="background:none;box-shadow:none;padding: 8px 5px;"> <b
-														style="font-family: arial;color:red; font-size: 14px"> Edit </b>
+														href=""""),_display_(Seq[Any](/*158.22*/routes/*158.28*/.CompanyOperationController.viewToEditJob(job.id))),format.raw/*158.77*/(""""
+														style="background: none; box-shadow: none; padding: 8px 5px;">
+														<b style="font-family: arial; color: red; font-size: 14px">
+															Edit </b>
 													</a>
 												</div>
 											</div>
 										</div>
 									</div>
-							</td>
-						</tr>
-						""")))})),format.raw/*161.8*/("""
-					</tbody>
-				</table>
+								</td>
+							</tr>
+							""")))})),format.raw/*169.9*/("""
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 			<div id="menu1" class="tab-pane fade">
-				<div style="margin-top: 20px" class="panel panel-default">
-					<header class="panel-heading">
-						<h3 class="panel-title">Create A Job</h3>
-					</header>
+			<h3></h3>
+				<div class="panel panel-primary" style="margin-bottom: 60px;">
+					<div class="panel-heading">Create Job</div>
 					<div class="panel-body">
 
 						<form class="form-horizontal" method="post"
-							action=""""),_display_(Seq[Any](/*174.17*/routes/*174.23*/.CompanyController.saveJob())),format.raw/*174.51*/("""">
+							action=""""),_display_(Seq[Any](/*182.17*/routes/*182.23*/.CompanyOperationController.saveJob())),format.raw/*182.60*/("""">
 							<div class="form-group ">
 								<label class="col-xs-2 control-label">Company Name</label>
 								<div class="col-xs-10">
-									<input type="text" value=""""),_display_(Seq[Any](/*178.37*/company/*178.44*/.name)),format.raw/*178.49*/("""" name="company_name"
+									<input type="text" value=""""),_display_(Seq[Any](/*186.37*/company/*186.44*/.name)),format.raw/*186.49*/("""" name="company_name"
 										class="form-control" readonly="readonly" placeholder="">
 								</div>
 							</div>
@@ -259,24 +267,26 @@ Seq[Any](format.raw/*1.35*/("""
 					</div>
 				</div>
 			</div>
+
+
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true"></button>
+					<h3 id="myModalLabel">Delete</h3>
+				</div>
+				<div class="modal-body">
+					<p></p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button data-dismiss="modal" class="btn red" id="btnYes">Confirm</button>
+				</div>
+
+			</div>
 		</div>
 	</div>
-
-
-	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal"
-				aria-hidden="true"></button>
-			<h3 id="myModalLabel">Delete</h3>
-		</div>
-		<div class="modal-body">
-			<p></p>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button data-dismiss="modal" class="btn red" id="btnYes">Confirm</button>
-		</div>
 </body>
 <script>
 	$('#jobTag').tokenfield();
@@ -296,11 +306,11 @@ Seq[Any](format.raw/*1.35*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jul 01 05:29:12 CEST 2015
+                    DATE: Thu Jul 02 05:45:55 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/companyDashboard.scala.html
-                    HASH: 528d368ccbd111881e4e0b53c0054b6ab084abff
-                    MATRIX: 796->1|923->34|989->73|1017->74|1111->141|1139->142|1178->154|1207->155|1296->217|1324->218|1368->234|1397->235|1478->289|1506->290|1648->396|1663->402|1717->434|1819->501|1834->507|1890->541|1992->608|2007->614|2063->648|3019->1568|3034->1574|3101->1619|3187->1669|3202->1675|3270->1721|3356->1771|3371->1777|3443->1827|3556->1905|3571->1911|3634->1952|3736->2019|3751->2025|3818->2070|3872->2088|3887->2094|3942->2127|4005->2154|4020->2160|4082->2200|4145->2227|4160->2233|4226->2277|5112->3127|5127->3133|5179->3163|5243->3191|5258->3197|5316->3233|5437->3319|5453->3326|5480->3331|5525->3340|5541->3347|5569->3353|5693->3441|5708->3447|5757->3474|6599->4280|6632->4296|6673->4298|6878->4466|6947->4512|7177->4705|7190->4708|7218->4713|7258->4716|7271->4719|7300->4725|7422->4810|7435->4813|7470->4825|7654->4972|7667->4975|7703->4988|7813->5061|7826->5064|7856->5071|7973->5151|7986->5154|8020->5165|8181->5289|8195->5292|8227->5300|8337->5373|8353->5379|8412->5415|8680->5646|8696->5652|8759->5692|9078->5979|9468->6332|9484->6338|9535->6366|9747->6541|9764->6548|9792->6553
-                    LINES: 26->1|29->1|34->6|34->6|38->10|38->10|40->12|40->12|43->15|43->15|45->17|45->17|48->20|48->20|56->28|56->28|56->28|58->30|58->30|58->30|60->32|60->32|60->32|78->50|78->50|78->50|79->51|79->51|79->51|80->52|80->52|80->52|83->55|83->55|83->55|85->57|85->57|85->57|86->58|86->58|86->58|87->59|87->59|87->59|88->60|88->60|88->60|111->83|111->83|111->83|112->84|112->84|112->84|117->89|117->89|117->89|117->89|117->89|117->89|121->93|121->93|121->93|152->124|152->124|152->124|157->129|157->129|163->135|163->135|163->135|163->135|163->135|163->135|165->137|165->137|165->137|169->141|169->141|169->141|170->142|170->142|170->142|171->143|171->143|171->143|173->145|173->145|173->145|175->147|175->147|175->147|179->151|179->151|179->151|189->161|202->174|202->174|202->174|206->178|206->178|206->178
+                    HASH: cd4a94f8655ef40e5af08159b73c20dc9bd71d1c
+                    MATRIX: 796->1|923->34|989->73|1017->74|1111->141|1139->142|1178->154|1207->155|1296->217|1324->218|1368->234|1397->235|1478->289|1506->290|1648->396|1663->402|1717->434|1819->501|1834->507|1890->541|1992->608|2007->614|2063->648|3019->1568|3034->1574|3101->1619|3187->1669|3202->1675|3270->1721|3356->1771|3371->1777|3443->1827|3556->1905|3571->1911|3634->1952|3736->2019|3751->2025|3818->2070|3872->2088|3887->2094|3942->2127|4005->2154|4020->2160|4082->2200|4145->2227|4160->2233|4226->2277|5112->3127|5127->3133|5188->3172|5252->3200|5267->3206|5325->3242|5446->3328|5462->3335|5489->3340|5534->3349|5550->3356|5578->3362|5702->3450|5717->3456|5766->3483|6744->4425|6777->4441|6818->4443|7038->4626|7107->4672|7353->4881|7366->4884|7394->4889|7434->4892|7447->4895|7476->4901|7613->5001|7626->5004|7661->5016|7845->5163|7858->5166|7894->5179|8004->5252|8017->5255|8047->5262|8164->5342|8177->5345|8211->5356|8374->5482|8387->5485|8418->5493|8529->5567|8545->5573|8613->5618|8903->5871|8919->5877|8991->5926|9335->6238|9705->6571|9721->6577|9781->6614|9993->6789|10010->6796|10038->6801
+                    LINES: 26->1|29->1|34->6|34->6|38->10|38->10|40->12|40->12|43->15|43->15|45->17|45->17|48->20|48->20|56->28|56->28|56->28|58->30|58->30|58->30|60->32|60->32|60->32|78->50|78->50|78->50|79->51|79->51|79->51|80->52|80->52|80->52|83->55|83->55|83->55|85->57|85->57|85->57|86->58|86->58|86->58|87->59|87->59|87->59|88->60|88->60|88->60|111->83|111->83|111->83|112->84|112->84|112->84|117->89|117->89|117->89|117->89|117->89|117->89|121->93|121->93|121->93|154->126|154->126|154->126|160->132|160->132|167->139|167->139|167->139|167->139|167->139|167->139|170->142|170->142|170->142|174->146|174->146|174->146|175->147|175->147|175->147|176->148|176->148|176->148|179->151|179->151|179->151|181->153|181->153|181->153|186->158|186->158|186->158|197->169|210->182|210->182|210->182|214->186|214->186|214->186
                     -- GENERATED --
                 */
             

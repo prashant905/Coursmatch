@@ -20,13 +20,13 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object login extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[Form[Application.Login],play.api.templates.HtmlFormat.Appendable] {
+object login extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[Form[StudentController.Login],play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(form: Form[Application.Login]):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(form: Form[StudentController.Login]):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.33*/("""
+Seq[Any](format.raw/*1.39*/("""
 
 <html>
     <head>
@@ -62,7 +62,7 @@ Seq[Any](format.raw/*1.33*/("""
             </a>           
         </header>
         
-        """),_display_(Seq[Any](/*37.10*/helper/*37.16*/.form(routes.Application.authenticate)/*37.54*/ {_display_(Seq[Any](format.raw/*37.56*/("""
+        """),_display_(Seq[Any](/*37.10*/helper/*37.16*/.form(routes.StudentController.authenticate)/*37.60*/ {_display_(Seq[Any](format.raw/*37.62*/("""
             
             <h1 style="height:50px">
                <img src=""""),_display_(Seq[Any](/*40.27*/routes/*40.33*/.Assets.at("images/logo.png"))),format.raw/*40.62*/("""" height="30px">
@@ -92,13 +92,7 @@ Seq[Any](format.raw/*1.33*/("""
             <p>
                 <button type="submit">Login</button>
             </p>
-            
-    
-            
-            
-            
-            
-        """)))})),format.raw/*73.10*/("""
+        """)))})),format.raw/*67.10*/("""
         
          
     </body>
@@ -109,20 +103,20 @@ Seq[Any](format.raw/*1.33*/("""
 """))}
     }
     
-    def render(form:Form[Application.Login]): play.api.templates.HtmlFormat.Appendable = apply(form)
+    def render(form:Form[StudentController.Login]): play.api.templates.HtmlFormat.Appendable = apply(form)
     
-    def f:((Form[Application.Login]) => play.api.templates.HtmlFormat.Appendable) = (form) => apply(form)
+    def f:((Form[StudentController.Login]) => play.api.templates.HtmlFormat.Appendable) = (form) => apply(form)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jul 01 05:29:12 CEST 2015
+                    DATE: Thu Jul 02 05:45:56 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/login.scala.html
-                    HASH: d463a96021e98f998da732adb776bfdec5a29d24
-                    MATRIX: 791->1|916->32|1076->157|1090->163|1143->195|1252->269|1266->275|1323->310|1617->576|1646->577|1702->605|1731->606|1863->711|1891->712|1927->721|1955->722|2420->1151|2435->1157|2492->1192|2613->1277|2628->1283|2675->1321|2715->1323|2831->1403|2846->1409|2897->1438|3011->1516|3044->1540|3084->1542|3210->1632|3223->1636|3265->1656|3334->1693|3399->1722|3437->1751|3477->1753|3604->1844|3618->1849|3655->1864|3724->1901|3896->2037|3918->2050|3946->2056|4289->2367
-                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|40->12|40->12|41->13|41->13|47->19|47->19|48->20|48->20|61->33|61->33|61->33|65->37|65->37|65->37|65->37|68->40|68->40|68->40|72->44|72->44|72->44|74->46|74->46|74->46|76->48|78->50|78->50|78->50|80->52|80->52|80->52|82->54|87->59|87->59|87->59|101->73
+                    HASH: e52306be61d60c3a827be7f76ada491ea2c50e7c
+                    MATRIX: 797->1|928->38|1088->163|1102->169|1155->201|1264->275|1278->281|1335->316|1629->582|1658->583|1714->611|1743->612|1875->717|1903->718|1939->727|1967->728|2432->1157|2447->1163|2504->1198|2625->1283|2640->1289|2693->1333|2733->1335|2849->1415|2864->1421|2915->1450|3029->1528|3062->1552|3102->1554|3228->1644|3241->1648|3283->1668|3352->1705|3417->1734|3455->1763|3495->1765|3622->1856|3636->1861|3673->1876|3742->1913|3914->2049|3936->2062|3964->2068|4231->2303
+                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|40->12|40->12|41->13|41->13|47->19|47->19|48->20|48->20|61->33|61->33|61->33|65->37|65->37|65->37|65->37|68->40|68->40|68->40|72->44|72->44|72->44|74->46|74->46|74->46|76->48|78->50|78->50|78->50|80->52|80->52|80->52|82->54|87->59|87->59|87->59|95->67
                     -- GENERATED --
                 */
             

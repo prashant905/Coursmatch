@@ -3,42 +3,38 @@
 # ~~~~
 
 # The home page
-GET     /                                              controllers.ChooseUser.login()
 GET     /coursematch                                   controllers.ChooseUser.login()
-GET     /coursematch/student                                   controllers.Application.login()
-GET     /coursematch/company                                   controllers.CompanyController.login()
 
 
 # Authentication
-GET     /coursematch/student/login                              controllers.Application.login()
-POST    /coursematch/student/login                              controllers.Application.authenticate()
-GET     /coursematch/student/logout                             controllers.Application.logout()
+GET     /coursematch/student/login                              controllers.StudentController.login()
+POST    /coursematch/student/login                              controllers.StudentController.authenticate()
+GET     /coursematch/student/logout                             controllers.StudentController.logout()
 
-GET 	/coursematch/student/dashboard							controllers.Application.dashboard()
 
 GET     /coursematch/company/login                              controllers.CompanyController.login()
 POST    /coursematch/company/login                              controllers.CompanyController.authenticate()
 GET     /coursematch/company/logout                             controllers.CompanyController.logout()
 
-GET 	/coursematch/company/dashboard							controllers.CompanyController.dashboard()
-POST 	/coursematch/company/dashboard/saveJob					controllers.CompanyController.saveJob()
-GET 	/coursematch/company/dashboard/deleteJob/:id					controllers.CompanyController.deleteJob(id:Long)
-POST 	/coursematch/company/dashboard/editJob/:id					controllers.CompanyController.editJob(id:Long)
-GET 	/coursematch/company/dashboard/viewToEditJob/:id		controllers.CompanyController.viewToEditJob(id:Long)
+GET 	/coursematch/company/dashboard							controllers.CompanyOperationController.dashboard()
+POST 	/coursematch/company/dashboard/saveJob					controllers.CompanyOperationController.saveJob()
+GET 	/coursematch/company/dashboard/deleteJob/:id					controllers.CompanyOperationController.deleteJob(id:Long)
+POST 	/coursematch/company/dashboard/editJob/:id					controllers.CompanyOperationController.editJob(id:Long)
+GET 	/coursematch/company/dashboard/viewToEditJob/:id		controllers.CompanyOperationController.viewToEditJob(id:Long)
 
 
-GET    /coursematch/student/course/:id                       controllers.Application.viewCourse(id:Long)
+GET 	/coursematch/student/dashboard							controllers.StudentOperationController.dashboard()
+GET    /coursematch/student/course/:id                       controllers.StudentOperationController.viewCourse(id:Long)
+GET  /coursematch/student/rateCourse/:id                       controllers.StudentOperationController.rateCourse(id:Long)
+GET /coursematch/student/compareCourses                       controllers.StudentOperationController.compareCourses()
+GET /coursematch/student/displayCourseRatings                      controllers.StudentOperationController.displayCourseRatings()
+GET    /coursematch/student/course/:id/                       controllers.StudentOperationController.saveComment(id:Long)
 
-GET  /coursematch/student/rateCourse/:id                       controllers.Application.rateCourse(id:Long)
-GET /coursematch/student/compareCourses                       controllers.Application.compareCourses()
-GET /coursematch/student/displayCourseRatings                      controllers.Application.displayCourseRatings()
-GET    /coursematch/student/course/:id/                       controllers.Application.saveComment(id:Long)
-
-GET /coursematch/student/dashboard/                       controllers.Application.saveStudentTags()
-GET /coursematch/student/course/                       controllers.Application.saveCourseTags()
-POST    /coursematch/student/course/                            controllers.Application.uploadMaterial()
-
-
+GET /coursematch/student/dashboard/                       controllers.StudentOperationController.saveStudentTags()
+GET /coursematch/student/course/                       controllers.StudentOperationController.saveCourseTags()
+POST    /coursematch/student/course/                            controllers.StudentOperationController.uploadMaterial()
+GET /coursematch/student/dashboard/addToFavorites/:id                       controllers.StudentOperationController.addToFavorites(id:Long)
+GET /coursematch/student/dashboard/removeFromFavorites/:id                       controllers.StudentOperationController.removeFromFavorites(id:Long)
 
 
 

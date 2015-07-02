@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for zentask#zentask_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies zentask#zentask_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@dd0288[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@159ccdf[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -5157,7 +5157,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2756ms :: artifacts dl 157ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2940ms :: artifacts dl 172ms[0m
 [0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 compile produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 runtime produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 test produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-test.xml[0m
@@ -5171,5 +5171,5 @@
 [0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 docs produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 pom produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for zentask#zentask_2.10;1.0 scala-tool produced in C:\Users\mragab\Desktop\project\Coursmatch\Coursmatch\zentasks\target\resolution-cache\reports\zentask-zentask_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2756ms resolve - 157ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2940ms resolve - 172ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

@@ -1,4 +1,4 @@
-@(student: Student , course :Course , ranking:Overallranking,comments:List[Comment],course_tags:String,uploads: List[Uploads])
+@(student: Student , course :Course , ranking:Overallranking,comments:List[Comment],course_tags:String,uploads: List[Uploads], schedules:List[Schedule],favCourses:List[FavoriteCourses])
 <html>
 
 <style>
@@ -77,7 +77,7 @@
 
 	<header style="padding-top: 12px; position:fixed">
 
-		<a href="@routes.Application.dashboard()" id="logo"> <img src="@routes.Assets.at("images/logo-white.png")" height="26px">
+		<a href="@routes.StudentOperationController.dashboard()" id="logo"> <img src="@routes.Assets.at("images/logo-white.png")" height="26px">
 		</a>
 				<button class="btn btn-danger" style="float: right;
   											  left: -355px;
@@ -90,7 +90,7 @@
 			</dt>
 			<dd>
 				<a class="glyphicon glyphicon-off logout"
-					href="@routes.Application.logout()" style="padding: 8px 5px;">
+					href="@routes.StudentController.logout()" style="padding: 8px 5px;">
 					<b style="font-family: arial; font-size: 14px"> Logout </b>
 				</a>
 			</dd>
@@ -98,7 +98,7 @@
 	</header>
 
 
-	<nav>
+	<nav style="position:fixed">
 		<div style="padding: 10px 0 0 15px">
 			<img src="@routes.Assets.at("images/TU_Muenchen_Logo.svg.png")" height="60px">
 		</div>
@@ -106,21 +106,14 @@
 		<div style="padding: 10px 0 0 0px">
 			<h4 class="dashboard">Courses</h4>
 			<ul class="navlist">
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-			</ul>
-		</div>
-
-		<div style="padding: 10px 0 0 0px">
-			<h4 class="dashboard">Favorites</h4>
-			<ul class="navlist">
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
-				<li><a href="../course/1">Introduction to software Eng.</a></li>
+		 @for(course <- favCourses) {
+                <li>
+                 <a href=@{"course/" + course.course.id}>
+                  
+				<nobr> @course.course.name </nobr> 
+                 </a>
+                </li>
+              }
 			</ul>
 		</div>
 
@@ -132,7 +125,7 @@
 													  top: 50px;
 													  width: 540px;">
 			  <div class="well">
-			  <form action="@routes.Application.saveCourseTags()">
+			  <form action="@routes.StudentOperationController.saveCourseTags()">
 				 <div class="well">
 				 <p> @course.name Tags:<p>
 				 <input name ="course_id" value="@course.id" type="hidden"> 
@@ -149,8 +142,8 @@
  			
  			
 	<ul class="breadcrumb" style="margin-top: 52px; margin-left: 218px">
-		<li><a href="@routes.Application.dashboard()">Dashboard</a> <span class="divider">/</span></li>
-		<li><a href="@routes.Application.compareCourses()">CompareCourses</a> <span
+		<li><a href="@routes.StudentOperationController.dashboard()">Dashboard</a> <span class="divider">/</span></li>
+		<li><a href="@routes.StudentOperationController.compareCourses()">CompareCourses</a> <span
 			class="divider"></span></li>
 	</ul>
 
@@ -161,8 +154,15 @@
 		style="position: relative; width: 66%; left: 260; background-color: #FFFFFF; border: 0px; box-shadow: 0 0 0 rgba(0, 0, 0, 0)">
 
 		<div style="line-height: 30px">
-			<p class="coursetitle">@course.name
-			<p>
+			<p class="coursetitle">@course.name</p>
+				<p><form style=" position: relative; left: -556px;"
+					action="@routes.StudentOperationController.addToFavorites(course.id)">
+					<div style="width: 100; min-height: 20px; margin: auto;">
+						<button id="compareCoursesButton" type="submit"
+							class="btn btn-danger" style="height: 30px; width: 200px">Add to Favorites</button>
+					</div>
+				</form>
+			</p>
 		</div>
 
 		<div>
@@ -175,9 +175,36 @@
 			<p>
 			<p>@course.description</p>
 		</div>
-
+	<div id="scedule" style="padding: 30px 0 0 0">
+			<p class="coursesubtitle">schedules<p>
+			
+			
+			
+          <table class="table table-striped">
+           <thead>
+            <tr>
+             <th scope="col">Nr.</th>
+             <th scope="col">Beginning</th>
+             <th scope="col">Ending</th>
+             <th scope="col">Room</th>
+            </tr>
+           </thead>
+           <tbody>
+           
+           @for((schedule, count) <- schedules zip (Stream from 1)) {
+           <tr>
+            <td>@count</td>
+            <td>@schedule.start_date</td>
+            <td>@schedule.end_date</td>
+            <td>@schedule.room</td>
+           </tr>
+           }
+           </tbody>
+          </table>			
+		
+		</div>
 		  
-   		  <form method="post" action="@routes.Application.uploadMaterial()">	 
+   		  <form method="post" action="@routes.StudentOperationController.uploadMaterial()">	 
 			 
 		  <div id="uploads" style="padding: 30px 0 0 0">  
 		    <p class="coursesubtitle">Uploads <div style="width:100; min-height: 20px;">			
@@ -262,7 +289,7 @@
         </div>		
 		</form>
 
-		<form action="@routes.Application.rateCourse(course.id)">
+		<form action="@routes.StudentOperationController.rateCourse(course.id)">
 			<div id="rating" style="padding: 50px 0 0 0">
 				<p class="coursesubtitle">Rating
 				<p>
@@ -337,24 +364,7 @@
 			</div>
 		</form>
 
-
-
-
-
-
-
-
-
-
-		<!-- <button type="button" class="btn btn-sm btn-primary">Rate this course</button> -->
-
-	</div>
-
-
-
-
-
-		<form method="get" action="@routes.Application.saveComment(course.id)" id="commentForm">
+		<form method="get" action="@routes.StudentOperationController.saveComment(course.id)" id="commentForm">
 	<div  style="padding: 50px 0 0 0">
 		<p class="coursesubtitle">Comments
 		<p>
@@ -375,13 +385,12 @@
 				style="height: 30px; width: 200px">Comment this course</button>
 		</div>
 	</div>
-	</div>
 		</form>
 
-
-
-
 	</div>
+
+
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 				 $('#commentBtn').on('click', function(e) {

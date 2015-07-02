@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2015 at 05:32 AM
+-- Generation Time: Jul 02, 2015 at 05:58 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `course_id` bigint(20) NOT NULL,
   `student_id` varchar(255) NOT NULL,
   `comment` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
@@ -42,7 +42,8 @@ INSERT INTO `comment` (`id`, `course_id`, `student_id`, `comment`) VALUES
 (5, 11, 'thomas@tum.de', 'i think otherwise'),
 (6, 11, 'mohamed.ragab@tum.de', 'hiiii again thomas testing this is working or not'),
 (7, 11, 'thomas@tum.de', 'tags are done '),
-(8, 3, 'mohamed.ragab@tum.de', 'best course');
+(8, 3, 'mohamed.ragab@tum.de', 'best course'),
+(9, 3, 'thomas@tum.de', 'awesome');
 
 -- --------------------------------------------------------
 
@@ -99,6 +100,25 @@ INSERT INTO `course` (`id`, `professor_name`, `chair`, `name`, `description`, `t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `favorite_courses`
+--
+
+CREATE TABLE IF NOT EXISTS `favorite_courses` (
+  `id` int(11) NOT NULL,
+  `course_id` bigint(20) NOT NULL,
+  `email` text
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favorite_courses`
+--
+
+INSERT INTO `favorite_courses` (`id`, `course_id`, `email`) VALUES
+(10, 4, 'mohamed.ragab@tum.de');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `job`
 --
 
@@ -145,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `overallranking` (
 INSERT INTO `overallranking` (`id`, `course_id`, `fair`, `material`, `fun`, `grade`, `recommend`, `overall_rate`) VALUES
 (1, 1, 5, 1, 1, 1, 5, 2),
 (2, 2, 0, 0, 0, 0, 0, 0),
-(3, 3, 0, 3, 3, 1, 3, 1),
+(3, 3, 2, 3, 3, 1, 3, 2),
 (4, 4, 0, 0, 0, 0, 0, 0),
 (5, 5, 0, 0, 0, 0, 0, 0),
 (6, 6, 0, 0, 0, 0, 0, 0),
@@ -170,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `ranking` (
   `course_id` bigint(20) NOT NULL,
   `grade` double NOT NULL,
   `overall_rate` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ranking`
@@ -193,7 +213,32 @@ INSERT INTO `ranking` (`id`, `fair`, `material`, `fun`, `recommend`, `course_id`
 (43, 5, 1, 1, 5, 1, 1, 2),
 (44, 0, 1, 1, 1, 3, 1, 0),
 (45, 5, 1, 1, 5, 1, 1, 2),
-(46, 0, 5, 5, 5, 3, 1, 3);
+(46, 0, 5, 5, 5, 3, 1, 3),
+(47, 5, 3, 3, 3, 3, 1, 3),
+(48, 5, 3, 3, 3, 3, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedule`
+--
+
+CREATE TABLE IF NOT EXISTS `schedule` (
+  `id` int(11) NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `room` text NOT NULL,
+  `course_id` bigint(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`id`, `start_date`, `end_date`, `room`, `course_id`) VALUES
+(1, '2015-07-03 07:15:00', '2015-07-03 08:46:00', 'MI HS 1', 1),
+(2, '2015-07-10 07:15:00', '2015-07-10 08:46:00', 'MI HS 1', 1),
+(3, '2015-07-17 07:15:00', '2015-07-17 08:46:00', 'MI HS 1', 1);
 
 -- --------------------------------------------------------
 
@@ -215,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 
 INSERT INTO `student` (`email`, `name`, `password`, `course_tags`, `job_tags`) VALUES
 ('mohamed.ragab@tum.de', 'mohamed ragab', '1234', 'easy, thomas', 'IOS'),
-('thomas@tum.de', 'thomas', '1234', 'fun, easy, modelingdata, boring as shit, 5awal', '');
+('thomas@tum.de', 'thomas', '1234', 'easy', 'developer');
 
 -- --------------------------------------------------------
 
@@ -262,6 +307,12 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `favorite_courses`
+--
+ALTER TABLE `favorite_courses`
+  ADD PRIMARY KEY (`id`), ADD KEY `course_id` (`course_id`);
+
+--
 -- Indexes for table `job`
 --
 ALTER TABLE `job`
@@ -277,6 +328,12 @@ ALTER TABLE `overallranking`
 -- Indexes for table `ranking`
 --
 ALTER TABLE `ranking`
+  ADD PRIMARY KEY (`id`), ADD KEY `course_id` (`course_id`);
+
+--
+-- Indexes for table `schedule`
+--
+ALTER TABLE `schedule`
   ADD PRIMARY KEY (`id`), ADD KEY `course_id` (`course_id`);
 
 --
@@ -299,7 +356,12 @@ ALTER TABLE `uploads`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `favorite_courses`
+--
+ALTER TABLE `favorite_courses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `job`
 --
@@ -314,7 +376,12 @@ ALTER TABLE `overallranking`
 -- AUTO_INCREMENT for table `ranking`
 --
 ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
+--
+-- AUTO_INCREMENT for table `schedule`
+--
+ALTER TABLE `schedule`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `uploads`
 --
@@ -331,6 +398,12 @@ ALTER TABLE `comment`
 ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
 
 --
+-- Constraints for table `favorite_courses`
+--
+ALTER TABLE `favorite_courses`
+ADD CONSTRAINT `favorite_courses_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+
+--
 -- Constraints for table `overallranking`
 --
 ALTER TABLE `overallranking`
@@ -341,6 +414,12 @@ ADD CONSTRAINT `overallranking_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `cou
 --
 ALTER TABLE `ranking`
 ADD CONSTRAINT `ranking_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+
+--
+-- Constraints for table `schedule`
+--
+ALTER TABLE `schedule`
+ADD CONSTRAINT `schedule_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
 
 --
 -- Constraints for table `uploads`
