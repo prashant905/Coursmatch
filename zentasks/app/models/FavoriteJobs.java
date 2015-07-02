@@ -41,8 +41,16 @@ public class FavoriteJobs extends Model{
 	    	return find.where().eq("email", email).findList();
 	    }
 	    
+	    public static void deleteByJob(Long id) {
+	    	List<FavoriteJobs> fj = find.where().eq("job_id",id).findList();
+	    	for(FavoriteJobs favj : fj){
+	    		favj.delete();
+	    	}
+	    }
 	    
 	    public String toString() {
 	        return "FavoriteJobs(" + id + ")";
 	    }
+
+
 }

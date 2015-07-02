@@ -1,10 +1,4 @@
 run
-reload
-clean
-reload
-comiple
-compile
-run
 compile
 run
 compile
@@ -494,6 +488,12 @@ reload
 run
 clean
 eclipse
+clean
+compile
+run
+exit
+compile
+run
 clean
 compile
 run

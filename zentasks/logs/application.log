@@ -1,59 +1,69 @@
-2015-07-02 06:43:39,189 - [INFO] - from play in pool-112-thread-5 
+2015-07-02 12:37:44,181 - [INFO] - from play in pool-40-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-07-02 06:43:45,448 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 12:38:10,458 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 06:43:47,188 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 12:38:11,019 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-07-02 06:47:23,929 - [ERROR] - from application in New I/O worker #1 
-
-
-! @6mjnge54l - Internal server error, for (GET) [/coursematch/student/dashboard] ->
-
-play.PlayExceptions$CompilationException: Compilation error[not found: value favoriteJobs]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
-	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
-	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
-	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.6]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.6]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-
-2015-07-02 06:48:00,547 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 12:39:35,579 - [INFO] - from play in play-internal-execution-context-4 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 06:48:00,717 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 12:39:35,716 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2015-07-02 06:48:22,663 - [INFO] - from play in play-internal-execution-context-6 
+2015-07-02 12:42:17,110 - [INFO] - from play in play-internal-execution-context-9 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 06:48:22,888 - [INFO] - from play in play-internal-execution-context-6 
+2015-07-02 12:42:17,266 - [INFO] - from play in play-internal-execution-context-9 
 Application started (Dev)
 
-2015-07-02 06:49:40,140 - [INFO] - from play in play-internal-execution-context-6 
+2015-07-02 12:43:23,138 - [INFO] - from play in play-internal-execution-context-9 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 06:49:40,376 - [INFO] - from play in play-internal-execution-context-6 
+2015-07-02 12:43:23,263 - [INFO] - from play in play-internal-execution-context-9 
 Application started (Dev)
 
-2015-07-02 06:50:33,643 - [INFO] - from play in play-internal-execution-context-14 
+2015-07-02 12:44:06,943 - [INFO] - from play in play-internal-execution-context-17 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 06:50:33,903 - [INFO] - from play in play-internal-execution-context-14 
+2015-07-02 12:44:07,115 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2015-07-02 12:45:44,481 - [INFO] - from play in play-internal-execution-context-17 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-02 12:45:44,628 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2015-07-02 12:47:40,130 - [INFO] - from play in play-internal-execution-context-20 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-02 12:47:40,255 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2015-07-02 12:49:00,397 - [INFO] - from play in play-internal-execution-context-20 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-02 12:49:00,537 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2015-07-02 12:50:37,012 - [INFO] - from play in play-internal-execution-context-20 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-02 12:50:37,122 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2015-07-02 12:51:00,625 - [INFO] - from play in play-internal-execution-context-20 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-02 12:51:00,735 - [INFO] - from play in play-internal-execution-context-20 
+Application started (Dev)
+
+2015-07-02 12:51:12,857 - [INFO] - from play in play-internal-execution-context-25 
+database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
+
+2015-07-02 12:51:12,967 - [INFO] - from play in play-internal-execution-context-25 
 Application started (Dev)
 

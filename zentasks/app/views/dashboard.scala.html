@@ -48,7 +48,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 				<table id="jobs" class="table table-striped" cellspacing="0">
 					<th></th>
 					<tbody class="searchable">
-						@for(job <- jobs) {
+						@for(job <- matchJobs) {
 						<tr>
 							<td>
 								<div class="panel panel-default" style="margin-top: 10px">

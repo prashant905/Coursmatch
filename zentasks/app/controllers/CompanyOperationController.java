@@ -5,6 +5,8 @@ import static play.data.Form.form;
 import java.util.List;
 
 import models.Company;
+import models.FavoriteCourses;
+import models.FavoriteJobs;
 import models.Job;
 import play.data.DynamicForm;
 import play.db.ebean.Transactional;
@@ -42,6 +44,7 @@ public class CompanyOperationController extends Controller{
 	}
 	@Transactional
 	public static Result deleteJob(Long id){
+		FavoriteJobs.deleteByJob(id);
 		Job job = Job.find.byId(id);
 		job.delete();
 		return redirect(routes.CompanyOperationController.dashboard());

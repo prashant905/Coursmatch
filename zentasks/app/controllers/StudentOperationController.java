@@ -35,13 +35,15 @@ public class StudentOperationController extends Controller {
 	public static void recommendationSystem(Student student){
 		String student_course_tags = student.course_tags;
 		String student_job_tags = student.job_tags;
+		
 		ArrayList<String> favCourseTags = new ArrayList<String>(Arrays.asList(student_course_tags.split(",")));
 		ArrayList<String> favJobTags = new ArrayList<String>(Arrays.asList(student_job_tags.split(",")));
+		
 		ArrayList<Course> courses = new ArrayList<Course>(Course.findAll());
 		matchedCourses = new ArrayList<Course>();
-		
 		ArrayList<Job> jobs = new ArrayList<Job>(Job.findAll());
 		matchedJobs = new ArrayList<Job>();
+		
 		if(!student_course_tags.isEmpty()){
 			for(Course course : courses){
 				ArrayList<String> ct = new ArrayList<String>(Arrays.asList(course.tags.split(",")));
