@@ -1,0 +1,74 @@
+@(form: Form[StudentController.Login])
+
+<html>
+    <head>
+        <title>Course Match Login</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+        <script type="text/javascript" src="http://malsup.github.io/jquery.cycle.all.js"></script>
+      
+        <script>
+        $(document).ready(function() {
+				$('#slideshow').cycle({
+				fx: 'fade',
+				pager: '#smallnav', 
+				pause:   1, 
+				speed: 2800,
+				timeout:  4500 
+			});			
+		});
+        </script>
+        
+    </head>
+    <body>
+        
+        <div id="slideshow">
+         <img src="http://www.in.tum.de/typo3temp/pics/d0b40b3dab.jpg" class="bgM"/>      
+         <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/TUM.-.Parabelrutsche1.jpg" class="bgM"/>
+        </div>
+    
+        <header style="padding-top: 10px">
+            <a href="" id="logo"> 
+             <img src="@routes.Assets.at("images/logo-white.png")" height="30px">
+            </a>           
+        </header>
+        
+        @helper.form(routes.StudentController.authenticate) {
+            
+            <h1 style="height:50px">
+               <img src="@routes.Assets.at("images/logo.png")" height="30px">
+            </h1>
+            
+            
+            @if(form.hasGlobalErrors) { 
+                <p class="error" style="border: 1px solid #F00">
+                    @form.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success" style="border: 1px solid #0F0">
+                    @flash.get("success")
+                </p>
+            }
+            
+           
+           
+            <p>
+                <input type="email" name="email" placeholder="Email" value="@form("email").value">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password">
+            </p>
+            <p>
+                <button type="submit">Login</button>
+            </p>
+        }
+        
+         
+    </body>
+</html>
+    
+
+

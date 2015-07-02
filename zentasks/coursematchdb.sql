@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2015 at 06:52 AM
+-- Generation Time: Jul 02, 2015 at 03:22 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -63,7 +63,8 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`email`, `password`, `name`, `description`) VALUES
-('apple@coursematch.de', '1234', 'Apple Ltd', 'multinational');
+('apple@coursematch.de', '1234', 'Apple Ltd', 'multinational'),
+('IBM@coursematch.de', '1234', 'IBM ltd', 'multinational');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `favorite_courses` (
   `id` int(11) NOT NULL,
   `course_id` bigint(20) NOT NULL,
   `email` text
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `favorite_courses`
@@ -115,7 +116,8 @@ CREATE TABLE IF NOT EXISTS `favorite_courses` (
 
 INSERT INTO `favorite_courses` (`id`, `course_id`, `email`) VALUES
 (10, 4, 'mohamed.ragab@tum.de'),
-(11, 9, 'mohamed.ragab@tum.de');
+(11, 9, 'mohamed.ragab@tum.de'),
+(12, 1, 'mohamed.ragab@tum.de');
 
 -- --------------------------------------------------------
 
@@ -127,7 +129,14 @@ CREATE TABLE IF NOT EXISTS `favorite_jobs` (
   `id` int(11) NOT NULL,
   `job_id` int(11) NOT NULL,
   `email` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favorite_jobs`
+--
+
+INSERT INTO `favorite_jobs` (`id`, `job_id`, `email`) VALUES
+(6, 14, 'mohamed.ragab@tum.de');
 
 -- --------------------------------------------------------
 
@@ -145,14 +154,16 @@ CREATE TABLE IF NOT EXISTS `job` (
   `link` text,
   `tags` text NOT NULL,
   `company_name` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `job`
 --
 
 INSERT INTO `job` (`id`, `title`, `salary`, `begin_date`, `description`, `contact`, `link`, `tags`, `company_name`) VALUES
-(13, 'IOS Frontend Developer changed', 'IOS Frontend Developer changed', '1st of august 2013', 'development IOS', 'recruit@apple.de', 'www.apple.de/jobs?id=1', 'IOS, Developer', 'Apple Ltd');
+(14, 'Backend Developer', '2000 euros', '1st july', 'database admin', 'recruit@apple.de', 'http://www.apple.com/', 'backend, developer, database', 'Apple Ltd'),
+(15, 'IOS Developer', 'IOS Developer', '1st ', '', 'recruit@apple.de', 'http://www.apple.com/', 'IOS', 'Apple Ltd'),
+(16, 'Database Designer', '3000 euros', '1st july', 'database admin', 'recruit@ibm.de', 'http://www.ibm.de', '', 'IBM ltd');
 
 -- --------------------------------------------------------
 
@@ -272,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`email`, `name`, `password`, `course_tags`, `job_tags`) VALUES
-('mohamed.ragab@tum.de', 'mohamed ragab', '1234', 'easy, thomas', 'IOS'),
+('mohamed.ragab@tum.de', 'mohamed ragab', '1234', 'easy', 'database'),
 ('thomas@tum.de', 'thomas', '1234', 'easy', 'developer');
 
 -- --------------------------------------------------------
@@ -380,17 +391,17 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `favorite_courses`
 --
 ALTER TABLE `favorite_courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `favorite_jobs`
 --
 ALTER TABLE `favorite_jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `job`
 --
 ALTER TABLE `job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `overallranking`
 --

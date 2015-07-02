@@ -136,7 +136,7 @@
 												<div style="float: left; width: 500px">
 													<span class="text-title">Title</span>
 													<p>
-														<a href="@job.link">@job.title</a>
+														<a href=@job.link target="_blank">@job.title</a>
 													</p>
 													<span class="text-title">Description</span>
 													<p>@job.description</p>
@@ -152,12 +152,12 @@
 														class="glyphicon  logout"
 														href="@routes.CompanyOperationController.deleteJob(job.id)"
 														style="background: none; box-shadow: none; padding: 8px 5px;">
-														<b style="font-family: arial; color: red; font-size: 14px">
+														<b style="font-family: arial; color: #C9302C; font-size: 14px">
 															Delete </b>
 													</a> <a class="glyphicon  logout"
 														href="@routes.CompanyOperationController.viewToEditJob(job.id)"
 														style="background: none; box-shadow: none; padding: 8px 5px;">
-														<b style="font-family: arial; color: red; font-size: 14px">
+														<b style="font-family: arial; color: #C9302C; font-size: 14px">
 															Edit </b>
 													</a>
 												</div>
@@ -190,7 +190,7 @@
 							<div class="form-group">
 								<label class="col-xs-2 control-label">Title</label>
 								<div class="col-xs-10">
-									<input type="text" name="job_title" class="form-control"
+									<input required="required" type="text" name="job_title" class="form-control"
 										placeholder="enter job title ..">
 								</div>
 							</div>
@@ -218,14 +218,14 @@
 							<div class="form-group ">
 								<label class="col-xs-2 control-label">Contact</label>
 								<div class="col-xs-10">
-									<input type="text" name="job_contact" class="form-control"
+									<input required="required" type="text" name="job_contact" class="form-control"
 										placeholder="enter job contact ..">
 								</div>
 							</div>
 							<div class="form-group ">
 								<label class="col-xs-2 control-label">Link</label>
 								<div class="col-xs-10">
-									<input type="text" name="job_link" class="form-control"
+									<input required="required" type="text" name="job_link" class="form-control"
 										placeholder="enter job link at company home page  ..">
 								</div>
 							</div>

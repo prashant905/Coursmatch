@@ -1,0 +1,184 @@
+@(company: Company,job:Job)
+
+<html>
+
+<style>
+#menu_container {
+	position: relative;
+	margin-left: 360px;
+	padding-top: 50px;
+}
+
+.nav>li {
+	width: 220px !important;
+	text-align: center !important;
+}
+
+.text-title {
+	font-style: italic;
+	text-decoration: underline;
+}
+</style>
+
+
+
+
+<head>
+<title>CourseMatch</title>
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="@routes.Assets.at("stylesheets/main.css")">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="@routes.Assets.at("stylesheets/tags.css")">
+
+
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/css/bootstrap-select.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.css">
+
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.dataTables.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.dataTables.min.js")"></script>
+
+<link rel="stylesheet" type="text/css" media="screen"
+	href="@routes.Assets.at("stylesheets/star-rating.css")">
+<link rel="stylesheet" type="text/css" media="screen"
+	href="@routes.Assets.at("stylesheets/star-rating.min.css")">
+<script src="@routes.Assets.at("javascripts/tags.js")"></script>
+<script src="@routes.Assets.at("javascripts/star-rating.js")"></script>
+<script src="@routes.Assets.at("javascripts/star-rating.min.js")"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script
+	src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script
+	src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/js/bootstrap-select.js"></script>
+</head>
+<body>
+
+	<header style="padding-top: 12px; position: fixed">
+
+
+
+		<a href="@routes.CompanyOperationController.dashboard()" id="logo"> <img
+			src="@routes.Assets.at(" images/logo-white.png")" height="26px">
+		</a>
+
+		<dl id="user">
+			<dt style="padding-top: 10px">
+				@company.name <span>(@company.email)</span>
+			</dt>
+			<dd>
+				<a class="glyphicon glyphicon-off logout"
+					href="@routes.CompanyController.logout()" style="padding: 8px 5px;">
+					<b style="font-family: arial; font-size: 14px"> Logout </b>
+				</a>
+			</dd>
+		</dl>
+	</header>
+
+
+	<nav style="position:fixed">
+
+		<div style="padding: 10px 0 0 0px">
+			<h4 class="dashboard">Jobs</h4>
+			<ul class="navlist">
+				<li><a href="#">Job .</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div id="menu_container" class="container">
+		<div style="margin-top: 20px" class="panel panel-default">
+			<header class="panel-heading">
+				<h3 class="panel-title">Create A Job</h3>
+			</header>
+			<div class="panel-body">
+
+				<form class="form-horizontal" method="post"
+					action="@routes.CompanyOperationController.editJob(job.id)">
+					<div class="form-group ">
+						<label class="col-xs-2 control-label">Company Name</label>
+						<div class="col-xs-10">
+							<input type="text" value="@company.name" name="company_name"
+								class="form-control" readonly="readonly" placeholder="" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">Title</label>
+						<div class="col-xs-10">
+							<input type="text" name="job_title" value="@job.title"class="form-control"
+								placeholder="enter job title ..">
+						</div>
+					</div>
+					<div class="form-group ">
+						<label class="col-xs-2 control-label">Salary</label>
+						<div class="col-xs-10">
+							<input type="text" name="job_salary" class="form-control"
+								placeholder="enter salary .." value="@job.title">
+						</div>
+					</div>
+					<div class="form-group ">
+						<label class="col-xs-2 control-label">Begin Date</label>
+						<div class="col-xs-10">
+							<input type="text" name="begin_date" class="form-control"
+								placeholder="enter starting date .."value="@job.begin_date">
+						</div>
+					</div>
+					<div class="form-group ">
+						<label class="col-xs-2 control-label">Description</label>
+						<div class="col-xs-10">
+							<input type="text" name="job_description" class="form-control"
+								placeholder="enter job description .."value="@job.description">
+						</div>
+					</div>
+					<div class="form-group ">
+						<label class="col-xs-2 control-label">Contact</label>
+						<div class="col-xs-10">
+							<input type="text" name="job_contact" class="form-control"
+								placeholder="enter job contact .."value="@job.contact">
+						</div>
+					</div>
+					<div class="form-group ">
+						<label class="col-xs-2 control-label">Link</label>
+						<div class="col-xs-10">
+							<input type="text" name="job_link" class="form-control"
+								placeholder="enter job link at company home page  .."value="@job.link">
+						</div>
+					</div>
+					<div class="well">
+						<p>Jobs Tags :</p>
+						<input name="job_tags" type="text" class="form-control"
+							id="jobTag" value="@job.tags" />
+					</div>
+					<button type="submit" style="width: 100%;" class="btn btn-danger">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$('#jobTag').tokenfield();
+	$('#jobs').DataTable();
+</script>
+</html>
+

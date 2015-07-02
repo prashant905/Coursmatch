@@ -209,6 +209,5 @@ public class StudentOperationController extends Controller {
 		fc.delete();
 		return redirect(routes.StudentOperationController.dashboard());
 	}
-	
 
 }

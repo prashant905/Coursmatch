@@ -1,0 +1,90 @@
+// -----------------------------------
+// MAIN
+// -----------------------------------
+
+@import 'libs/_reset.less';
+@import 'libs/_mate.less';
+@import 'libs/_theme.less';
+
+// ----------------------- MAIN STYLES
+body {
+    background: @mainBackground;
+    color: @mainColor;
+    font: @defaultFont;
+    -webkit-font-smoothing: antialised;
+    -webkit-user-select: none;
+}
+
+a {
+    color: @links;
+    text-decoration: none;
+    &:hover {
+        color: @linksHover;
+    }
+}
+
+
+.navlist {
+    margin-top: 15px;
+    li {        
+        margin: 0 8px;
+        a {
+            display: inline-block;
+            margin: 0 4px;
+            text-align: none;
+        }
+    }
+} 
+
+.logout {
+    
+    background: #0E5180; /*#445868;*/  /*155984 0%, #003b84 */  /*  #445868, #2a3a48) */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#155984), to(#003b84));
+    background-image: -moz-linear-gradient(top, #155984, #003b84);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.8); 
+    
+}
+
+.coursetitle {
+	font-size: 24px;	
+}
+.coursesubtitle {
+	font-size: 20px;	
+}
+.uploaditem {
+    float:left; 
+    padding-right:30px;
+    div {
+        height: 140px;
+        width: 100px;
+        div {
+            height: 100px
+        }
+    }
+}
+.uploaditembox {
+    height: 100px; 
+    width: 100px; 
+    border: 1px solid #AAA; 
+    border-radius: 6px; 
+    background: #FFF;
+}
+
+
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background: #0e5180 -moz-linear-gradient(center top , #155984, #003b84) repeat scroll 0 0;
+    color: #fff;
+}
+
+
+
+// --------------------------- IMPORTS
+@import 'main/_layout.less';        // General grid
+@import 'main/_widgets.less';       // Some shared elements
+@import 'main/_drawer.less';        // Project drawer
+@import 'main/_header.less';        // Top header + User bar
+@import 'main/_breadcrumb.less';    // Breadcrumb + App menu
+@import 'apps/_tasks.less';         // Tasks 
+@import 'main/_rating.less';        // Rating 
+

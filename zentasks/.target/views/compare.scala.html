@@ -1,0 +1,71 @@
+@(student: Student ,
+courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],favoriteJobs:List[FavoriteJobs])(content:Html)
+@main(student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs){
+<html>
+<div id="menu_container" class="container">
+
+	<div class="panel panel-primary"
+		style="margin-bottom: 60px; width: 1250px">
+		<div class="panel-heading">Compare Courses</div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form method="GET"
+					action="@routes.StudentOperationController.displayCourseRatings()">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<table class="table" style="margin: auto;">
+								<header>
+									<th>First Course</th>
+									<th>Second Course</th>
+								</header>
+								<tr>
+									<td><select id="firstCourse" name="course_1"
+										class="selectpicker  form-control" name="course1"
+										data-live-search="true"> @for(course <- courses) {
+											<option value="@course.id">@course.name</option> }
+									</select></td>
+									<td><select id="secondCourse" name="course_2"
+										class="selectpicker  form-control" data-live-search="true">
+											@for(course <- courses) {
+											<option value="@course.id">@course.name</option> }
+									</select></td>
+							</table>
+							<div
+								style="width: 100; min-height: 20px; margin: auto; padding-bottom: 15px;">
+								<button id="compareCoursesButton" type="submit"
+									class="btn btn-sm btn-primary"
+									style="height: 30px; width: 200px">Compare</button>
+
+							</div>
+						</div>
+					</div>
+				</form>
+				<section>@content</section>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function getUrlParameter(sParam) {
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) {
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) {
+				return sParameterName[1];
+			}
+		}
+	}
+
+	$(document).ready(function() {
+		var course1 = getUrlParameter('course_1');
+		var course2 = getUrlParameter('course_2');
+		$("#firstCourse").val(course1);
+		$("#secondCourse").val(course2);
+	});
+</script>
+</html>
+
+
+
+}

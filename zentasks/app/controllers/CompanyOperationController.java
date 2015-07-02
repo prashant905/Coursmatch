@@ -4,6 +4,8 @@ import static play.data.Form.form;
 
 import java.util.List;
 
+import com.sun.media.jfxmedia.logging.Logger;
+
 import models.Company;
 import models.FavoriteCourses;
 import models.FavoriteJobs;
@@ -40,7 +42,7 @@ public class CompanyOperationController extends Controller{
 		job.salary = form.get("job_salary");
 		job.begin_date = form.get("begin_date");
 		job.save();
-		return dashboard();
+		return redirect(routes.CompanyOperationController.dashboard());
 	}
 	@Transactional
 	public static Result deleteJob(Long id){
@@ -72,5 +74,4 @@ public class CompanyOperationController extends Controller{
 		job.update();
 		return redirect(routes.CompanyOperationController.dashboard());
 	}
-	
 }

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Course Match Login</title>
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at(" images/favicon.png")"/>
+<link rel="stylesheet" type="text/css" media="screen"
+	href="@routes.Assets.at("stylesheets/login.css")">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+<script type="text/javascript"
+	src="http://malsup.github.io/jquery.cycle.all.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#slideshow').cycle({
+			fx : 'fade',
+			pager : '#smallnav',
+			pause : 1,
+			speed : 2800,
+			timeout : 4500
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<div id="slideshow">
+		<img src="http://www.in.tum.de/typo3temp/pics/d0b40b3dab.jpg"
+			class="bgM" /> <img
+			src="https://upload.wikimedia.org/wikipedia/commons/4/40/TUM.-.Parabelrutsche1.jpg"
+			class="bgM" />
+	</div>
+	<header style="padding-top: 10px">
+		<a href="" id="logo"> <img src="@routes.Assets.at("images/logo-white.png")" height="30px">
+		</a>
+	</header>
+	<form>
+		<h1 style="height: 50px">
+			<img src="@routes.Assets.at("images/logo.png")" height="30px">
+		</h1>
+		<p>
+			<a href="@routes.StudentController.login()">Student Login</a>
+		</p>
+		<p>
+			<a href="@routes.CompanyController.login()">Company Login</a>
+		</p>
+	</form>
+</body>
+</html>
+
+
+

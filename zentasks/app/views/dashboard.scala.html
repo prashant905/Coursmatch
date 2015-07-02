@@ -61,7 +61,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 											<div style="float: left; width: 500px">
 												<span class="text-title">Title</span>
 												<p>
-													<a href="@job.link">@job.title</a>
+													<a href=@job.link target="_blank" >@job.title</a>
 												</p>
 												<span class="text-title">Description</span>
 												<p>@job.description</p>
@@ -149,7 +149,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 							<td></a> <a class="glyphicon  logout"
 								href="@routes.StudentOperationController.removeFromFavorites(course.id)"
 								style="background: none; box-shadow: none; padding: 8px 5px;">
-									<b style="font-family: arial; color: red; font-size: 14px">
+									<b style="font-family: arial; color: #C9302C; font-size: 14px">
 										Remove from Favorites </b>
 							</a></td>
 						</tr>
@@ -181,7 +181,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 											<div style="float: left; width: 500px">
 												<span class="text-title">Title</span>
 												<p>
-													<a href="@job.link">@job.title</a>
+													<a href=@job.link target="_blank">@job.title</a>
 												</p>
 												<span class="text-title">Description</span>
 												<p>@job.description</p>
@@ -197,7 +197,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 													class="glyphicon  logout"
 													href="@routes.StudentOperationController.addJobToFavorites(job.id)"
 													style="background: none; box-shadow: none; padding: 8px 5px;">
-													<b style="font-family: arial; color: red; font-size: 14px">
+													<b style="font-family: arial; color: #C9302C; font-size: 14px">
 														Add To Favorites </b>
 												</a>
 											</div>
@@ -229,7 +229,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 											<div style="float: left; width: 500px">
 												<span class="text-title">Title</span>
 												<p>
-													<a href="@job.job.link">@job.job.title</a>
+													<a href=@job.job.link target="_blank">@job.job.title</a>
 												</p>
 												<span class="text-title">Description</span>
 												<p>@job.job.description</p>
@@ -245,7 +245,7 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 													class="glyphicon  logout"
 													href="@routes.StudentOperationController.removeJobFromFavorites(job.id)"
 													style="background: none; box-shadow: none; padding: 8px 5px;">
-													<b style="font-family: arial; color: red; font-size: 14px">
+													<b style="font-family: arial; color: #C9302C; font-size: 14px">
 														Remove From Favorites </b>
 												</a>
 											</div>

@@ -1,0 +1,374 @@
+@(matchedCourses:List[Course],matchJobs:List[Job],student: Student ,
+courses: List[Course],
+jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],favoriteJobs:List[FavoriteJobs])
+@main(student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs){
+
+
+<div id="menu_container" class="container">
+	<ul class="nav nav-pills" style="width: 1000px">
+		<li class="active"><a data-toggle="pill" href="#home">Dashboard</a></li>
+		<li><a data-toggle="pill" href="#menu2">Courses</a></li>
+		<li><a data-toggle="pill" href="#menu3">Jobs</a></li>
+		<li><a data-toggle="pill" href="#menu4">About us</a></li>
+	</ul>
+
+
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane fade in active">
+			<h3></h3>
+			<div class="panel panel-primary" style="margin-bottom: 60px">
+				<div class="panel-heading">Recommended Courses</div>
+				<table id="recommendedCourses" class="table table-striped"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Professor</th>
+							<th>Chair</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody class="searchable">
+						@for(course <- matchedCourses) {
+						<tr>
+
+							<td><a
+								href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
+							<td>@course.professor_name</td>
+							<td>@course.chair</td>
+							<td>@course.description</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Recommended Jobs</div>
+				<table id="jobs" class="table table-striped" cellspacing="0">
+					<th></th>
+					<tbody class="searchable">
+						@for(job <- matchJobs) {
+						<tr>
+							<td>
+								<div class="panel panel-default" style="margin-top: 10px">
+									<div class="panel-body">
+										<div style="float: left; width: 160px">
+											<img src=@{"assets/images/" + job.company_name + ".png"}>
+										</div>
+										<div style="float: left">
+
+											<div style="float: left; width: 500px">
+												<span class="text-title">Title</span>
+												<p>
+													<a href=@job.link target="_blank" >@job.title</a>
+												</p>
+												<span class="text-title">Description</span>
+												<p>@job.description</p>
+											</div>
+
+											<div style="float: left; padding-left: 30px">
+												<span class="text-title">Company</span> <span>@job.company_name</span><br>
+												<span class="text-title">Salary </span> <span>@job.salary</span><br>
+												<span class="text-title">Beginning Time</span> <span>@job.begin_date</span><br>
+
+												<span class="text-title"><b>Contact:</b></span> <span
+													style="padding-right: 15px">@job.contact</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="menu2" class="tab-pane fade">
+
+			<h3></h3>
+			<div class="panel panel-primary" style="margin-bottom: 60px;">
+				<div class="panel-heading">Search Courses</div>
+				<form style="top: -36px; position: relative; left: -345px;"
+					action="@routes.StudentOperationController.compareCourses()">
+					<div style="width: 100; min-height: 20px; margin: auto;">
+						<button id="compareCoursesButton" type="submit"
+							class="btn btn-danger" style="height: 30px; width: 200px">Compare
+							Courses</button>
+					</div>
+				</form>
+				<table id="courses" class="table table-striped" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Professor</th>
+							<th>Chair</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody class="searchable">
+						@for(course <- courses) {
+						<tr>
+
+							<td><a
+								href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
+							<td>@course.professor_name</td>
+							<td>@course.chair</td>
+							<td>@course.description</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+
+
+			<div class="panel panel-primary" style="margin-bottom: 60px">
+				<div class="panel-heading">Favorite Courses</div>
+				<table id="favoriteCourses" class="table table-striped"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Professor</th>
+							<th>Chair</th>
+							<th>Description</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody class="searchable">
+						@for(course <- favCourses) {
+						<tr>
+
+							<td><a
+								href="@routes.StudentOperationController.viewCourse(course.course.id)">@course.course.name</td>
+							<td>@course.course.professor_name</td>
+							<td>@course.course.chair</td>
+							<td>@course.course.description</td>
+							<td></a> <a class="glyphicon  logout"
+								href="@routes.StudentOperationController.removeFromFavorites(course.id)"
+								style="background: none; box-shadow: none; padding: 8px 5px;">
+									<b style="font-family: arial; color: #C9302C; font-size: 14px">
+										Remove from Favorites </b>
+							</a></td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+
+
+		</div>
+		<div id="menu3" class="tab-pane fade">
+			<h3></h3>
+
+			<div class="panel panel-primary" style="margin-bottom: 60px;">
+				<div class="panel-heading">Jobs</div>
+				<table id="jobs" class="table table-striped" cellspacing="0">
+					<th></th>
+					<tbody class="searchable">
+						@for(job <- jobs) {
+						<tr>
+							<td>
+								<div class="panel panel-default" style="margin-top: 10px">
+									<div class="panel-body">
+										<div style="float: left; width: 160px">
+											<img src=@{"assets/images/" + job.company_name + ".png"}>
+										</div>
+										<div style="float: left">
+
+											<div style="float: left; width: 500px">
+												<span class="text-title">Title</span>
+												<p>
+													<a href=@job.link target="_blank">@job.title</a>
+												</p>
+												<span class="text-title">Description</span>
+												<p>@job.description</p>
+											</div>
+
+											<div style="float: left; padding-left: 30px">
+												<span class="text-title">Company</span> <span>@job.company_name</span><br>
+												<span class="text-title">Salary </span> <span>@job.salary</span><br>
+												<span class="text-title">Beginning Time</span> <span>@job.begin_date</span><br>
+
+												<span class="text-title"><b>Contact:</b></span> <span
+													style="padding-right: 15px">@job.contact</span> <a
+													class="glyphicon  logout"
+													href="@routes.StudentOperationController.addJobToFavorites(job.id)"
+													style="background: none; box-shadow: none; padding: 8px 5px;">
+													<b style="font-family: arial; color: #C9302C; font-size: 14px">
+														Add To Favorites </b>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+
+			<div class="panel panel-primary" style="margin-bottom: 60px;">
+				<div class="panel-heading">Favorite Jobs</div>
+				<table id="favoriteJobs" class="table table-striped" cellspacing="0">
+					<th></th>
+					<tbody class="searchable">
+						@for(job <- favoriteJobs) {
+						<tr>
+							<td>
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<div style="float: left; width: 160px">
+											<img src=@{"assets/images/" + job.job.company_name + ".png"}>
+										</div>
+										<div style="float: left">
+
+											<div style="float: left; width: 500px">
+												<span class="text-title">Title</span>
+												<p>
+													<a href=@job.job.link target="_blank">@job.job.title</a>
+												</p>
+												<span class="text-title">Description</span>
+												<p>@job.job.description</p>
+											</div>
+
+											<div style="float: left; padding-left: 30px">
+												<span class="text-title">Company</span> <span>@job.job.company_name</span><br>
+												<span class="text-title">Salary </span> <span>@job.job.salary</span><br>
+												<span class="text-title">Beginning Time</span> <span>@job.job.begin_date</span><br>
+
+												<span class="text-title"><b>Contact:</b></span> <span
+													style="padding-right: 15px">@job.job.contact</span> <a
+													class="glyphicon  logout"
+													href="@routes.StudentOperationController.removeJobFromFavorites(job.id)"
+													style="background: none; box-shadow: none; padding: 8px 5px;">
+													<b style="font-family: arial; color: #C9302C; font-size: 14px">
+														Remove From Favorites </b>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+		<div id="menu4" class="tab-pane fade">
+			<h3>About Us</h3>
+			<p>
+				CourseMatch is a team project, which was created by students as part
+				of the Web Application Engineering<br> course at the Technical
+				University Munich. As a result of the hard time finding university
+				courses and<br> jobs the team decided to implement a web
+				application for universities to make life for students easier<br>
+				when it comes to choosing courses.
+			</p>
+
+			<h3>Imprint</h3>
+			<p>
+				CourseMatch GmbH</br> Hauptstrasse 123</br> 80333 Munich - Germany
+			</p>
+
+			<p>
+				Contact</br> + 49 42-123456789</br> team[at]coursematch.de
+			</p>
+
+			<p>
+				CourseMatch GmbH</br> Headquarters: Munich</br> Register Court: Munich HRB
+				102273</br> Ust-Ident-Nr .: DE123456789
+			</p>
+
+			<p>Managing Director: The CourseMatch Team</p>
+
+			<p>
+				Responsible for content according to § 55 II RStV: CourseMatch</br> ©
+				Copyright 2015-2123</br> CourseMatch GmbH
+			</p>
+
+			<p>All rights reserved.</p>
+
+			<p>
+				The information on this website has been carefully compiled and
+				checked to the best of its knowledge and belief.<br> No
+				guarantee or liability for the information, particularly regarding
+				its accuracy, completeness, timeliness or<br> availability at
+				any time, but can not be accepted. Any liability for damages arising
+				from the use of the <br> information, is - to the extent
+				permitted by law - excluded. The website also contains links or
+				references to <br> other websites. The CourseMatch GmbH is not
+				responsible for the content of other Web sites, it dissociates <br>
+				itself and makes this content as its own. The CourseMatch GmbH
+				reserves the right to amend without notice the<br> information
+				provided, to change or remove.
+			</p>
+
+			<p>
+				Privacy: The radio.de GmbH will abide strictly by the data
+				protection regulations and only use particular<br> personally
+				identifiable information such as name or e-mail address to answer or
+				to process requests concern.
+			</p>
+
+
+
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+	$(document).ready(function() {
+		$('#favoriteCourses').dataTable();
+		$('#courses').dataTable();
+		$('#recommendedCourses').dataTable();
+		$('#jobs').dataTable();
+		$('#favoriteJobs').dataTable();
+	});
+</script>
+<style>
+#recommendedCourses_wrapper, #favoriteCourses_wrapper {
+	margin-top: 30px;
+}
+
+div.dropdown-menu>ul.dropdown-menu {
+	max-height: 135px !important;
+}
+
+#recommendedCourses_filter>label, #courses_filter>label,
+	#favoriteCourses_filter>label {
+	float: right;
+	position: relative;
+	top: -66px;
+	margin-right: 5px;
+	color: transparent;
+}
+
+#courses_filter>label>input[type="search"], #recommendedCourses_filter>label>input[type="search"],
+	#favoriteCourses_filter>label>input[type="search"] {
+	width: 400px !important;
+}
+
+.pagination {
+	top: -25px;
+	position: relative;
+}
+
+.panel-body {
+	padding: 5px 15px 0;
+}
+
+.panel {
+	margin-bottom: 3px;
+}
+</style>
+
+}
