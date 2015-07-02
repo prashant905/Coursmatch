@@ -1,87 +1,9 @@
-2015-07-02 17:00:33,103 - [INFO] - from play in pool-4-thread-3 
+2015-07-02 23:04:33,896 - [INFO] - from play in pool-5-thread-4 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-07-02 17:01:06,034 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 23:04:55,279 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 17:01:06,843 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2015-07-02 17:07:53,168 - [INFO] - from play in play-internal-execution-context-5 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:07:53,356 - [INFO] - from play in play-internal-execution-context-5 
-Application started (Dev)
-
-2015-07-02 17:10:09,199 - [INFO] - from play in play-internal-execution-context-6 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:10:09,453 - [INFO] - from play in play-internal-execution-context-6 
-Application started (Dev)
-
-2015-07-02 17:11:24,331 - [INFO] - from play in play-internal-execution-context-8 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:11:24,457 - [INFO] - from play in play-internal-execution-context-8 
-Application started (Dev)
-
-2015-07-02 17:17:42,869 - [INFO] - from play in play-internal-execution-context-8 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:17:43,072 - [INFO] - from play in play-internal-execution-context-8 
-Application started (Dev)
-
-2015-07-02 17:19:01,816 - [INFO] - from play in play-internal-execution-context-13 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:19:02,048 - [INFO] - from play in play-internal-execution-context-13 
-Application started (Dev)
-
-2015-07-02 17:20:41,809 - [INFO] - from play in play-internal-execution-context-19 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:20:42,000 - [INFO] - from play in play-internal-execution-context-19 
-Application started (Dev)
-
-2015-07-02 17:23:16,540 - [INFO] - from play in play-internal-execution-context-21 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:23:16,698 - [INFO] - from play in play-internal-execution-context-21 
-Application started (Dev)
-
-2015-07-02 17:26:47,146 - [INFO] - from play in play-internal-execution-context-25 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:26:47,290 - [INFO] - from play in play-internal-execution-context-25 
-Application started (Dev)
-
-2015-07-02 17:27:09,633 - [INFO] - from play in play-internal-execution-context-29 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:27:09,778 - [INFO] - from play in play-internal-execution-context-29 
-Application started (Dev)
-
-2015-07-02 17:41:31,977 - [INFO] - from play in play-internal-execution-context-38 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:41:32,160 - [INFO] - from play in play-internal-execution-context-38 
-Application started (Dev)
-
-2015-07-02 17:42:48,192 - [INFO] - from play in play-internal-execution-context-41 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:42:48,358 - [INFO] - from play in play-internal-execution-context-41 
-Application started (Dev)
-
-2015-07-02 17:49:11,166 - [INFO] - from play in play-internal-execution-context-42 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:49:11,347 - [INFO] - from play in play-internal-execution-context-42 
-Application started (Dev)
-
-2015-07-02 17:49:43,527 - [INFO] - from play in play-internal-execution-context-42 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 17:49:43,668 - [INFO] - from play in play-internal-execution-context-42 
+2015-07-02 23:04:55,864 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 

@@ -1,8 +1,5 @@
 compile
 run
-clean
-compile
-run
 compile
 clean
 compile
@@ -496,5 +493,8 @@ clean
 compile
 run
 exit 
+run
+exit
+compile
 run
 exit
