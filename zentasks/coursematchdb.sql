@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2015 at 05:58 AM
+-- Generation Time: Jul 02, 2015 at 06:52 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -107,14 +107,27 @@ CREATE TABLE IF NOT EXISTS `favorite_courses` (
   `id` int(11) NOT NULL,
   `course_id` bigint(20) NOT NULL,
   `email` text
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `favorite_courses`
 --
 
 INSERT INTO `favorite_courses` (`id`, `course_id`, `email`) VALUES
-(10, 4, 'mohamed.ragab@tum.de');
+(10, 4, 'mohamed.ragab@tum.de'),
+(11, 9, 'mohamed.ragab@tum.de');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorite_jobs`
+--
+
+CREATE TABLE IF NOT EXISTS `favorite_jobs` (
+  `id` int(11) NOT NULL,
+  `job_id` int(11) NOT NULL,
+  `email` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -313,6 +326,12 @@ ALTER TABLE `favorite_courses`
   ADD PRIMARY KEY (`id`), ADD KEY `course_id` (`course_id`);
 
 --
+-- Indexes for table `favorite_jobs`
+--
+ALTER TABLE `favorite_jobs`
+  ADD PRIMARY KEY (`id`), ADD KEY `job_id` (`job_id`);
+
+--
 -- Indexes for table `job`
 --
 ALTER TABLE `job`
@@ -361,7 +380,12 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `favorite_courses`
 --
 ALTER TABLE `favorite_courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `favorite_jobs`
+--
+ALTER TABLE `favorite_jobs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `job`
 --
@@ -402,6 +426,12 @@ ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`
 --
 ALTER TABLE `favorite_courses`
 ADD CONSTRAINT `favorite_courses_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+
+--
+-- Constraints for table `favorite_jobs`
+--
+ALTER TABLE `favorite_jobs`
+ADD CONSTRAINT `favorite_jobs_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `job` (`id`);
 
 --
 -- Constraints for table `overallranking`
