@@ -20,15 +20,15 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object compare extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template7[Student,List[Course],List[Job],String,String,List[FavoriteCourses],Html,play.api.templates.HtmlFormat.Appendable] {
+object compare extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template8[Student,List[Course],List[Job],String,String,List[FavoriteCourses],List[FavoriteJobs],Html,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
     def apply/*1.2*/(student: Student ,
-courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses])(content:Html):play.api.templates.HtmlFormat.Appendable = {
+courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],favoriteJobs:List[FavoriteJobs])(content:Html):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*2.119*/("""
-"""),_display_(Seq[Any](/*3.2*/main(student,courses,jobs,course_tags,job_tags,favCourses)/*3.60*/{_display_(Seq[Any](format.raw/*3.61*/("""
+Seq[Any](format.raw/*2.151*/("""
+"""),_display_(Seq[Any](/*3.2*/main(student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs)/*3.73*/{_display_(Seq[Any](format.raw/*3.74*/("""
 <html>
 <div id="menu_container" class="container">
 
@@ -100,19 +100,19 @@ Seq[Any](format.raw/*2.119*/("""
 """))}
     }
     
-    def render(student:Student,courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],content:Html): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs,course_tags,job_tags,favCourses)(content)
+    def render(student:Student,courses:List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],favoriteJobs:List[FavoriteJobs],content:Html): play.api.templates.HtmlFormat.Appendable = apply(student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs)(content)
     
-    def f:((Student,List[Course],List[Job],String,String,List[FavoriteCourses]) => (Html) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs,course_tags,job_tags,favCourses) => (content) => apply(student,courses,jobs,course_tags,job_tags,favCourses)(content)
+    def f:((Student,List[Course],List[Job],String,String,List[FavoriteCourses],List[FavoriteJobs]) => (Html) => play.api.templates.HtmlFormat.Appendable) = (student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs) => (content) => apply(student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs)(content)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jul 02 05:45:55 CEST 2015
+                    DATE: Thu Jul 02 06:43:14 CEST 2015
                     SOURCE: C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/app/views/compare.scala.html
-                    HASH: 01b69043e7a6a5e1e8f8481af98ec4b61829e35a
-                    MATRIX: 841->1|1075->140|1112->143|1178->201|1216->202|1547->497|1562->503|1634->553|2066->949|2104->971|2144->973|2209->1002|2224->1008|2249->1011|2288->1014|2303->1020|2330->1025|2373->1036|2575->1202|2613->1224|2653->1226|2718->1255|2733->1261|2758->1264|2797->1267|2812->1273|2839->1278|2882->1289|3290->1661|3319->1668|3464->1785|3493->1786|3671->1936|3700->1937|3820->2029|3849->2030|3912->2066|3940->2067|3971->2071|3999->2072|4029->2075|4057->2076|4119->2110|4148->2111|4341->2277|4369->2278|4431->2309
+                    HASH: e16d6a6fd51ec44749b16dc77b35c0718d92e0f2
+                    MATRIX: 860->1|1126->172|1163->175|1242->246|1280->247|1611->542|1626->548|1698->598|2130->994|2168->1016|2208->1018|2273->1047|2288->1053|2313->1056|2352->1059|2367->1065|2394->1070|2437->1081|2639->1247|2677->1269|2717->1271|2782->1300|2797->1306|2822->1309|2861->1312|2876->1318|2903->1323|2946->1334|3354->1706|3383->1713|3528->1830|3557->1831|3735->1981|3764->1982|3884->2074|3913->2075|3976->2111|4004->2112|4035->2116|4063->2117|4093->2120|4121->2121|4183->2155|4212->2156|4405->2322|4433->2323|4495->2354
                     LINES: 26->1|30->2|31->3|31->3|31->3|41->13|41->13|41->13|52->24|52->24|52->24|53->25|53->25|53->25|53->25|53->25|53->25|53->25|57->29|57->29|57->29|58->30|58->30|58->30|58->30|58->30|58->30|58->30|71->43|71->43|77->49|77->49|80->52|80->52|82->54|82->54|84->56|84->56|85->57|85->57|86->58|86->58|88->60|88->60|93->65|93->65|99->71
                     -- GENERATED --
                 */

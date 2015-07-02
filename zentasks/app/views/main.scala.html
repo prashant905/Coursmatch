@@ -1,25 +1,19 @@
-@(student: Student , courses: List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses])(body: Html)
-
+@(student: Student , courses: List[Course],jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],favoriteJobs:List[FavoriteJobs])(body: Html)
 <html>
 
 <style>
-
 #menu_container{
 	position: relative;
 	margin-left: 360px;   //not 450px please
 }
-
 .nav > li {
    width: 220px !important;
   text-align: center !important;
 }
-
 .text-title{
 	font-style:italic;
 	text-decoration: underline;
 }
-
-
 </style>
 
 
@@ -102,6 +96,22 @@
 				<nobr> @course.course.name </nobr> 
                  </a>
                 </li>
+                </ul>
+              }
+            </div>
+            
+              <div style="padding: 10px 0 0 0px">
+             <h4 class="dashboard">
+                Jobs
+             </h4>
+             <ul class="navlist">
+              @for(job <- favoriteJobs) {
+                <li>
+                 <a href=@{}>
+				<nobr> @job.job.title </nobr> 
+                 </a>
+                </li>
+                </ul>
               }
             </div>
   
@@ -145,4 +155,3 @@
 				  
 			  </script>
 </html>
-

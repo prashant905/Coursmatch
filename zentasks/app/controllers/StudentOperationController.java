@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 import models.Comment;
 import models.FavoriteCourses;
+import models.FavoriteJobs;
 import models.Schedule;
 import models.Course;
 import models.Job;
@@ -104,14 +105,14 @@ public class StudentOperationController extends Controller {
 		Student student = Student.find.byId(request().username());
 		recommendationSystem(student);
 		return ok(viewCourse.render(student,
-				course, Overallranking.findByCourseId(id),Comment.findByCourseId(id),course.tags,Uploads.findById(id),Schedule.findById(id),FavoriteCourses.findAllByStudent(student.email)));
+				course, Overallranking.findByCourseId(id),Comment.findByCourseId(id),course.tags,Uploads.findById(id),Schedule.findById(id),FavoriteCourses.findAllByStudent(student.email),FavoriteJobs.findAllByStudent(student.email)));
 	}
 
 	public static Result dashboard() {
 		Student student = Student.find.byId(request().username());
 		recommendationSystem(student);
 		return ok(dashboard.render(matchedCourses,matchedJobs,student,
-				Course.findAll(), Job.findAll(),student.course_tags,student.job_tags,FavoriteCourses.findAllByStudent(student.email)));
+				Course.findAll(), Job.findAll(),student.course_tags,student.job_tags,FavoriteCourses.findAllByStudent(student.email),FavoriteJobs.findAllByStudent(student.email)));
 	}
 
 	// ------------------------------Compare
@@ -120,7 +121,7 @@ public class StudentOperationController extends Controller {
 		ArrayList<Course> courses = new ArrayList<Course>(Course.findAll());
 		Student student = Student.find.byId(request().username());
 		return ok(compare.render(student,
-				courses, Job.findAll(),student.course_tags,student.job_tags,FavoriteCourses.findAllByStudent(student.email),fiveStarRate.render(
+				courses, Job.findAll(),student.course_tags,student.job_tags,FavoriteCourses.findAllByStudent(student.email),FavoriteJobs.findAllByStudent(student.email),fiveStarRate.render(
 						Overallranking.findByCourseId(courses.get(0).id),
 						Overallranking.findByCourseId(courses.get(0).id))));
 	}
@@ -131,7 +132,7 @@ public class StudentOperationController extends Controller {
 		Overallranking ranking1 = Overallranking.findByCourseId((long) Double.parseDouble(form.get("course_1")));
 		Overallranking ranking2 = Overallranking.findByCourseId((long) Double.parseDouble(form.get("course_2")));
 		return ok(compare.render(Student.find.byId(request().username()),
-				Course.findAll(), Job.findAll(),student.course_tags,student.job_tags,FavoriteCourses.findAllByStudent(student.email),
+				Course.findAll(), Job.findAll(),student.course_tags,student.job_tags,FavoriteCourses.findAllByStudent(student.email),FavoriteJobs.findAllByStudent(student.email),
 				fiveStarRate.render(ranking1,
 				ranking2)));
 	}
@@ -189,5 +190,23 @@ public class StudentOperationController extends Controller {
 		fc.delete();
 		return redirect(routes.StudentOperationController.dashboard());
 	}
+	
+	@Transactional
+	public static Result addJobToFavorites(Long id){
+		FavoriteJobs fj = new FavoriteJobs();
+		fj.email = request().username();
+		fj.job = Job.findById(id);
+		if(FavoriteJobs.isExist(fj))
+		fj.save();
+		return redirect(routes.StudentOperationController.dashboard());
+	}
+	
+	@Transactional
+	public static Result removeJobFromFavorites(Long id){
+		FavoriteJobs fc = FavoriteJobs.find.byId(id);
+		fc.delete();
+		return redirect(routes.StudentOperationController.dashboard());
+	}
+	
 
 }

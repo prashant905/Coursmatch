@@ -43,6 +43,9 @@ public class Job extends Model {
 	    public static List<Job> findAll() {
 	        return find.all();
 	    }
+	    public static Job findById(Long id) {
+	        return find.where().eq("id", id).findUnique();
+	    }
 	    
 	    public static List<Job> findByCompany(String company_name){
 	    	return find.where().eq("company_name",company_name).findList();

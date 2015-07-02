@@ -1,7 +1,7 @@
 @(matchedCourses:List[Course],matchJobs:List[Job],student: Student ,
 courses: List[Course],
-jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses])
-@main(student,courses,jobs,course_tags,job_tags,favCourses){
+jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourses],favoriteJobs:List[FavoriteJobs])
+@main(student,courses,jobs,course_tags,job_tags,favCourses,favoriteJobs){
 
 
 <div id="menu_container" class="container">
@@ -33,7 +33,8 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 						@for(course <- matchedCourses) {
 						<tr>
 
-							<td><a href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
+							<td><a
+								href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
 							<td>@course.professor_name</td>
 							<td>@course.chair</td>
 							<td>@course.description</td>
@@ -111,7 +112,8 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 						@for(course <- courses) {
 						<tr>
 
-							<td><a href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
+							<td><a
+								href="@routes.StudentOperationController.viewCourse(course.id)">@course.name</td>
 							<td>@course.professor_name</td>
 							<td>@course.chair</td>
 							<td>@course.description</td>
@@ -120,8 +122,8 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 					</tbody>
 				</table>
 			</div>
-			
-			
+
+
 			<div class="panel panel-primary" style="margin-bottom: 60px">
 				<div class="panel-heading">Favorite Courses</div>
 				<table id="favoriteCourses" class="table table-striped"
@@ -139,23 +141,24 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 						@for(course <- favCourses) {
 						<tr>
 
-							<td><a href="@routes.StudentOperationController.viewCourse(course.course.id)">@course.course.name</td>
+							<td><a
+								href="@routes.StudentOperationController.viewCourse(course.course.id)">@course.course.name</td>
 							<td>@course.course.professor_name</td>
 							<td>@course.course.chair</td>
 							<td>@course.course.description</td>
 							<td></a> <a class="glyphicon  logout"
-														href="@routes.StudentOperationController.removeFromFavorites(course.id)"
-														style="background: none; box-shadow: none; padding: 8px 5px;">
-														<b style="font-family: arial; color: red; font-size: 14px">
-															Remove from Favorites </b>
-													</a></td>
+								href="@routes.StudentOperationController.removeFromFavorites(course.id)"
+								style="background: none; box-shadow: none; padding: 8px 5px;">
+									<b style="font-family: arial; color: red; font-size: 14px">
+										Remove from Favorites </b>
+							</a></td>
 						</tr>
 						}
 					</tbody>
 				</table>
 			</div>
-			
-			
+
+
 		</div>
 		<div id="menu3" class="tab-pane fade">
 			<h3></h3>
@@ -190,7 +193,13 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 												<span class="text-title">Beginning Time</span> <span>@job.begin_date</span><br>
 
 												<span class="text-title"><b>Contact:</b></span> <span
-													style="padding-right: 15px">@job.contact</span>
+													style="padding-right: 15px">@job.contact</span> <a
+													class="glyphicon  logout"
+													href="@routes.StudentOperationController.addJobToFavorites(job.id)"
+													style="background: none; box-shadow: none; padding: 8px 5px;">
+													<b style="font-family: arial; color: red; font-size: 14px">
+														Add To Favorites </b>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -202,8 +211,54 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 				</table>
 			</div>
 
-		</div>
+			<div class="panel panel-primary" style="margin-bottom: 60px;">
+				<div class="panel-heading">Favorite Jobs</div>
+				<table id="favoriteJobs" class="table table-striped" cellspacing="0">
+					<th></th>
+					<tbody class="searchable">
+						@for(job <- favoriteJobs) {
+						<tr>
+							<td>
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<div style="float: left; width: 160px">
+											<img src=@{"assets/images/" + job.job.company_name + ".png"}>
+										</div>
+										<div style="float: left">
 
+											<div style="float: left; width: 500px">
+												<span class="text-title">Title</span>
+												<p>
+													<a href="@job.job.link">@job.job.title</a>
+												</p>
+												<span class="text-title">Description</span>
+												<p>@job.job.description</p>
+											</div>
+
+											<div style="float: left; padding-left: 30px">
+												<span class="text-title">Company</span> <span>@job.job.company_name</span><br>
+												<span class="text-title">Salary </span> <span>@job.job.salary</span><br>
+												<span class="text-title">Beginning Time</span> <span>@job.job.begin_date</span><br>
+
+												<span class="text-title"><b>Contact:</b></span> <span
+													style="padding-right: 15px">@job.job.contact</span> <a
+													class="glyphicon  logout"
+													href="@routes.StudentOperationController.removeJobFromFavorites(job.id)"
+													style="background: none; box-shadow: none; padding: 8px 5px;">
+													<b style="font-family: arial; color: red; font-size: 14px">
+														Remove From Favorites </b>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
 
 
 		<div id="menu4" class="tab-pane fade">
@@ -269,16 +324,18 @@ jobs:List[Job],course_tags:String,job_tags:String,favCourses:List[FavoriteCourse
 </div>
 
 
+
 <script>
 	$(document).ready(function() {
 		$('#favoriteCourses').dataTable();
 		$('#courses').dataTable();
 		$('#recommendedCourses').dataTable();
 		$('#jobs').dataTable();
+		$('#favoriteJobs').dataTable();
 	});
 </script>
 <style>
-#recommendedCourses_wrapper,#favoriteCourses_wrapper {
+#recommendedCourses_wrapper, #favoriteCourses_wrapper {
 	margin-top: 30px;
 }
 
@@ -286,8 +343,8 @@ div.dropdown-menu>ul.dropdown-menu {
 	max-height: 135px !important;
 }
 
-
-#recommendedCourses_filter>label , #courses_filter>label , #favoriteCourses_filter>label{
+#recommendedCourses_filter>label, #courses_filter>label,
+	#favoriteCourses_filter>label {
 	float: right;
 	position: relative;
 	top: -66px;
@@ -295,7 +352,8 @@ div.dropdown-menu>ul.dropdown-menu {
 	color: transparent;
 }
 
-#courses_filter>label>input[type="search"], #recommendedCourses_filter>label>input[type="search"], #favoriteCourses_filter>label>input[type="search"] {
+#courses_filter>label>input[type="search"], #recommendedCourses_filter>label>input[type="search"],
+	#favoriteCourses_filter>label>input[type="search"] {
 	width: 400px !important;
 }
 

@@ -1,18 +1,18 @@
-2015-07-02 05:46:18,475 - [INFO] - from play in pool-160-thread-4 
+2015-07-02 06:43:39,189 - [INFO] - from play in pool-112-thread-5 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-07-02 05:46:30,204 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 06:43:45,448 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 05:46:30,745 - [INFO] - from play in play-internal-execution-context-1 
+2015-07-02 06:43:47,188 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-07-02 05:47:39,577 - [ERROR] - from application in New I/O worker #5 
+2015-07-02 06:47:23,929 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6mjn8i6nk - Internal server error, for (GET) [/coursematch/student/course/11] ->
+! @6mjnge54l - Internal server error, for (GET) [/coursematch/student/dashboard] ->
 
-play.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
+play.PlayExceptions$CompilationException: Compilation error[not found: value favoriteJobs]
 	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
 	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
 	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
@@ -33,39 +33,27 @@ play.PlayExceptions$CompilationException: Compilation error[error: cannot find s
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
 
-2015-07-02 05:47:55,413 - [INFO] - from play in play-internal-execution-context-2 
+2015-07-02 06:48:00,547 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 05:47:55,550 - [INFO] - from play in play-internal-execution-context-2 
+2015-07-02 06:48:00,717 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-07-02 05:49:09,127 - [INFO] - from play in play-internal-execution-context-7 
+2015-07-02 06:48:22,663 - [INFO] - from play in play-internal-execution-context-6 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 05:49:09,231 - [INFO] - from play in play-internal-execution-context-7 
+2015-07-02 06:48:22,888 - [INFO] - from play in play-internal-execution-context-6 
 Application started (Dev)
 
-2015-07-02 05:50:57,050 - [INFO] - from play in play-internal-execution-context-17 
+2015-07-02 06:49:40,140 - [INFO] - from play in play-internal-execution-context-6 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 05:50:57,194 - [INFO] - from play in play-internal-execution-context-17 
+2015-07-02 06:49:40,376 - [INFO] - from play in play-internal-execution-context-6 
 Application started (Dev)
 
-2015-07-02 05:52:25,679 - [INFO] - from play in play-internal-execution-context-21 
+2015-07-02 06:50:33,643 - [INFO] - from play in play-internal-execution-context-14 
 database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
 
-2015-07-02 05:52:25,821 - [INFO] - from play in play-internal-execution-context-21 
-Application started (Dev)
-
-2015-07-02 05:52:58,108 - [INFO] - from play in play-internal-execution-context-24 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 05:52:58,235 - [INFO] - from play in play-internal-execution-context-24 
-Application started (Dev)
-
-2015-07-02 05:54:22,119 - [INFO] - from play in play-internal-execution-context-24 
-database [default] connected at jdbc:mysql://localhost:3306/coursematchdb?characterEncoding=UTF-8
-
-2015-07-02 05:54:22,244 - [INFO] - from play in play-internal-execution-context-24 
+2015-07-02 06:50:33,903 - [INFO] - from play in play-internal-execution-context-14 
 Application started (Dev)
 

@@ -35,6 +35,8 @@ GET /coursematch/student/course/                       controllers.StudentOperat
 POST    /coursematch/student/course/                            controllers.StudentOperationController.uploadMaterial()
 GET /coursematch/student/dashboard/addToFavorites/:id                       controllers.StudentOperationController.addToFavorites(id:Long)
 GET /coursematch/student/dashboard/removeFromFavorites/:id                       controllers.StudentOperationController.removeFromFavorites(id:Long)
+GET /coursematch/student/dashboard/addJobToFavorites/:id                       controllers.StudentOperationController.addJobToFavorites(id:Long)
+GET /coursematch/student/dashboard/removeJobFromFavorites/:id                       controllers.StudentOperationController.removeJobFromFavorites(id:Long)
 
 
 

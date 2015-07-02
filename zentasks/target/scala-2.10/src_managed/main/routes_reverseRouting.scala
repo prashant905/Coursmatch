@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mragab/Desktop/project/Coursmatch/Coursmatch/zentasks/conf/routes
-// @HASH:95048c8fbca93b0aeaef408464286f7e05bbf1ee
-// @DATE:Thu Jul 02 05:45:55 CEST 2015
+// @HASH:77163e685338d96e02912bb7878264575ab21cc0
+// @DATE:Thu Jul 02 06:43:12 CEST 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,9 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:44
+// @LINE:46
+// @LINE:39
+// @LINE:38
 // @LINE:37
 // @LINE:36
 // @LINE:35
@@ -39,11 +41,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:44
+// @LINE:46
 class ReverseAssets {
     
 
-// @LINE:44
+// @LINE:46
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -160,6 +162,8 @@ def login(): Call = {
 }
                           
 
+// @LINE:39
+// @LINE:38
 // @LINE:37
 // @LINE:36
 // @LINE:35
@@ -204,6 +208,12 @@ def viewCourse(id:Long): Call = {
 }
                                                 
 
+// @LINE:39
+def removeJobFromFavorites(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "coursematch/student/dashboard/removeJobFromFavorites/" + implicitly[PathBindable[Long]].unbind("id", id))
+}
+                                                
+
 // @LINE:33
 def saveStudentTags(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "coursematch/student/dashboard/")
@@ -228,6 +238,12 @@ def saveComment(id:Long): Call = {
 }
                                                 
 
+// @LINE:38
+def addJobToFavorites(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "coursematch/student/dashboard/addJobToFavorites/" + implicitly[PathBindable[Long]].unbind("id", id))
+}
+                                                
+
 // @LINE:30
 def displayCourseRatings(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "coursematch/student/displayCourseRatings")
@@ -246,7 +262,9 @@ def removeFromFavorites(id:Long): Call = {
                   
 
 
-// @LINE:44
+// @LINE:46
+// @LINE:39
+// @LINE:38
 // @LINE:37
 // @LINE:36
 // @LINE:35
@@ -272,11 +290,11 @@ def removeFromFavorites(id:Long): Call = {
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:44
+// @LINE:46
 class ReverseAssets {
     
 
-// @LINE:44
+// @LINE:46
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -458,6 +476,8 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:39
+// @LINE:38
 // @LINE:37
 // @LINE:36
 // @LINE:35
@@ -527,6 +547,17 @@ def viewCourse : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:39
+def removeJobFromFavorites : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.StudentOperationController.removeJobFromFavorites",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "coursematch/student/dashboard/removeJobFromFavorites/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      }
+   """
+)
+                        
+
 // @LINE:33
 def saveStudentTags : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.StudentOperationController.saveStudentTags",
@@ -571,6 +602,17 @@ def saveComment : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:38
+def addJobToFavorites : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.StudentOperationController.addJobToFavorites",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "coursematch/student/dashboard/addJobToFavorites/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      }
+   """
+)
+                        
+
 // @LINE:30
 def displayCourseRatings : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.StudentOperationController.displayCourseRatings",
@@ -599,7 +641,9 @@ def removeFromFavorites : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:44
+// @LINE:46
+// @LINE:39
+// @LINE:38
 // @LINE:37
 // @LINE:36
 // @LINE:35
@@ -626,11 +670,11 @@ def removeFromFavorites : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:44
+// @LINE:46
 class ReverseAssets {
     
 
-// @LINE:44
+// @LINE:46
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /public path""", _prefix + """assets/$file<.+>""")
 )
@@ -747,6 +791,8 @@ def login(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
+// @LINE:39
+// @LINE:38
 // @LINE:37
 // @LINE:36
 // @LINE:35
@@ -791,6 +837,12 @@ def viewCourse(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRe
 )
                       
 
+// @LINE:39
+def removeJobFromFavorites(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.StudentOperationController.removeJobFromFavorites(id), HandlerDef(this, "controllers.StudentOperationController", "removeJobFromFavorites", Seq(classOf[Long]), "GET", """""", _prefix + """coursematch/student/dashboard/removeJobFromFavorites/$id<[^/]+>""")
+)
+                      
+
 // @LINE:33
 def saveStudentTags(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.StudentOperationController.saveStudentTags(), HandlerDef(this, "controllers.StudentOperationController", "saveStudentTags", Seq(), "GET", """""", _prefix + """coursematch/student/dashboard/""")
@@ -812,6 +864,12 @@ def addToFavorites(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.Handl
 // @LINE:31
 def saveComment(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.StudentOperationController.saveComment(id), HandlerDef(this, "controllers.StudentOperationController", "saveComment", Seq(classOf[Long]), "GET", """""", _prefix + """coursematch/student/course/$id<[^/]+>/""")
+)
+                      
+
+// @LINE:38
+def addJobToFavorites(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.StudentOperationController.addJobToFavorites(id), HandlerDef(this, "controllers.StudentOperationController", "addJobToFavorites", Seq(classOf[Long]), "GET", """""", _prefix + """coursematch/student/dashboard/addJobToFavorites/$id<[^/]+>""")
 )
                       
 
